@@ -1,2 +1,3 @@
 # Python
-This repository has python docs,programs and videos.
+This repository is created for sharing python docs,materials and videos.
+
