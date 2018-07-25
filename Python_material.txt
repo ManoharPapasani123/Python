@@ -1,0 +1,6077 @@
+session1
+--------
+Python is Object oriented ,simple,interpreted and open source 
+programming language.
+
+Python is an object-oriented programming language created by Guido Rossum in 1989.
+Python is simple, high level ,OOP and provides support for high level data structures like List,Set, and so on.
+It is also  an interpreted scripting language.
+It supports different programming paradigm like OOP,functional,imperative,procedure oriented.
+Python is dynamically  typed i.e. we don't need to use data types.
+
+scripting language vs compiled languages
+
+i)Scripting Language
+
+Scripting is interpretor based language.
+An interpreter converts line by line of code from high level to machine and machine to high level.
+No .exe  file is generated.
+No need of compilation
+Interpreter is slow.
+Ex:Python,perl,javascript etc
+
+ii)compiled Languages
+It is compiler based language.
+A compiler converts whole program from high level to machine and vice versa.
+Generates a .exe file.
+Needs  compilation.
+Compiler is fast.
+c,c++,java etc
+
+Features of Python
+------------------
+Interpreted:
+Python is an interpreted language i.e. interpreter executes the code line by line at a time. This makes debugging easy.
+
+Extensible:
+It implies that other languages such as C/C++ can be used to compile the code and thus it can be used further in our python code.
+
+Embeddable:
+Python Ccan also be embedded into an application to provide a programmable interface.
+
+
+Extensive Libraries
+Python provides lot of built-in modules which makes developer jobs
+simple. 
+
+Garbage Collection
+Python supports automatic garbage collections
+
+Multithreaded
+Python also multithreading support which encourages parallel programming.
+
+Simple
+Python is easy to learn and use. It is developer-friendly and high level programming language.
+
+OOP
+Python supports object oriented language and concepts of classes and objects come into existence.
+
+Strongly and dynamically typed
+Python automatically creates datatypes we dont need to declare any
+dataypes.
+
+Multi Paradigm
+It supports different programming paradigm like OOP,functional,imperative,procedure oriented.
+
+Free and Open source
+
+Portable
+Python applications are portable we can run python programs 
+on different os.
+
+
+python versions
+---------------
+Python 1.0	January 1994
+Python 1.5	December 31, 1997
+Python 1.6	September 5, 2000
+Python 2.0	October 16, 2000
+Python 2.1	April 17, 2001
+Python 2.2	December 21, 2001
+Python 2.3	July 29, 2003
+Python 2.4	November 30, 2004
+Python 2.5	September 19, 2006
+Python 2.6	October 1, 2008
+Python 2.7	July 3, 2010
+Python 3.0	December 3, 2008
+Python 3.1	June 27, 2009
+Python 3.2	February 20, 2011
+Python 3.3	September 29, 2012
+Python 3.4	March 16, 2014
+Python 3.5	September 13, 2015
+Python 3.6	December 23, 2016
+Python 3.6.4	December 19, 2017
+
+python applications
+-------------------
+Gui based applications
+TKinter
+Pyqt
+Kivy basic
+
+Scientific and Numeric Applications
+Scipy
+NumPy
+Pandas
+
+Business Applications
+     Tryton
+
+Console Based Applications
+     I python
+
+Audio and Video based Applications
+     Tim Player
+      Cplay
+
+3D CAD Applications
+FanDango.
+
+Enterprise Applications
+OpenErp
+Tryton
+Picalo 
+
+Applications for images
+Vpython
+Gogh
+imgSeek
+
+
+Language Fundamentals
+variables
+constants
+datatypes
+operators
+
+variables
+---------
+A variable is a name given to a value in a program.It is also 
+called identifier.
+
+syntax
+------
+varname=value
+
+Rules for declaring variables
+-----------------------------
+i)A variable should start with alphabet or underscore(_)
+ii)A variable can have digits but should start with alphabets and 
+   underscore.(_)
+iii)No special symbols are allowed.
+iv)NO spaces are allowed.
+ex:
+abc123(v)
+123abc(x)
+_123(v)
+abc.123(x)
+abc$123(x)
+abc 123(x)
+
+constants
+---------
+we have four type of constants in python.
+
+i)character constants.
+ii)numeric constants.
+iii)complex constants.
+iv)boolean constants.
+
+i)character constants
+---------------------
+character constants are 
+i)alphabets-(a-z/A-Z)
+ii)digits(0-9)
+iii)special symbols
+iv)words
+
+we declare a character data in python using
+
+i)single quotes
+ii)double quotes
+iii)Triple quotes
+
+ex:
+'python'
+"python"
+'''python'''
+
+Everything in quotes is treated as string in python.
+
+Note:Python automatically declare a datatype based on the data we specify.
+
+Python uses a datatype 'str' to declare a string.
+
+ex:
+>>> x='abc'
+>>> x
+'abc'
+>>> type(x)
+<class 'str'>
+>>>
+
+
+ii)Numeric constants
+--------------------
+All numbers are numeric constants in python.
+
+we have 2 types of numeric constants
+i)Integer
+ii)Decimal
+
+i)Integer-->A number without fraction.
+
+ex:
+10
+20
+6
+
+Python uses a datatype 'int' to declare an integer data.
+
+ii)Decimal-->A number with fraction.
+
+ex:
+10.5
+20.6
+6.7
+
+
+Python uses a datatype 'float' to declare a decimal data.
+
+x=10
+
+
+
+iii)complex costants
+
+complex numbers are of the form
+a+bj
+
+Use 'j' as a suffix.
+
+Python uses the datatype complex to declare a compex data in python.
+
+iv)boolean
+boolean is used represent True/False.
+
+It has  2 built in constants
+
+i)True
+ii)False
+
+Python uses the datatype bool to declare True/False.
+
+Datatypes in python
+-------------------
+Datatype is keyword used specify a data in program.
+
+Python automatically declare a datatype based on data.
+
+Python is dynamically typed we don't need to declare any datatype is 
+python.
+
+we have following  datatypes in python
+--------------------------------------
+str--->declare any character type of data/string.
+int--->declare an integer type of data.
+float-->declare a decimal type of data.
+complex--->declare a complex type of data.
+bool-->declare a True/False.
+
+whenever we declare a variable in python it is provided with 
+address and type.
+
+To check address type uses a function
+id()
+
+To check datatype type uses a function
+type()
+
+To display  output we use the keyword
+print()
+
+x=10
+
+>>>id(x)
+123456
+
+>>>type(x)
+<class str>
+
+>>>print(x)
+10
+
+
+Software requirements of python
+-------------------------------
+we can execute python in 2 ways
+
+i)command prompt
+ii)IDE(Integrated development environment)
+
+How to download python s.w
+--------------------------
+Goto python.org
+
+IDE
+Pyton IDLE
+Anaconda 
+spyder
+
+Pycharm-->
+
+Installing anaconda
+-------------------
+Goto google-->download anaconda
+
+anaconda.org/anaconda/python-->download anaconda3-
+
+
+Different modes of executing python 
+-----------------------------------
+i)Intercative
+Executing code from command prommpt.
+
+ii)Batch mode
+writing group of instructions in a file and executing it as 
+a file.
+
+iii)IDE
+Pycharm
+spyder
+IDLE
+
+operators
+---------
+An operator performs an operation
+i)Arithmetic operators
++-->addition
+--->
+*-->
+/-->division(quotient-->float)
+%-->division(remainder)
+//-->division(quotient-->integer)
+**-->power
+a=10
++=
+a+=1--->a=a+1
+a+=20-->a=a+20-->30
+
+-=
+*=
+/=
+//=
+%=
+**=
+
+How to write and execute a code in Python IDLE
+
+Open IDLE
+
+Goto File-->New File
+
+a=10
+b=20
+c=a+b
+print(c)
+
+save as -->sum.py
+
+Goto Run--->F5
+
+How to write a batch a program and execute from python shell
+
+Open Notepad
+a=10
+b=20
+c=a+b
+print(c)
+
+save sum.py
+
+
+
+
+
+Python Strings
+--------------
+A string is sequence of characters.
+
+Anything in ''/" "/'''  is a string in python.
+
+python using datatype str(String class) to declare a string.
+
+syntax 
+------
+s='manohar'
+s="manohar"
+s='''manohar'''
+
+
+Every string internally has an  indexing and it has both forward and backward indexing. 
+
+ex:
+s="vidhatri";
+
+0   1  2  3  4  5  6   7
+v   i  d  h  a  t  r   i 
+-8 -7 -6 -5 -4 -3 -2  -1            
+
+we can access the characters from string using index[]
+
+s[0]--->
+s[1]-->i
+s[7]-->i
+s[9]-->
+
+
+string slicing
+[startindex:endindex]
+
+It extract part of a string.
+
+Note:start index must be smaller than endindex.
+
+>>> s="vidhatri"
+>>> s[0:8]
+'vidhatri'
+>>> s[-1]
+'i'
+>>> s[0]
+'v'
+>>> s[-8:2]
+>>> s[2:-4]
+>>> s[0:-1]
+>>> s[0:0]
+>>> s[0:-2]
+>>> s[0:]
+>>> s[:7]
+>>> s[:8]
+>>> s[:-9]
+''
+>>> s[-9:]
+'vidhatri'
+
+
+usecase1
+--------
+singers = "Peter, Paul, and Mary"
+
+
+print(singers[0:5])
+print(singers[7:11])
+print(singers[17:21])
+
+usecase2
+--------
+fruit = "banana"
+print(fruit[:3])
+print(fruit[3:])
+print(fruit[3:-10])
+print(fruit[3:99])
+fruit[:]
+
+Iterating
+---------
+s='vidhatri'
+
+functions of string class
+-------------------------
+len()--->returns length of a string
+
+syntax
+------
+varname=len(str)
+
+ex:
+s='vidhatri'
+x=len(s)
+x
+8
+
+reverse
+copy
+
+s='vidhatri'
+x=len(s)
+for x in range(x,-1,-1):
+    print(s[x])
+    
+>>> s='vidhatri'
+>>> s[::-1]
+'irtahdiv'
+>>> s2=s
+>>> s2
+'vidhatri'
+
+
+strings-7-1: What is printed by the following statements?
+
+s = "python rocks"
+print(s[3:8])
+(A) python
+(B) rocks
+(C) hon r
+(D) Error, you cannot have two numbers inside the [ ].
+
+strings-7-2: What is printed by the following statements?
+
+s = "python rocks"
+print(s[7:11] * 3)
+(A) rockrockrock
+(B) rock rock rock
+(C) rocksrocksrocks
+(D) Error, you cannot use repetition with slicing.
+
+
+This also works for tuples, arrays, and strings:
+
+>>> s='abcd'
+>>> s[::2]
+'ac'
+>>> s[::-1]
+'dcba'
+
+
+String is immutable
+
+If the given index is not available we get an index error. 
+
+ex:
+>>> s[-50]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+
+
+Methods of String class
+-----------------------
+len()--returns length of  a string.
+s="vidhatri"
+len(s)
+8
+
+lower()--converts a string to lower case.
+s='VIDHATRI'
+s.lower()
+'vidhatri'
+
+upper()--converts a string to upper case.
+>>> s.upper()
+'VIDHATRI'
+
+count()--returns the count of occurances of a string.
+>>> s.count('i')
+2
+
+swapcase()--converts lower to upper and viceversa.
+s='VidhAtri'
+s.swapcase()
+'vIDHaTRI'
+
+find()--find the  index of a string
+>>> s='VidhAtri'
+>>> s.find("v")
+-1
+>>> s.find("i")
+1
+>>> s.find("d")
+2
+>>> s.find("h")
+3
+
+find()  vs index()
+
+find() returns -1 if substring is not found
+index() returns ValueError.
+
+lstrip()--removes spaces at the left side of a string.
+>>> s=" mano"
+>>> s
+' mano'
+>>> s.lstrip()
+'mano'
+rstrip()-removes spaces at the right side of a string.
+>>> s=" mano "
+>>> s
+' mano '
+>>> s.rstrip()
+' mano'
+
+isalnum()--checks whether a string is alphanumeric.
+>>>s="abc123"
+>>> s.isalnum()
+True
+
+isalpha()-checks whether a string has only alphabets.
+>>> s="abc"
+>>> s.isalpha()
+True
+
+>>> s="abc123"
+>>> s.isalpha()
+False
+
+isdigit()--checks whether a string has only digits.
+>>> s="123"
+>>> s.isdigit()
+True
+
+islower()--checks whether a string is in lower case.
+>>> s="abc"
+>>> s.islower()
+True
+
+isupper()--checks whether a string is in uppercase.
+>>> s.isupper()
+False
+>>>
+
+isspace()--checks whether a string is having whitespace characters
+>>> s=" "
+>>> s.isspace()
+True
+
+max()--returns max alphabet in a string
+>>> s='vidhatri'
+>>> max(s)
+'v'
+
+min()--returns min alphabet in a string
+>>> s='vidhatri'
+>>> min(s)
+'a'
+>>>
+
+split()--splits a string into tokens
+>>> s="this is a language"
+>>> s.split(delimiter)
+['this', 'is', 'a', 'language']
+
+s="vidhatri"
+
+
+
+Iterating a collection
+----------------------
+startswith()--checks whether a string starts with a given chars.
+endswith()--checks whether a string ends with a given chars.
+
+
+index()-->returns index of a string,if string not found returns          ValueError 
+
+>>> s="vidhatri"
+>>> s.index('v')
+0
+>>> s.index('i')
+1
+>>> s.index('vidha')
+0
+>>> s.index('mano')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: substring not found
+
+replace()-->It replaces a  old character with new character.
+ 
+>>> s="vidhatri"
+>>> s.replace('i','a')
+'vadhatra'
+>>>
+
+s='vidhatriiii'
+print(s.replace('i','a',3))
+vadhatraaii
+
+join()-->concatenate List of strings
+
+Special operators
+-----------------
++--concatenate 2 strings
+str1 = "Hello"
+str2 = "World"
+str1 + str2
+'HelloWorld'
+
+>>> print ‘red’ + ‘yellow’
+Redyellow
+>>> print ‘red’ * 3
+Redredred
+>>> print ‘red’ + 3
+Traceback (most recent call last):
+File “”, line 1, in
+TypeError: cannot concatenate ‘str’ and ‘int’ objects
+>>>
+
+Note:we cannot concatenate a number with string directly we should convert number to string using str() and apply(+).
+
+>>> print ‘red’ + str(3)
+red3
+>>>
+
+*--create new strings,concatenates multiple copies of same string.
+[]--returns a character from a give index
+[:]--slice operator retuns a substring with in a given range.
+in--checks whether a character exist with in a given string
+not in--checks whether a character doesn't exist with in a given string.
+
+is-->check whether address of 2 objects same or not.
+is not-->check whether address of 2 objects are not same(different).
+
+r/R-r preceeds a quotation marks(Regular expression)
+
+%--formatting a string.
+
+Format specifiers
+-----------------
+character--%c
+string--%s
+signed decimal integer--%i
+signed decimal integer--%d
+unsigned integer--%u
+
+signed-->It accepts -ve and +ve values
+unsigned-->It accepts only +ve values.
+
+octal integer-%o
+hexadecima integer-%x/%X
+exponential notation--%e/%E
+floating poing--%f
+shorter of %e&%f-->%g
+shorter of %E & %f-->%G
+
+string
+int
+float
+ 
+syntax
+------
+print("formatspecifiers"%(var1,var2,....))
+
+ex:
+print("%s %d %f"%(s,x,y))
+
+\n-->newline
+\t-->Horizontal tab
+\b
+\r
+
+sum of 2 numbers
+
+output
+------
+The sum of 10 and 20 is 30
+
+
+
+name="manohar"
+>>> print("%s"%name)
+manohar
+
+>>> name='vidhatri'
+>>> age=1
+>>> print("%s%d"%(name,age))
+vidhatri1
+>>> print("%s\n%d"%(name,age))
+vidhatri
+1
+>>> print("%s\t%d"%(name,age))
+vidhatri        1
+
+>>> x="apples"
+>>> y="lemons"
+
+output
+------
+apples are sweet,lemons are sour.
+
+>>> print("%s%s"%(x,y))
+
+String Formatting with the { } Operators
+
+>>> fname="vidhatri"
+>>> lname="yalla"
+>>> age=1
+
+vidhatri yalla is 1 year old
+
+>>> "{}{} is {} year old".format(fname,lname,age)
+'vidhatriyalla is 1 year old'
+
+
+
+Using the Join Method In Python
+The join method in Python is used to concatenate a list of strings.
+
+>>> s="abc"
+>>> s2='and'
+>>> s2.join(s)
+'aandbandc'
+>>> s2=','
+>>> s2.join(s)
+'a,b,c'
+
+>>> ‘ ‘ .join([‘the’, ‘quick’, ‘brown’, ‘fox’, ‘jumps’, ‘over’, ‘the’, ‘lazy’, ‘dog’])
+‘the quick brown fox jumps over the lazy dog’
+
+
+Dynamic initialization of values
+--------------------------------
+Reading a value from keyboard is known as dynamic initialization.
+
+we use the method
+input() to read a value from keyboard,by default the value we input
+from keyboard is treated as string.
+
+sometimes we need to convert a string to required type for the
+we need to use type conversion functions.
+
+Type conversion functions convert one datatype to another datatype.
+
+i)int()-->converts a string to integer.
+
+>>> x=input('enter no')
+enter no10
+>>> x
+'10'
+>>> y=int(x)
+>>> y
+10
+>>> print(y)
+10
+>>> x+x
+'1010'
+>>> y+y
+20
+>>>
+
+ii)long()-->convert a string to long form.
+This is supported in older version.
+
+20
+>>> type(y)
+<class 'int'>
+>>> x=input('enter no')
+enter no1211111111111111113333333333333333
+>>> x
+'1211111111111111113333333333333333'
+>>> y=long(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'long' is not defined
+>>> y=int(x)
+>>> y
+1211111111111111113333333333333333
+>>>type(y)
+>>><class 'int'>
+
+Note:int and long is combined in new versions
+so no more long in latest versions.
+
+iii)float()-->It is used to convert a string to float
+>>> x=input('enter no')
+enter no10.5
+>>> x
+'10.5'
+>>> y=float(x)
+>>> y
+10.5
+>>>
+
+iv)complex()-->It is used to convert a string to complex type.
+>>> x=input('enter no')
+enter no10+20j
+>>> x
+'10+20j'
+>>> y=complex(x)
+>>> y
+(10+20j)
+>>>
+
+v)bool()-->It is used to convert a string to boolean.
+
+>>> x=input('enter no')
+enter noTrue
+>>> x
+'True'
+>>> y=bool(x)
+>>> y
+True
+>>>
+
+
+Operators 
+---------
+An operator is a symbol which performs a n operation.
+
+i)Arithmetic 
+ii)Relational
+iii)Logical
+iv)Assignment
+v)bitwise 
+vi)special operators
+
+Arithmetic
+
++  --Addition
+-  --substraction
+*  --Multiplication
+%  --remainder
+/  --quotient
+// --quotient
+** --power
+
+Example
+-------
+>>> x=10
+>>> y=20
+>>> x+y
+30
+>>> x-y
+-10
+>>> x*y
+200
+>>> x%y
+10
+>>> x/y
+0.5
+>>> x//y
+0
+>>> x**5
+100000
+>>>
+
+
+Relational operator
+-------------------
+>  --Greater than
+<  --less than
+>= --Greater than or equal
+<= --Less than or equal
+== --equal
+!= --Not equal 
+
+Any relational operation gives a boolean result.
+
+>>> x=10
+>>> y=5
+>>> x>y
+True
+>>> x<y
+False
+>>> x>=y
+True
+>>> x<=y
+False
+>>> x==y
+False
+>>> x!=y
+True
+>>>
+
+Logical operator
+----------------
+A logical operator is used to combine 2 or more conditions.
+
+
+we have the folllowing operators
+
+Logical and ---and
+Logical or---or
+Logical not-->not
+
+Logical and is used if every condition in the given expression must be
+true.
+
+syntax
+------
+condition1 and condition2 and ...
+
+ex:
+x>=10 and x>=20
+
+example
+-------
+>>> x=10
+>>> y=20
+>>> x>=30 and y>=40
+False
+>>> x>=5 and y>=10
+True
+>>> x>=5 and y>=40
+False
+>>>
+
+Logical or
+----------
+Logical or is used if any one  condition can be true with in the given expression or even all the conditions be true.
+
+ex:
+>>> x=10
+>>> y=20
+>>> x>=5 or y>=40
+True
+>>> x>=30 and y>=40
+False
+>>> x>=5 and y>=10
+True
+>>>
+
+Logical Not
+-----------
+It gives a negation 
+
+syntax
+------
+not expression
+
+ex:
+not true-->false
+not false-->true
+
+Assignment operator
+-------------------
+It assigns a value to a variable
+
+=
++=
+-=
+*=
+%=
+/=
+//=
+**=
+
+a=10
+a+=10-->a=a+10
+
+
+Bitwise operators
+-----------------
+A operator which performs operation on bits.
+
+Bitwise and-->&
+Bitwise or-->|
+Bitwise xor-->^
+Bitwise right shift-->>
+Bitwise left shift--<<
+Bitwise compliment--~
+
+
+converting a decimal to binary. 
+
+x=10---->1010
+
+x=5-->101
+
+2|10
+ ------ 
+2| 5-0
+ ----- 
+2| 2-1
+ ----- 
+2| 1-0
+  -----
+   0-1
+
+10--->1010
+
+Binary to decimal
+-----------------
+1010--->
+
+1       0     1     0
+2^3    2^2   2^1     2^0
+
+2^0*0+2^1*1+2^2*0+2^3*1-->
+
+    0+2+0+8-->10
+
+
+25-->11001
+
+A binary number can have prefix 0b
+
+ex;
+x=0b101
+5
+
+bin()-->converts a decimal integer to binary
+Note:bin() accepts only integer as input
+
+>>> x=10
+>>> y=bin(x)
+>>> y
+
+
+octal number system
+--------------------
+It has base as 8[0-7]
+
+0o must be prefix for octal integer.
+
+0o123
+0o148
+
+converting decimal to octal
+---------------------------
+8|78
+ ---
+8|9-6
+ ----
+8|1-1
+ -----
+  0-1
+
+0o116
+
+converting octal to decimal
+---------------------------
+ 1       1   6 
+ 8^2   8^1    8^0
+
+64+8+6-->78
+
+oct()--->convert any number to octal form
+
+>>> x=10
+>>> y=oct(x)
+>>> y
+'0o12'
+
+>>> y=oct(True)
+>>> y
+'0o1'
+
+Note:
+In python in place of True 1 is returned and for False 0 is returned 
+internally. 
+
+Hexadecimal
+-----------
+It has base as 16[0-15]
+
+0-9 
+10-A/a
+11-B/b
+12-C/c
+13-D/d
+14-E/e
+15-F/f
+
+Hexadecimal has a prefix-->0x/0X
+
+converting decimal to hexa
+--------------------------
+100-->64
+
+16|100
+  ----
+ 16 | 6-4
+    -----
+     0-6
+
+100-->0x64
+
+converting hexa to decimal
+--------------------------
+0x  6        4-->
+    16^1     16^0
+
+96+4-->100
+
+hex()-->convert a decimal number to hexa decimal
+
+>>> x=0x64
+>>> x
+100
+>>> x=100
+>>> y=hex(x)
+>>> y
+'0x64'
+
+x=106
+
+16|106
+  -----
+16| 6-10
+  ------
+    0-6
+ 
+0x6A
+
+0xpage
+0x12ab
+0xbeef
+0xge45
+
+Bitwise operators
+-----------------
+a=5-->101
+b=6-->110 
+
+
+Bitwise and--&
+Bitwise or--|
+Bitwise XOR--^
+          *        +        
+a   b     a&b     a|b     a^b
+0   0     0       0        0
+1   0     0       1        1     
+0   1     0       1        1
+1   1     1       1        0
+
+
+a=5--->101
+b=6--->110
+
+a&b--> 100 -->4
+   
+       1       0   0
+      2^2    2^1  2^0 
+
+    2^0*0+2^1*0+2^2*1-->
+     0+0+4-->4
+
+a|b--> 111-->7
+
+a^b--> 011-->3
+ 
+
+Bitwise right shift-->>
+It shifts bits towards right by a given width.
+
+syntax
+------
+variable>>width
+
+ex:
+a>>1
+
+a=5
+  101
+
+a>>1
+  010
+  010-->2
+  
+Bitwise left shift--<<
+It shifts bits towards left side.
+
+syntax
+------
+variable<<width
+
+ex:
+a<<1
+ 
+a=5
+0000  0101  
+      1010-->10 
+
+Bitwise compliment--~
+
+syntax
+------
+~variable
+
+
+x=5 y=6
+
+x=101
+y=110
+
+x&y-->100-->4
+x|Y-->111-->7
+x^y-->011-->3
+x>1-->2
+x<1-->10
+~x-->-6
+
+5-->
+1's compliment
+2's compliment->1's+1
+a=5
+0000  0101
+1111  1010(1's)
+
+2's->1's+1
+1000 0101(1's)
+0000 0011
+---------  
+1     110
+
+Datatypes
+---------
+str
+long(2.x),int
+int(3.x)
+float
+bool
+complex
+
+Every fundamental datatype in python is immutable.
+
+>>> a=10
+>>> b=10
+>>> c=10
+>>> type(a)
+<class 'int'>
+>>> id(a)
+1663293376
+>>> id(b)
+1663293376
+>>> id(c)
+1663293376
+
+
+>>> c=20
+>>> id(c)
+1663293536
+>>>
+
+whenever we initialize same value for different variables
+in python only one object is created for such value and the
+address of object is shared by all variables(references),
+if we modify a variable then a new object is created and 
+the address is reassigned in that variable and the old object is not modified .This is called immutability.
+
+Special operators
+-----------------
+i)Identity operators
+
+is     -->checks whether  adrress of 2 objects are same or not
+          return true if same otherwise false.
+is not -->checks whether  adrress of 2 objects are not
+          same,return true if not same otherwise false.
+
+2)Membership operator
+
+in-->It is used to search for a specific element in a      string,list,tuple,set and so on.return true if found otherwise 
+     false.
+     
+not in--->It is used to search for a specific element in a      string,list,tuple,set and so on.return true if not found otherwise 
+     false.
+
+>>> a=10
+>>> b=10
+>>> a is b
+True
+>>> l=[1,2,3,4,5]
+>>> 1 in l
+True
+>>> a=5
+>>> a in l
+True
+>>> a not in l
+False
+
+datatype conversion functions
+-----------------------------
+we use function
+raw_input()-->It accepts anything as a string.
+input()--->values accepts as per data like
+           10-->int
+           10.5-->float
+           ....
+
+
+for dynamic initialization in 2.x but from 
+3.x we have only input().
+input()-->accepts Everything is a string.
+
+syntax
+------
+varname=input('enter value')
+print(varname)
+
+ex:
+>>> a=input('enter value')
+enter value10
+>>> b=input('enter value')
+enter value20
+>>> c=a+b
+>>> c
+'1020'
+
+some times a string type must be converted to some other datatype
+at such times we should use datatype conversion functions.
+
+For each type we have one function
+
+int()/long()[2.x]
+
+int()[3.x]--->convert a string/float/bool to int type,cannot 
+              convert complex to int.
+
+>>> x='10'
+>>> y=int(x)
+>>> y
+10
+>>> type(x)
+<class 'str'>
+>>> type(y)
+<class 'int'>
+>>> y=int(10.5)
+>>> y
+10
+>>> y=int(True)
+>>> y
+1
+>>> y=int(10+4j)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't convert complex to int
+
+float()-->convert a string/int/bool to float type
+bool()-->convert a string/float/int to bool type
+complex()-->convert anytyoe to complex type
+>>> complex('10+20j')
+(10+20j)
+>>> complex(10)
+(10+0j)
+>>> complex(10.5)
+(10.5+0j)
+>>> complex(True)
+(1+0j)
+
+str()->convert any type to string
+
+control statements
+------------------
+Alters execution flow of a program.
+
+conditinal statments
+Loops
+
+---
+---
+---
+---
+
+conditional statements
+----------------------
+A conditional statment checks whether a condition is true or false.
+
+x=10
+y=50
+x>y
+
+i)if
+ii)if-else
+iii)elif
+
+if
+--
+It checks whether a condition is true or false.
+if true-->if block is executed else execution of
+          if block is skipped.
+
+syntax
+------
+if(condition):
+statement1
+statement1
+statement1
+statementx
+
+blocks
+------
+if(condition)//c/cpp/java/c#
+{
+  //block
+}
+
+In python we don't have blocks but we have indention.
+
+Indention is a way of implementing blocks in python.
+
+
+if(condition):
+   statement1
+   statement2
+   statement3
+   statement4
+   ..
+   ..
+   
+
+
+
+
+
+if-forms
+---------
+we have 3 if forms
+simple if
+multiple if
+nested if
+
+simple if
+---------
+only one if statement in a program is simple if.
+
+syntax
+------
+if(condition):
+ statement1;
+ statement2;
+ statement3;
+#greatest of 2 numbers
+'''Greatest of 2 numbers'''
+a=100
+b=20
+if(a>b):
+     print("a is big",a,"")
+print("Byee")
+     
+
+
+#leap or non 
+a=2012
+if(a%4==0):
+     print("a is leap",a,"")
+print("Byee")
+     
+
+
+Python Indention
+----------------
+To indicate a block of code in Python, you must indent each line of the block by the same amount of space.
+
+In most other programming languages, indentation is used only to help make the code look pretty. But in Python, it is required for indicating what block of code a statement belongs to
+
+
+if
+
+simple  if
+multiple if
+nested if
+
+simple if
+
+one if block in code is simple if
+
+
+syntax
+------
+if(condition):
+ statements;
+ statementx;
+
+greatest of 2 numbers.
+
+
+program to check whether a number is even or not 
+
+
+Leap year or not
+Age-->major/minor
+
+
+Multiple if 
+-----------
+Declaring more than one if statment.
+
+syntax
+------
+if(condition1):
+ statements;
+if(condition2):
+ statements;
+...
+...
+
+Program to find greatest of 2 numbers
+Program to find even or odd
+Program to find leap or non leap
+Program to find greatest of 3 number
+
+a  b    c
+
+a>b  a>c
+
+Nested if
+---------
+An if within another if is known as nested if
+
+syntax
+------
+if(condition1):
+  if(condition2):
+    statements;
+Program to find greatest of 3 numbers
+
+if-else
+-------
+
+syntax
+------
+if(condition1):
+  statements
+else:
+  statements
+
+Program to find greatest of 2 numbers 
+Program to find even or not 
+Program to find leap or non leap 
+
+
+Nested if-else
+--------------
+An if-else with in another if-else .
+
+syntax
+------
+if(condition1):
+  statements
+else:
+  if(condition2):
+    statements
+  else:
+    statements
+
+Greatest 3 numbers
+
+a=10
+b=200
+c=300
+
+if(a>b and a>c):
+     print("a is big",a);
+else:
+       
+     if(b>c):
+          print("b is big",b);
+     else:
+          print("c is big",c);
+
+
+elif
+----
+It is used to check condition by condition.
+
+syntax
+------
+if(condition1):
+  statements;
+elif(condition2):
+  statements;
+elif(condition3)
+  statements;
+...
+...
+else:
+  statements;
+
+
+a=100
+b=20
+c=30
+
+if(a>b and a>c):
+     print("a is big",a);
+elif(b>c):
+     print("b is big",b);
+else:
+     print("c is big",c);
+
+
+Program to find greatest of 3 numbers
+
+a=10
+b=5
+c=30
+
+
+Program to find grades of students taking marks as input
+6 subs
+
+avg>=75--->A
+avg>=60 and avg<75-->B
+avg>=50 and avg<60-->C
+avg>=40 and avg<50-->D
+avg<40-->fail
+
+
+Loops
+-----
+A loop performs a repitive task.
+
+for
+It is used to iterate a string/collection
+
+2 loops
+while
+
+syntax
+------
+while(condition):
+    statements
+    statements
+    statements
+    inc/dec
+
+Loop basics
+-----------
+initialization-->where loop starts.
+condition--->how many times a loop iterates.
+inc/dec-->step statement.
+
+
+Program to print 1-10
+#initialiation
+i=1
+while(i<=10):
+     print(i,end="\t")
+     i=i+1
+     
+Program to print 10-1
+#initialiation
+i=10
+while(i>=1):
+     print(i,end=" ")
+     i=i-1
+     
+Printing even numbers from 1-10
+#initialiation
+i=10
+while(i>=1):
+     if(i%2==0):
+          print(i,end=" ")
+     i=i-1
+     
+Program to find sum of numbers from 1-10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+mind=mind+value
+#initialiation
+i=1
+sum=0
+while(i<=10):
+     sum=sum+i
+     i+=1
+print("the sum is",sum)
+
+5!-->5*4*3*2*1
+#initialiation
+i=1
+sum1=1
+n=5
+while(i<=n):
+     sum1=sum1*i
+     i+=1
+print("the sum is",sum1)
+
+Program to find sum of even numbers from 1-10
+#initialiation
+i=1
+sum1=0
+n=10
+while(i<=n):
+     if(i%2==0):
+          sum1=sum1+i
+     i+=1
+print("the sum is",sum1)
+
+Program to find count of even numbers from 1-10
+#initialiation
+i=1
+count=0
+n=10
+while(i<=n):
+     if(i%2==0):
+          count=count+1
+     i+=1
+print("the sum is",count)
+
+Program to print factors of a given a number
+--------------------------------------------
+6-->1
+    2
+    3
+    6
+
+#initialiation
+i=1
+n=6
+while(i<=n):
+     if(n%i==0):
+          print(i)
+     i+=1
+     
+     
+Program to find sum of factors
+------------------------------
+#initialiation
+i=1
+n=6
+sum=0
+while(i<=n):
+    if(n%i==0):
+         sum=sum+i
+    i=i+1
+print(sum)    
+
+Program to find count of factors
+#initialiation
+i=1
+n=6
+count=0
+while(i<=n):
+    if(n%i==0):
+         count=count+1
+    i=i+1
+print(count)    
+
+6-->1 2 3 6 
+
+#initialiation
+i=1
+n=7
+sum=0
+while(i<n):
+    if(n%i==0):
+         sum=sum+i
+    i=i+1
+
+if(sum==n):    
+     print("perfect")
+else:
+     print("Imperfect")
+
+prime or composite
+------------------
+7-->
+8-->
+#initialiation
+i=1
+n=1
+count=0
+while(i<=n):
+    if(n%i==0):
+         count=count+1
+    i=i+1
+
+if(count==1):    
+     print("neither prime nor comp")
+elif(count==2):
+     print(" prim")
+else:
+     print("comp")
+
+Print digit by digit     
+
+n=256     
+     
+6
+5
+2
+
+10)256(25
+   250
+   ---
+    6
+   ---
+r=n%10
+
+n=n//10-->25
+
+n>0
+
+10)25(2
+   20
+   --
+   5
+  ---
+
+#initialiation
+n=256
+while(n>0):
+     r=n%10
+     print(r)
+     n=n//10
+    
+
+sum of the digits of a given number
+-----------------------------------
+256-->2+5+6     
+
+#initialiation
+n=256
+sum=0
+while(n>0):
+     r=n%10
+     sum=sum+r
+     n=n//10
+print(sum)
+     
+    
+sum of the cubes of digits of a given number
+
+  153-->1^3+5^3+3^3
+
+#initialiation
+n=153
+sum=0
+while(n>0):
+     r=n%10
+     sum=sum+r*r*r
+     n=n//10
+print(sum)
+     
+    
+Armstrong
+
+sum of cubes of digits equal to actual number
+
+153-->
+     
+#initialiation
+x=n=143
+sum=0
+while(n>0):
+     r=n%10
+     sum=sum+r*r*r
+     n=n//10
+print(sum)
+if(sum==x):
+     print("Arm")
+else:
+     print("Not Arm")
+    
+12345
+
+reversing a number
+
+123-->321
+
+sum=sum*10+r
+
+
+121
+#initialiation
+x=n=121
+sum=0
+while(n>0):
+     r=n%10
+     sum=sum*10+r
+     n=n//10
+print(sum)
+if(sum==x):
+     print("pal")
+else:
+     print("Not pal")
+    
+Nested loops
+syntax
+------
+while(codition1):
+    while(condition2):
+        #statements
+
+*****
+*****
+*****
+
+for
+
+syntax
+------
+for variable in string/Collection: 
+         statements
+
+s='python'
+
+
+for
+It is used to iterate on a range of values
+
+we use a function range()
+
+
+range(n)-->
+n-->ending point(exclusive)
+
+range(x,y)-->
+x-->starting point
+y-->ending point
+
+range(x,y,n)-->   
+x-->starting point
+y-->ending point(exclusive)
+n-->no of steps        
+        
+syntax
+------
+for variable in range(n):
+   statements
+
+Program to print 1-10
+Program to print 10-1
+Program to print even numbers from 0-10
+Program to print odd numbers from 0-10
+sum of numbers 1-10 
+
+Assignent
+---------
+All programs done in while,implement them with for
+
+
+
+syntax
+------
+for variable in range(x,y):
+   statements
+
+
+syntax
+------
+for variable in range(x,y,n):
+   statements
+
+
+Program to print 1-10
+Program to print 10-1
+Program to print even numbers from 1-100
+Program to print count of even numbers from 1-100
+Program to find sum of numbers from 1-10
+
+55
+sum=0
+
+x
+
+x    sum    -->sum
+1     0         1
+2     1         3
+3     3         6
+4     6        10
+
+
+sum=sum+x
+
+Program to find factorial of  a given number
+Program to print factors of a given number
+program to find sum of factors
+perfect number
+
+Collections/Data Structures
+---------------------------
+A collection is representing group of objects as a single entity.
+
+1)bytes
+
+It is a collection of values.
+It is immutable and values must be with range 0-256.
+homogenous-->accepts only integers
+
+we use the function bytes() to create a bytes collection.
+ 
+         0 1 2 3 4 
+x=bytes([1,2,3,4,5])
+         -5-4-3-2-1
+
+extraction elements
+-------------------
+varname[index]
+
+ex:
+x[0]
+x[1]
+
+Iterating bytes()
+
+for i in x:
+   print(i)
+
+x[0]=100
+
+2)bytearray
+It is similar to bytes.
+It is mutuble.
+
+we use the function bytearray() to construct arraybyte.
+
+
+
+
+
+
+3)list
+4)tuple
+5)dictionary
+6)set
+
+
+
+List
+
+dynamic
+heterogenous
+insertion order preserved
+duplicates are allowed
+
+x=[value1,value2,.....]
+
+add()-->
+insert()-->
+count()
+remove()
+pop()
+
+sort()
+sort elements in ascending order.
+
+Note:
+while sorting make sure the List has homogenous elements.
+
+reverse()
+reverse the List
+
+pop() vs remove()
+
+remove() is used to remove a given object.
+
+pop() is remove the last element.
+
+List is mutable
+
+
+A List is  used to represent group of objects as a single entity.
+
+mutuble/immutable-->Mutuble
+dynamic->yes
+insertion order is preserved-->yes
+duplicates-->yes
+heterogenous/homogenous-->heterogenous
+
+List uses indexing to perform operations on list.
+
+It has both forward and backward indexing.
+
+How to create list
+------------------
+way1
+----
+[]
+
+syntax
+------
+varname=[]
+
+
+Declaring and internal representation
+-------------------------------------
+   0 1 2 3 4 5 
+x=[1,2,3,4,5,6]
+  -6-5-4-3-2-1
+
+How to extract a value from a list
+----------------------------------
+varname[index]
+
+ex:
+x[0]
+x[1]
+x[2]
+..
+..
+
+x=[1,2,3,4,5,6,7]
+x[0:5]
+x[:9]
+x[1:]
+x[0:-5
+x[-5:-1]
+x[-1:-4]
+
+Iterating list
+--------------
+
+
+Task1
+-----
+sum of all all elements of list.
+write program to remove duplicates from a list
+
+list2=[]
+not in
+
+write a program to sort a list
+
+x=[1,4,5,3,2]
+
+print(x)
+i=0
+while(i<len(x)):
+     j=i+1
+     while(j<len(x)):
+          if(x[i]>x[j]):
+               t=x[i]
+               x[i]=x[j]
+               x[j]=t
+          j=j+1
+     i=i+1
+print(x)
+
+reverse a list
+copy element from one list to another list.
+
+Approach1
+---------
+x=[1,2,3,4,5]
+y=[]
+
+
+x=[1,4,5,3,2]
+y=[]
+j=0
+for i in x:
+     y.append(i)
+print(x)
+print(y)
+     
+     
+write a program to search for an element in a list.
+x=[1,4,5,3,2]
+key=int(input("enter key"))
+flag=False
+for i in x:
+     if(key==i):
+          flag=True
+          break
+if(flag):
+     print("element found")
+else:
+     print("element not found")
+     
+
+
+count of occurances of a number
+1,3
+2,2
+3,1
+
+way2
+----
+we can also create list using function list().
+
+syntax
+------
+varname=list(iterableobject)
+
+>>> x=list('manohar')
+>>> x=list([1,2,3,4])
+>>> x=list((1,2,3,4))//tuple
+>>> x=list({1,2,3,4})//set
+>>> x=list({1:'a',2:'b'})//dictionary
+
+list()-->1)It is used to construct empty list
+      -->2)You can convert any collection to list.
+
+functions of list
+-----------------
+append()-->add an element to a list.
+
+count()-->it returns the occurances of an element in a list.
+
+index()-->returns index of a given element.
+
+index(element)-->index of 1st occurance
+
+index(element,index)-->
+second parameter decides from index we to search for next occurance.
+
+copy()-->It used to create a new list from existing list.
+         copy perform shallow coping.
+         
+In shallow copy change in one list doesn't impact other list.
+
+
+2 types of copy()
+i)shallow copy
+ii)deep copy
+
+x=[10, 20, 30, 40, 10, 10, 10, 200]
+
+y=x//deep copy
+
+>>> x.append(300)
+>>> x
+[10, 20, 30, 40, 10, 10, 10, 200, 300]
+>>> y
+[10, 20, 30, 40, 10, 10, 10, 200, 300]
+
+
+In deep change in list doesn't have impact on another list because we don't have 2 list but infact the address of existing list is copied another variable.
+
+
+insert()-->insert an element at a given index.
+
+extend()-->It is used to group of values at the end of the list
+sort()-->By default sort list i asc order.
+      
+sort(ele,reverse=False)-->sort element either in asc/dsc
+reverse=False-->asc
+reverse=True-->dsc                     
+
+reverse()
+remove()-->remove an element based on object.
+pop()
+
+pop(x)-->remove element based on index.
+pop()-->remove and return last element.
+
+clear()
+
+Task1
+-----
+"Bitty bought a bitter butter 
+ but butter was bitter so she 
+ bought better butter to make 
+ bitter butter better"
+
+split()
+count()
+
+
+s='''Bitty bought a bitter butter 
+ but butter was bitter so she 
+ bought better butter to make 
+ bitter butter better'''
+
+
+words=s.split()
+le=len(words)
+
+while(le>0):
+     for w in words:
+          j=words.count(w)
+          print(w,j)
+          k=1
+          while(k<=j):
+               words.remove(w)
+               k=k+1
+               
+               
+Task2
+-----
+display all strings which with bi,bu
+display all strings which ends with er
+
+y=a+xb
+
+
+tuple
+-----
+collection is used to represent group of objects as
+single entity.
+
+dynamic-->yes
+heterogenous-->yes
+insertion order-->yes
+duplicates-->yes
+
+tuple is immutable.
+
+()
+tuple()-->list to tuple
+
+tuple also uses indexing to extract values.
+
+It is has forward and backward indexing.
+0  1  2  3   4  5
+1  2  3  4   5  6
+-6 -5 -4 -3 -2 -1  
+
+we cannot modify tuple.
+
+Looping tuple
+
+
+
+list()-->create a list
+      -->convert a tuple to List
+
+
+list         vs         tuple
+
+mutable                 immutable
+dynamic                 dynamic
+heterogenous            heterogenous
+insertion order         insertion order
+[]                      ()
+we can modify list      we cannot modify tuple.
+duplucates are allowed  allow duplicates
+it is slow              it is faster
+add()                   no functions are applied
+insert()
+etc
+
+list()                  tuple()
+
+
+Modules types
+Built in modules
+Userdefined modules
+
+math
+It provides math properties,functions.
+
+os
+system
+
+importing a module
+
+import-->2 types
+
+implicit import
+explicit import
+
+syntax
+------
+import math
+
+#implicit import
+import math
+
+print(math.pi)
+print(math.e)
+print(math.sqrt(16))
+       
+Explicit import
+importing a specific member of a module
+
+from...import
+
+syntax
+------
+from modulename import member1,member2,...
+
+#implicit import
+from math import pi,e
+
+x=10
+print(pi)
+print(e)
+print(dir())
+       
+
+dir()
+List out all the variables,functions,classes from
+a module.
+
+Renaming a module
+Giving an alias 
+
+import modulename as newname
+
+ex:
+import math as m
+
+
+Exception Handling
+
+Exception
+An exception is a runtime error which terminates a program abnormally/
+unsuccessfully.
+
+
+Types of errors
+---------------
+compile time/syntax error
+error which are raised due to wrong syntax.
+
+ 
+runtime error
+A runtime error occurs while executing a program.
+and terminate a program abnormally.
+
+
+logic error
+A logic error doesn't provide expected output 
+
+risky statement
+A statement which may raise exception.
+
+Exception Handling
+------------------
+It avoids abnormal termination of a program.
+
+try
+except
+finally
+
+try
+---
+A try block consists of risky statement.
+
+whenever an exception is raised ,it is thrown
+to except block.
+
+syntax
+------
+try:
+  statements
+
+except
+------
+It also a block which is used to handle the exception thrown from a
+try block.
+
+An exception which is raised in try block is
+automatically thrown to except block.
+
+syntax
+------
+except(ClassName):
+    statements
+It is used to handle a specific exception.
+
+
+except:
+    statements
+
+It is used to handle any exception thrown from try block.
+
+An except block must be declared after try block
+
+
+we need try/except construct to handle an exception
+
+syntax
+------
+try:
+   statements
+except(ClassName):
+   statements
+
+Every exception in python is a class.
+
+Except is an exception handler because the it is the except block
+which receives the exception thrown from try block and avoids 
+abnormal termination of a program.
+
+finally 
+-------
+A finally block is used to perform clean up operations.
+
+clean up operations means like closing file/database/network connections.
+
+A finally block is declared after a try block or except block.
+
+
+syntax1
+-------
+try:
+  statements
+except:
+  statments
+finally:
+  statement
+
+
+syntax2
+-------
+try:
+  statements
+finally:
+  statements
+
+A try block and finally block are always executed.
+An except block is executed only when an exception/error is raised
+in try block.
+
+ex:
+a=10
+b=0
+try:
+    c=a/b #risky statement
+    print(c)
+finally:
+    print("clean up operations")
+print("byee")
+
+
+output:
+1.0
+clean up operations
+byee
+
+
+output2:
+Division by Zero error
+clean up operations
+byee
+
+try with multiple except blocks
+-------------------------------
+we can declare a try block with multiple except blocks
+
+syntax
+------
+try:
+  statements
+except(ClassName1):
+  statements
+except(ClassName2):
+  statements
+...
+finally:
+  statements
+
+   
+ZeroDiviosionError
+IndexError
+
+
+Exception Types
+---------------
+we have 2 types of exceptions
+
+i)Builtin exceptions
+ii)User defined exceptions
+
+
+Builtin exceptions
+------------------
+Exceptions which are predefined 
+
+TypeError
+NameError
+IndexError
+ZeroDivisionError
+..
+
+
+User defined exceptions
+-----------------------
+Exceptions created by developer
+
+AgeError
+InsufficientFundsError
+
+If we should create an userdefined exception it has to inherited from
+a built in exception.
+
+syntax
+------
+class ClassName(Exception):
+    statements
+
+ex:
+ValueTooSmallError
+
+a=10
+
+example:
+class ValueTooSmallError(Exception):
+    pass
+
+
+How to raise an exception
+-------------------------
+we can raise exceptions in 2 ways
+
+i)Implicilty
+ii)Explicitly
+
+
+if an exception is automatically thrown from
+try block to except block ,such kind of raising is 
+called implicit raising.
+
+we can raise only Built in exceptions implicitly.
+
+we must throw userdefined exceptions from 
+try block to except block using raise keyword explicitly/
+programmtically
+
+
+syntax
+------
+raise ExceptionClassName
+
+ex:
+try:
+	raise ValueTooSmallError
+
+steps to implemet used defined exceptions
+-----------------------------------------
+step1:Declare an exception class
+if we should create user defined exception we must inherit it 
+from a Built in exception.
+
+syntax
+------
+class ClassName(Exception):
+   pass
+
+class InSufficientFundsError(Exception):
+     pass
+
+
+
+step2:
+How to raise exception 
+
+syntax
+------
+try:
+  raise ExceptionClassName:
+
+ex:
+try:
+  raise InSufficientFundsError
+
+example
+-------
+#step1
+class InSufficientFundsError(Exception):
+    pass
+
+#step2
+bal=100000
+amount=float(input("enter amount"))    
+if(bal<amount):
+    try:
+        raise InSufficientFundsError
+    except(InSufficientFundsError):
+        print("Balance not sufficient")
+    finally:
+        print("Byee")
+else:
+    print("trasnaction success")        
+        
+
+
+
+
+
+Nested try/except/finally blocks
+--------------------------------
+
+try:
+  try:
+    statements
+  except:
+    statements
+  finally:
+    statements
+except:
+  try:
+    statements
+  except:
+    statements
+  finally:
+    statements
+finally:
+  try:
+    statements
+  except:
+    statements
+  finally:
+    statements
+
+
+
+read()
+write()
+
+readline()
+writelines()
+
+tell()-->returns the position of a character in a file. 
+seek()-->It is used to set the position of a file pointer.
+
+#
+try:
+    fp=open("e://abc.txt","r");
+    po1=fp.tell()
+    d1=fp.readline()
+    po2=fp.tell()
+    fp.seek(0)
+    d2=fp.readline()
+    po3=fp.tell()
+    d3=fp.readline()
+    d4=fp.readline()
+    
+    
+    print(po1)
+    print(d1)
+    print(po2)
+    print(d2)    
+    print(po3)
+    print(d3)
+    print(d4)
+    
+    
+except:
+    print("error occured")
+finally:
+    fp.close()
+    print("Data stored successfully")
+    
+    
+
+File exercises
+--------------
+File copy
+eliminating duplicate words
+eliminations duplicate numbers 
+elimnating duplicate records
+reading file backword to forward
+
+Reading a csv file using python
+-------------------------------
+we can read or write data to a csv file using the 
+module csv.
+
+example
+-------
+import csv
+
+csv.reader()
+csv.writer()
+
+exercises
+---------
+display all records starts with A-F
+display all records whose total profit >= 500000
+List all items types
+List all countries
+
+OOP[object oriented programming]
+--------------------------------
+OOP consists of following features. 
+
+Object
+class
+encapsulation
+abstraction
+inheritance
+poymorphism
+message passing
+dynamic binding
+
+
+Object
+------
+It is a real world entity like person,place or a thing.
+
+Object-->Properties
+         actions
+
+ex:
+Person--->name,age,color,height,..(variables)
+          reading,writing,...(functions)
+
+
+syntax
+------
+referenceVariable=ClassName()
+
+
+class
+-----
+A class describes about properties and actions
+of an object.
+
+A class is collection of variables and functions.
+
+A class is a plan or blueprint of an object.
+
+we declare a class using keyword class.
+
+syntax
+------
+class ClassName:
+      variables
+      functions
+
+ex:
+class Book:
+     #
+     #
+
+steps to implement classes and objects
+--------------------------------------
+step1:
+declare a class
+
+syntax
+------
+class ClassName:
+     variables
+     functions
+
+ex:
+class Person:
+      #
+      #
+
+step2:create an object
+referenceVariable=ClassName()
+
+ex:
+p=Person()
+
+step3:Accessing instance members of a class
+
+we access instance members using keyword self/referenceVariable.
+
+if we access instance members within a class then we use self
+
+if we access instance members outside a class using referenceVariable.
+
+syntax
+------
+referenceVariable.membername(outside a class)
+self.variable(with in a class)
+
+ex:
+referenceVariable.variablename
+
+ex:
+p.name
+
+referenceVariable.function_name(outside a class)
+self.function_name(with in a class)
+
+ex:
+p.setValues()
+self.setValues()
+
+
+Program to display details of a person
+--------------------------------------
+Person-->name
+      --->age
+      -->address
+
+we must define instance variables inside a function using keyword self.
+
+      actions-->setValues(self)
+             -->display(self)
+
+functions defined with keyword self as a parameter we call such 
+functions as instance functions.
+
+Person
+------
+class Person:
+   
+How to declare instance varibles
+
+def function_name(self):
+   self.var1=value
+   self.var2=value
+   ..
+
+
+Analyis of a python program
+---------------------------
+whenever create an object it has a unique address.
+The address of object is initialized to a variable which is called refernce variable.
+variables inside object are called instance variables.
+instance  variables are declared inside a function using keyword self.
+A function declared using inside class using keyword self as parameter are called as instance functions.
+Instance functions operate on objects.
+
+
+a=10
+
+class A:
+     a=20
+     def f1(self):
+          self.a=30
+          a=40
+          print(a)
+          print(self.a)
+          print(A.a)
+          print(globals()['a'])
+          
+print(a)                   
+          
+
+a1=A()
+a1.f1()#
+
+creating multiple objects for a class
+--------------------------------------
+we can creat n number of objects for a class.
+
+class Person:
+     def init(self):
+          self.name="mano"
+          self.age=35
+          self.gender="male"
+          
+     def display(self):
+          print(self.name)
+          print(self.age)
+          print(self.gender)
+
+a1=Person()
+a2=Person()
+a3=Person()
+a1.init()
+a2.init()
+a3.init()
+
+a1.display()
+a2.display()
+a3.display()
+
+
+Parameter passing in classes
+----------------------------
+Passing values from one function to another function of a class is known as PP.
+we can initialize instance variables of a class using PP.
+
+class Person:
+     def init(self,name,age,gender):
+          self.name=name
+          self.age=age
+          self.gender=gender
+          
+     def display(self):
+          print(self.name)
+          print(self.age)
+          print(self.gender)
+
+a1=Person()
+a2=Person()
+a3=Person()
+
+
+a1.init("aaa",1,'m')
+a2.init('bbb',2,'m')
+a3.init('ccc',3,'f')
+
+a1.display()
+a2.display()
+a3.display()
+
+
+Every object has its own instance variables.
+
+Tasks
+-----
+write a program to find sum of 2 numbers.
+class Addition:
+     def init(self,a,b):
+          self.a=a
+          self.b=b
+
+     def add(self):
+          self.c=self.a+self.b
+          
+     def display(self):
+          print(self.a)
+          print(self.b)
+          print(self.c)
+
+a1=Addition()
+
+a1.init(1,2)
+a1.add()
+a1.display()
+
+
+Area of a triangle
+Area of a rectangle
+Area of a square
+Area of a circle
+even or not
+armstrong 
+palindrome
+
+static variables and functions
+------------------------------
+static variables
+
+A variable declared inside a class and outside a function is called static/class 
+variable.
+
+Only one copy of memory is allocated to a static variable and it is shared by all objects.
+
+A static  variable is not part of object but part of class so we can access a static variable directly using classname.
+
+syntax
+------
+ClassName.varname
+
+ex:
+A.x
+
+A static/class variable is shared by all the objects of a class so it is also called shared variable.
+
+ex 1)
+class Test:
+     x=10
+
+
+print(Test.x)
+
+
+ex 2)
+class Counter:
+     def init(self):
+          self.x=10
+     
+     def incr(self):
+           self.x=self.x+1
+           print(self.x)
+
+
+c1=Counter()
+c2=Counter()
+c3=Counter()
+
+c1.init()
+c2.init()
+c3.init()
+
+c1.incr()#11
+c2.incr()#11
+c3.incr()#11
+
+
+ex 3)
+class Counter:
+     
+     x=10   
+     
+     def incr(self):
+           Counter.x=Counter.x+1
+           print(Counter.x)
+
+
+c1=Counter()
+c2=Counter()
+c3=Counter()
+
+
+
+c1.incr()#11
+c2.incr()#11
+c3.incr()#11
+
+
+ex 4)
+class Counter:
+     
+     x=10   
+     
+     @staticmethod
+     def incr():
+           Counter.x=Counter.x+1
+           print(Counter.x)
+
+
+Counter.incr()#11
+
+
+ex 5)
+class Counter:
+     
+     x=10   
+
+     def init(self):
+          self.a=10
+          
+     @staticmethod
+     def incr():
+           c=Counter()
+           c.init()
+           c.a=c.a+1
+           print(c.a)
+
+
+
+c=Counter()
+c.incr()
+
+static functions
+
+A static  function is declared using decorator 
+@staticmethod.
+
+
+A static method is not part of object but part of 
+class.
+
+we can access a static function directly using classname.
+
+syntax
+------
+@staticmethod
+def function_name():
+	statements
+	
+
+How to call a static function
+-----------------------------
+ClassName.function_name()
+
+ex:
+Counter.incr()
+
+program
+------
+class Counter:
+     #static/class variable
+     x=10
+     @staticmethod
+     def incr():
+         Counter.x=Counter.x+1
+         print(Counter.x)
+         
+
+
+Counter.incr()#11
+Counter.incr()#12
+Counter.incr()#13
+
+we can access static variable from instance function directly.
+A staticmethod allows to access only static memebers(variables,functions) directly but if we want to access an instance members(variables/fucntions) from a static function then we should create an object of a class in a static method and we must access the instance members using reference of object or object itself.
+
+
+
+classmethod
+-----------
+It is similar to static function
+but declared using decorator
+@classmethod
+
+A classmethod is declared with a parameter cls
+
+syntax
+------
+@classmethod
+def function_name(cls):
+ 	statements
+
+How to call a class function
+----------------------------
+ClassName.function_name()
+
+Program
+-------
+class Counter:
+     #static/class variable
+     x=10
+     @classmethod
+     def incr(cls):
+         Counter.x=Counter.x+1
+         print(Counter.x)
+         
+Counter.incr()#1111
+Counter.incr()#1211
+Counter.incr()#1311
+         
+         
+instance variable vs static vaiables
+
+i)a)instance variables are declared inside a function using keyword 
+self.
+
+self.varname
+
+b)static variables declared inside class and outside 
+function.
+
+
+ii)a)Forevery object we have a seperate copy of instance
+variables.
+
+b)for a static variable only one copy of memory and shared by all
+the objects of a class.
+
+iii)a)we should access instance variable using a reference/self.
+
+b)we access  static variable directly using ClassName.
+
+iv)if values changes froom object to object declare such data using instance variables
+
+if values are common values objects declare such data using static variables
+
+instance functions vs static functions vs class functions
+--------------------------------------
+i)1)instance function is declared inside class and with keyword self 
+as  a parameter.
+
+2)static functions and class function are declared with decorators
+@staticmethod and @classmethod
+
+
+ii)1)we access instance function using reference variable of an object
+2)we access static function/classfunction using ClassName
+
+Instance functions are used to  implement logic on data of objects whereas static methods/class methods are used to implement utility logic.
+
+
+constructor
+-----------
+A constructor is a special function used to declare and initialize instance variables of a class.
+A constructor is automatically called whenever object is created.
+
+Types 
+-----
+i)default
+A constructor without any parameters
+
+syntax
+------
+def __init__(self):
+	statements 
+
+
+Program to display details of a Book
+Book-->name
+       author
+       price
+
+A constructor doesn't return any type except None.
+
+Program
+-------
+class Book:
+    def __init__(self):
+        self.name='harrypotter'
+        self.author='jkrowling'
+        self.price=1000.0
+        
+        
+    def display(self):
+        print(self.name)
+        print(self.author)
+        print(self.price)
+        
+b=Book()
+b.display()        
+        
+ii)parameterized
+
+A constructor with parameters.
+
+A constructor is declared using keyword init.
+
+syntax
+------
+def __init__(self,var1,var2,....):
+	//declare and initialize instance variables.
+
+A parameterized constructor is used to implement parameter passing.
+
+referenceName=ClassName(arg1,arg2,...);
+
+
+Program
+-------
+class Book:
+    def __init__(self,name,author,price):
+        self.name=name
+        self.author=author
+        self.price=price
+    
+    def display(self):
+        print(self.name)
+        print(self.author)
+        print(self.price)
+        
+b=Book('aaa','bbb',700.00)  
+b.display()  
+b2=Book('vvv','nnn',800.00)
+b2.display()
+        
+        
+destructor
+----------
+A destrcutor is used to perform clean up opertions i,e used to remove 
+unwanted objects from memory.
+
+
+syntax
+------
+def __del__(self):
+	//clean up operations
+
+A destructor is used to perform garbage collection.
+
+Garbage collection is process of removing unwanted objects from memory.
+
+It happens automatically in python.
+
+A destructor is automatically called once after completing execution
+of a program.
+
+An object is eligible of garbage collection if it doesn't have any external references.
+
+Gargabe collection is of 2 types implicit and explicit
+
+Implicit-->
+Garbage collection automatically done by interpretor.
+Here destructor automatically after completing execution.
+
+Explicit
+Garbage collection done by developer by removing reference programatically.
+
+use keyword del to call destructor explicilty.
+
+syntax
+------
+del referencename
+
+Here destructor called programatically once the reference of an object is removed by developer.
+
+
+class  A:
+     def __del__(self):
+          print("Object destroyed")
+
+a1=A()
+a2=A()
+a3=A()
+a4=A()
+a5=A()
+
+
+Inheritance
+-----------
+The process of deriving the properties of a super class
+to a sub class or a parent class to child class or
+or a base class to a derived.
+
+Inheritance avoids data redundancy.
+
+we declare all the common properties of sub classes
+in a class called as Parent/Base/Super class.
+
+The classes declared at bottom level are  called as
+child/sub/derived classes
+
+Inheritance provides proper code  maintenance.
+
+syntax
+------
+class ChildClassName(ParentClassName):
+		#statements
+
+
+Types of inheritance
+--------------------
+we have 5 types of inheritance
+
+i)single inheritance
+ii)Multi level inheritance
+iii)Heirarchical inheritance
+iv)Multiple inheritance
+v)Hybrid inheritance
+
+
+single inheritance
+------------------
+i)Deriving one child from one parent.
+
+
+syntax
+------
+class Parent:	
+    statements
+
+class Child(Parent):	
+    statements
+
+A
+a
+b
+setValues()
+display()
+
+
+B
+c
+sum()
+
+It is recommended to create an object for a sublcass.
+
+we can inherit properties from parent to child and reverse
+is not possible.
+
+Program
+-------
+class A:
+    def setValues(self):
+        self.a=10
+        self.b=20
+    def display(self):
+        print(self.a)
+        print(self.b)
+        
+class B(A):
+    def sum(self):
+        self.c=self.a+self.b
+        print(self.c)
+        
+b=B()
+b.setValues()
+b.display()
+b.sum()
+    
+    
+Multi level inheritance
+-----------------------
+Deriving a subclass from a super class and inturn
+deriving another sub class from derived class and so on.
+
+A
+^
+|
+B
+^
+|
+C
+^
+|
+D
+..
+..
+
+
+A bottom level has access to all its top level classes.
+
+A
+a,b
+setValues()
+display()
+B
+c
+sum()
+
+C
+d
+mul()
+
+Program
+-------
+class A:
+    def setValues(self):
+        self.a=10
+        self.b=20
+    def display(self):
+        print(self.a)
+        print(self.b)
+        
+class B(A):
+    def sum(self):
+        self.c=self.a+self.b
+        print(self.c)
+class C(B):
+    def mul(self):
+        self.result=self.a*self.b*self.c
+        print(self.result)
+        
+    
+    
+c=C()
+c.setValues()
+c.display()
+c.sum()        
+c.mul()       
+       
+
+Heirarchical inheritance(one-many)
+----------------------------------
+Deriving more than one child class from a parent class.
+A
+|      |   |
+B      C   D
+
+Here one sub class doesn't have access to another sub class directly.
+
+syntax
+------
+class Parent:	
+    statements
+
+class Child1(Parent):	
+    statements
+
+class Child2(Parent):	
+    statements
+...
+... 
+
+
+Program
+-------
+class A:
+    def setValues(self):
+        self.a=10
+        self.b=20
+    def display(self):
+        print(self.a)
+        print(self.b)
+        
+class B(A):
+    def sum(self):
+        self.c=self.a+self.b
+        print(self.c)
+class C(A):
+    def mul(self):
+        self.result=self.a*self.b
+        print(self.result)
+        
+b=B()
+b.setValues()
+b.display()
+b.sum()
+    
+    
+c=C()
+c.setValues()
+c.display()
+c.mul()       
+       
+Multiple inheritance(many-one)
+------------------------------
+deriving a sub class from 2 or more parent classes.
+
+A     B    C ....
+|     |    |
+------------
+      |
+      X
+
+
+syntax
+------
+class Parent1:	
+    statements
+
+class Parent2:	
+    statements
+..
+..
+
+class Child(Parent1,Parent2,....):	
+    statements
+...
+... 
+
+Example:
+--------
+class A:
+    def setValues(self):
+        self.a=10
+        self.b=20
+    def display(self):
+        print(self.a)
+        print(self.b)
+        
+class B:
+    def setValues(self):
+        self.x=30
+        self.y=40
+    def show(self):
+        print(self.a)
+        print(self.b)
+class C(B,A):
+    def sum(self):
+        self.result=self.a+self.b
+        print(self.result)
+        
+    
+    
+c=C()
+c.setValues()
+c.display()
+c.show()
+c.sum()        
+       
+object class.
+It is parent class of all classes in python
+Every class in python is a directly or indirectly inherited from
+object class.
+
+__dict__
+__doc___
+__bases__
+
+
+Polymorphism.
+poly-->many
+morphism-->forms
+
+same function represented in many forms is polymorphism.
+i)compiletime
+if function binding happens at the time of compiling  a program 
+we call it as comopile time polymorphism
+
+binding a function call to its appropriate function 
+
+def m1()
+{
+}
+def m1(a,b)
+{
+
+}
+def m1(a,b,c)
+{
+
+}
+
+
+
+m1()
+m1(10,20)
+m1(1,2,3)
+
+we implement compile time polymorphism using function overloading/operator overloading.
+
+Python doesn't support function overloading or operator overloading.
+
+ex:
+void m1(int x,int y)
+void m1(float x,float,int y)
+void m1(double  x,double y)
+
+
+ex 2)
+def f1():
+     print("hello")
+
+def f1(a):
+     print("hello")
+
+def f1(a,b):
+     print("hello",a,b)
+
+f1(1,2)
+f1(100,200)
+f1(10,20)
+
+if we overload a function in python the latest function will override the address of existing functing.
+
+In python overloading is not necessary because a fuction accepts any parameter sent through caller.
+
+ii)runtime polymorphism
+if function binding happens at the time of executing a program 
+we call it as run time polymorphism
+
+we implement run time polymorohism using function overriding.
+
+function overriding
+defining a function of super class in sub class with same signature but with different implementation.
+
+The function in super class is called overridden function
+The function in sub class is called overriding function
+
+signature=function_name+parameters
+
+     
+class A:
+    def m1(self):
+        print("A")
+ 
+class B(A):
+   a=A()
+   def m1(self):
+       print("B")
+
+x=A()
+x.m1()
+
+b=B()
+b.m1()
+
+b.a=B()
+b.a.m1()
+
+ex 2)
+class Bear(object):
+    def sound(self):
+        print "Groarrr"
+ 
+class Dog(object):
+    def sound(self):
+        print "Woof woof!"
+ 
+def makeSound(animalType):
+    animalType.sound()
+ 
+ 
+bearObj = Bear()
+dogObj = Dog()
+ 
+makeSound(bearObj)
+makeSound(dogObj)
+
+Overloading
+Python doesn't support overloading.
+Because python doesn't have explicit types 
+Also one method can accept any type of parameters
+variable length parameters example with instance method
+in python.
+
+overriding
+same method signature with different implementation
+
+Example for dynamic method dispatch
+
+
+abstract classes
+----------------
+A class with abstract function(s) is known as abstract class.
+
+A function without implementation is known as abstract function
+
+ex 1:
+class Document:
+    def __init__(self, name):    
+        self.name = name
+ 
+    def show(self):             
+        raise NotImplementedError("Subclass must implement abstract method")
+ 
+
+we override abstract of a class in a sub class.
+
+ex 2)
+class Document:
+    def __init__(self, name):    
+        self.name = name
+ 
+    def show(self):             
+        raise NotImplementedError("Subclass must implement abstract method")
+ 
+class Pdf(Document):
+    def show(self):
+        return 'Show pdf contents!'
+ 
+class Word(Document):
+    def show(self):
+        return 'Show word contents!'
+ 
+documents = [Pdf('Document1'),
+             Pdf('Document2'),
+             Word('Document3')]
+ 
+for document in documents:
+    print document.name + ': ' + document.show()
+
+ex 3)
+
+from builtins import NotImplementedError
+class Document:
+    def __init__(self,name):
+        self.name=name
+    def show(self):
+        raise NotImplementedError("sub class must override super class")
+
+class Pdf(Document):
+    def show(self):
+        print("show pdf contents")
+
+class Word(Document):
+    def show(self):
+        print("show word contents")
+
+def showdocuments(mydocument):
+    mydocument.show()
+
+p=Pdf("Pdf")
+w=Word("word")
+
+showdocuments(p)
+showdocuments(w)
+
+ex 4)Pseudo code
+class Car:
+    def drive abstract, no implementation.
+    def stop abstract, no implementation.
+ 
+class Sportscar(Car):
+    def drive: implementation of sportscar
+    def stop: implementation of sportscar
+ 
+class Truck(Car):
+    def drive: implementation of truck
+    def stop: implementation of truck
+
+
+ex 5)
+from builtins import NotImplementedError
+
+class Car:
+    def __init__(self,name):
+        self.name=name
+    def drive(self):
+        raise NotImplementedError("sub class must override super class")
+    def stop(self):
+       	raise NotImplementedError("sub class must override super class")
+
+
+class SportsCar(Car):
+    def drive(self):
+        print("drrrrrrrrrrrr")
+    def stop(self):
+        print("stop stop!!!!")
+
+class Truck(Car):
+    def drive(self):
+        print("Burrrrrrrrrr")
+    def stop(self):
+        print("stop stop!!!!")
+
+def journey(mycar):
+    mycar.drive()
+    mycar.stop()
+
+
+p=SportsCar("Ferrari")
+w=Truck("Hammmer")
+
+journey(p)
+journey(w)
+
+setter and getter examples
+
+A setter is a function which is used to set a value to instance variable where as getter is
+a function which is used to get a value from an instance variable.
+
+syntax(setter)
+--------------
+def set_propertyname(self,varname):
+    self.varname=varname
+
+syntax(getter)
+--------------
+def get_propertyname(self):
+    return self.varname
+
+class Employee:
+    #eno,ename,sal
+    def set_eno(self,eno):
+        self.eno=eno
+    def get_eno(self):
+        return self.eno
+    def set_ename(self,ename):
+        self.ename=ename
+    def get_ename(self):
+        return self.ename
+    def set_sal(self,sal):
+        self.sal=sal
+    def get_sal(self):
+        return self.sal
+    
+emp=Employee()
+emp.set_eno(10)
+emp.set_ename('mano')
+emp.set_sal(1000.00)
+
+print(emp.get_eno())
+print(emp.get_ename())
+print(emp.get_sal)    
+
+
+@property
+@attribute.setter
+
+class A:
+    #getter
+    @property
+    def a(self):    
+        return self.x
+    @a.setter    
+    def a(self,a):
+        self.x=a
+        
+ob=A()
+#caller a setter
+ob.a=10    
+
+#calling a getter
+print(ob.a)
+    
+Encapsulation
+-------------
+Encapsulation is grouping of variables and functions into a single 
+unit.
+
+Functions are exposed whereas data is hidden from outside classes and
+functions.
+
+Encapsulation it provides security to data.
+
+__varname-->private
+__function_name()-->private
+        
+class Employee:
+    #eno,ename,sal
+    def set_eno(self,eno):
+        self.__eno=eno
+    def get_eno(self):
+        return self.__eno
+    def set_ename(self,ename):
+        self.__ename=ename
+    def get_ename(self):
+        return self.__ename
+    def set_sal(self,sal):
+        self.__sal=sal
+    def get_sal(self):
+        return self.__sal
+    
+emp=Employee()
+emp.set_eno(10)
+emp.set_ename('mano')
+emp.set_sal(1000.00)
+
+print(emp.get_eno())
+print(emp.get_ename())
+print(emp.get_sal())
+        
+Accessmodifier/accesspecifiers/public/private/proteced
+
+by default a member is public in python
+private member is declared  using __(double underscore)  as prefix
+protected member is declared  using _(single underscore)  as prefix
+
+A public member is accessible anywhere in module/package and also in other modules/packages.
+
+A private member is accessible only within the class it is declared.
+
+
+class A:
+    __x=10
+    _a=20
+    m=100
+
+    def b1(self):
+        return "hello"
+
+class B:
+    a=A()
+    def f1(self):
+        print(B.a.m,B.a._a)
+
+b=B()
+b.f1()
+
+
+
+ex 2)
+class Parent(object):
+    def _protected(self):
+        pass
+
+    def __private(self):
+        print("Is it really private?")
+
+class Child(Parent):
+    def foo(self):
+        self._protected()
+
+    def bar(self):
+        self.__private()
+
+#case1
+c = Child()
+c._Parent__private()
+
+#case2
+c2 = Child()
+c2.bar()
+c2.foo()
+c2._protected()
+
+
+An example with functions in class +outside class
+
+Adding and deleting static variables and instance variables to a class from outside class.
+
+type() vs isinstance()
+class A:
+    def m1(self,*args):
+            result=0
+            strcat=''
+            for val in args:
+                if(type(val)==int):
+                    result=result+val
+                if(type(val)==str):
+                    strcat=strcat+val
+            print(strcat)   
+            
+A().m1('manohar','vidha','manoja')
+
+super() in python
+A super function is used to access super class 
+variables and functions from  a sub class.
+
+super().function_name()
+super().var_name()
+
+
+abstraction/code hiding
+
+public
+private 
+protected
+
+Regular expressions
+-------------------
+It is used to implement pattern matching
+It also used to validate data
+Regular expressions supported by pearl are also supported by python.
+Python provides builtin functions to work with RE.
+we use the module "re" to work with regular expressions.
+
+we can declare a regular expression pattern 
+as
+
+r'pattern'
+r"pattern"
+r'''pattern'''
+
+
+special characters used in regular expressions are:
+1)*--->It matches zero or more occurances of preceeding character.
+
+ex:
+     ab*c
+     ac
+     abc
+     abbc
+     abbbbbc
+     adc
+     acid
+
+ex:
+import re
+regex=r"ab*c"
+matches=re.findall(regex,"ac,abc,abbc,abbbbc")
+print(matches)
+
+
+2)+---->It matches with one or more occurances of preceeding character
+ 
+ex:
+   ab+c
+   ac
+   abc
+   abbc
+   abbbbbc
+
+3)?---->It matches with zero or one occurances of preceeding character.
+ex:
+  ab?c
+  ac
+  abc
+  abbc
+
+4).-->It matches any single character.It should be exact match.
+ex:
+  a.c
+  abc
+  agc
+  axc
+  amc
+  apc
+  a12
+  a&b
+  abcd(invalid)
+     
+import re
+
+regex=r"a.c"
+matches=re.findall(regex,"a.c,abc,agc,axc,amc,apc,a1c,a&c,abcd,abbc")
+print(matches)
+
+
+5)[]-->It matches with any single charcater in the given list.
+  ex:
+     b[aeiou]d
+     bad
+     bed
+     bid
+     bod
+     bud
+     bxd
+
+import re
+regex=r"b[aeiou]d"
+matches=re.findall(regex,"aaabad,bed,bid,bod,bud,bxd,beddd,baddy")
+print(matches)
+
+
+6)[^]-->It matches with any single charcater other than in the given list.
+  ex:
+      [^xyz]
+      b[^aeiou]d
+  ex:
+      bad,bed,bid,bod,bud,bbd
+    
+
+7)[-]-It matches any single character within given range
+  
+   ex:
+     x[a-e]y
+     xay
+     xby
+     xcy
+     xdy
+     xey
+     xhy(invalid)
+
+8)[0-9]-->Any single digit
+  [a-z]-->Any one lowercase alphabet
+  [A-Z]-->Any one uppercase alphabet
+  [a-zA-Z]-->Any one alphabet
+  [a-zA-Z0-9]-->Any one alphanumeric
+  [^0-9]-->Any one single non digit
+  [^a-z]-->Any one non lowercase alphabet
+  [^A-Z]-->Any one non uppercase alphabet
+  [^a-zA-Z0-9]Any one non alphanumeric
+  [^a-zA-Z]Any one non alphabet
+
+9)(|)
+  (java|hadoop|python)
+  
+   java
+   hadoop
+   python
+   salesforce(invalid)
+
+10){m}-->It matches exact occurances of preceeding characters.
+   
+   ex:
+   ab{3}c
+   abbbc
+
+   abc
+   abbc
+   abbbbc
+
+11){m,n}-->It matches minimum m occurances and max n occurances of preceeding character.
+
+ab{3,5}c
+abbc
+abbbc
+abbbbbc
+
+import re
+
+regex=r"ab{3,5}c"
+matches=re.findall(regex,"abbbc,abbbc,abc,abbc,abc,abbc,abbbc,abbbbc")
+print(matches)
+
+12){,n}-->we can have have min zero to max n.
+
+import re
+
+regex=r"ab{,5}c"
+matches=re.findall(regex,"abbbc,abbbc,abc,abbc,abc,abbc,abbbc,abbbbc")
+print(matches)
+
+13){m,}-->It matches minimum m occurances and max no limit of           preceeding character.
+
+14)^-->start of the line.
+     ^vidhatri
+     ^[abc]-->can start with a or b or c
+     ^[^abc]-->otherthan a or b or c
+ex:
+
+import re
+
+regex=r'suresh'
+s='''vidhatri is a good girl\n
+vidhatri is cute\n
+suresh is aweeeeeesome\n
+suresh is charming\n
+suresh is almighty'''
+
+matches=re.findall(regex,s)
+print(matches)
+
+14)$-->End of the line.
+   perl$
+   [0-9]$
+
+ex:
+import re
+regex=r'perl$'
+s1='perl is a language'
+s2='perl'
+s3='is a scripting perl'
+
+matches=re.findall(regex,s1)
+print(matches)
+
+15)\d or [0-9]
+
+   ex:
+   [0-9][0-9][0-9][0-9] or[0-9]{4} or \d\d\d\d or \d{4}
+
+16)\D or [^0-9]-->Any single non digit.
+
+17)\w or [a-zA-Z0-9] -->Any alphanumeric.
+
+18)\W or [^a-zA-Z0-9]-->Any non alphanumeric(special characters)
+
+19)\s -->
+it matches any whitespace character, this is equivalent to the set [ \t\n\r\f\v].
+
+20)\b-->word boundary.
+
+Matches the empty string, but only at the beginning or end of a word. 
+
+For example, 
+r'\bfoo\b' matches 
+'foo', 
+'foo.', 
+'(foo)', 
+'bar foo baz' 
+but not 'foobar' or 'foo3'. 
+Inside a character range, \b represents the backspace character, for compatibility with Python’s string literals.
+
+How to find maximum occurances in char-string 
+For example:-
+"geeksforgeeks geeks geek geer 
+Is a char string and after solving output is - gee
+
+import re
+s="geeks for geeks geer geet the boot boor geem booat aap  bool aab aaat boot1 boomb"
+
+regex1=r'gee'
+regex2=r'boo'
+regex3=r'aa'
+
+matches1=re.findall(regex1,s)
+matches2=re.findall(regex2,s)
+matches3=re.findall(regex3,s)
+
+print(matches1)
+print(matches2)
+print(matches3)
+
+l1=len(matches1)
+l2=len(matches2)
+l3=len(matches3)
+
+if(l1 > l2 and l1>l2):
+    print("gee  is having highest prefix ",l1)
+elif(l2>l3):
+    print("boo  is having highest prefix ",l2)
+else:
+    print("aa  is having highest prefix ",l3)
+
+reference:For more
+https://docs.python.org/2/library/re.html
+
+multithreading
+--------------
+A thread performs a specifc task.
+Group of threads executing parallely is known as multithreading.
+A thread ligh weight process i,e it utilizes less system resources.
+Mutithreading provides parallel programming.
+Thread uses shared resources i,e cpu and ram.
+ 
+thread is a sequence of  instructions within a program that can be executed independently of other code
+
+Multiple threads can exist within one process where:
+
+Each thread contains its own register set and local variables (stored in stack).
+All threads of a process share global variables (stored in heap) and the program code.
+
+Multitasking
+------------
+Executing multiple programs parallely is known as multitasking.
+It is heavy weight i,e a seperate ram and cpu necessary to execute each program
+
+we use the module threading
+we use class call Thread to create any userdefined thread.
+
+steps to implement threading
+----------------------------
+step1:Inherit a class from Thread class available in threading module
+
+ex:
+import threading as t
+class Thread1(t.Thread):
+      def run(self):
+	  #code
+
+step3:
+t=Thread()
+
+step4:
+calll start()      
+
+
+example
+-------
+import threading as t
+class Thread1(t.Thread):
+    def run(self):
+        i=1
+        while(i<=10):
+            print(i,end='\n')
+            i=i+1
+t=Thread1()
+t.start()            
+            
+Running multiple threads
+import threading as t
+class Thread1(t.Thread):
+    def run(self):
+        i=1
+        while(i<=10):
+            print("Thread ",i,end='\n')
+            i=i+1
+t1=Thread1()
+t2=Thread1()
+t1.start()      
+t2.start()      
+      
+Joining threads
+---------------
+A join causes current thread to give an oppurtunity for other threads threads and the current will be waiting untill other threads complete 
+execution.
+
+import threading
+import time
+
+exitFlag = 0
+
+class myThread (threading.Thread):
+   def __init__(self, threadID, name, counter):
+      threading.Thread.__init__(self)
+      self.threadID = threadID
+      self.name = name
+      self.counter = counter
+   def run(self):
+      print ("Starting " + self.name)
+      print_time(self.name, self.counter, 5)
+      print ("Exiting " + self.name)
+
+def print_time(threadName, delay, counter):
+   while counter:
+      if exitFlag:
+         threadName.exit()
+      time.sleep(delay)
+      print ("%s: %s" % (threadName, time.ctime(time.time())))
+      counter -= 1
+
+# Create new threads
+thread1 = myThread(1, "Thread-1", 1)
+thread2 = myThread(2, "Thread-2", 2)
+
+# Start new Threads
+thread1.start()
+thread2.start()
+thread1.join()
+thread2.join()
+print ("Exiting Main Thread")
+
+
+synchronization
+---------------
+synchronization is used to data inconsistency.
+When multiple threads are executing only one thread is allowed to execute meanwhile remaining has to wait.
+synchroniztion involves a lock concept,the thread which aquires a lock keep executing meanwhile the other threads has to wait untill the current thread releases the lock.
+
+
+import threading
+import time
+
+class myThread (threading.Thread):
+   def __init__(self, threadID, name, counter):
+      threading.Thread.__init__(self)
+      self.threadID = threadID
+      self.name = name
+      self.counter = counter
+   def run(self):
+      print ("Starting " + self.name)
+      # Get lock to synchronize threads
+      threadLock.acquire()
+      print_time(self.name, self.counter, 3)
+      # Free lock to release next thread
+      threadLock.release()
+
+def print_time(threadName, delay, counter):
+   
+   while counter:
+      time.sleep(delay)
+      print ("%s: %s" % (threadName, time.ctime(time.time())))
+      counter -= 1
+
+threadLock = threading.Lock()
+threads = []
+
+# Create new threads
+thread1 = myThread(1, "Thread-1", 1)
+thread2 = myThread(2, "Thread-2", 2)
+
+# Start new Threads
+thread1.start()
+thread2.start()
+
+# Add threads to thread list
+threads.append(thread1)
+threads.append(thread2)
+
+# Wait for all threads to complete
+for t in threads:
+   t.join()
+print ("Exiting Main Thread")
+            
+Database
+--------
+Collection of tables
+Table is collection of cols
+col is a field.
+
+
+creating a database
+-------------------
+create database databasename
+
+ex:
+create database test
+
+Example
+-------
+MySql
+Oracle
+sql server
+sybase
+DB2
+..
+..
+
+sql
+---
+DDl--->create 
+       Alter
+       drop
+
+DML-->insert
+      update 
+      delete 
+      select
+
+creating a table
+----------------
+create
+
+sytax
+-----
+create table tablename(col1 datatype,col2 datatype,....);
+
+ex:
+employee
+
+eno-->int 
+ename-->varchar
+sal-->double
+
+
+displaying schema of table
+--------------------------
+desc tablename;
+
+insert
+------
+syntax
+------
+insert into tablename values(value1,value2,.....);
+
+ex:
+insert into employee values(1,'manohar',20000.00);
+
+selecting data from a table
+---------------------------
+select
+
+syntax
+------
+select *from tablename;
+
+ex:
+select *from employee;
+
+seleting a specific row 
+-----------------------
+select *from employee where enoo=1;
+ 
+
+selecting partial row
+---------------------
+select eno,name from employee;
+
+updating a table
+----------------
+
+syntax
+------
+update tablename set col1=value,col2=value,... where condition;
+ex:
+update employee set sal=50000.00 where eno=1;
+
+delete
+------
+delete a row,or rows from a table.
+
+
+deleting all rows from a table
+syntax
+------
+delete from employee;
+
+
+deleting a specific row
+
+syntax
+------
+delete from employee where condition;
+
+w3schools.com
+
+
+How to instal MySQLDB module in python
+
+pip install --upgrade pip
+pip install mysql-connector-python
+pip install mysqlclient. 
+
+The Python DB API implementation for
+MySQL -- MySQLdb. 
+PostgreSQL-- psycopg, PyGresQL and pyPgSQL modules. 
+Oracle---dc_oracle2 and cx_oracle.
+DB2--Pydb2
+
+connecting to mysql database 
+
+step1:
+import MySQLdb
+
+step2:
+connecting to database
+we have to use a function called connect which is present in
+MySQLdb module.
+
+syntax
+------
+varname=MySQLdb.connect("ipaddress","user","password","databasename")
+
+ex:
+conn=MySQLdb.connect("localhost","root","root","test")
+
+step3:
+open  a cursor
+cur=conn.cursor()
+
+step4:
+call execute function
+res=cur.execute("sqlquery");
+
+step5:
+close conn
+conn.close()
+
+C:\Users\user>python
+Python 3.6.3 (v3.6.3:2c5fed8, Oct  3 2017, 17:26:49) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+import MySQLdb
+conn=MySQLdb.connect("localhost","root","root","test")
+cursor=conn.cursor()
+sql="create table employee420(id int,name varchar(30))"
+cursor.execute(sql)
+conn.close()
+
+
+
+Inserting  a record into a table
+--------------------------------
+import MySQLdb
+conn=MySQLdb.connect("localhost","root","root","test")
+cursor=conn.cursor()
+sql="insert into emp1 values(1,'manohar')"
+cursor.execute(sql)
+cursor.execute("commit")
+conn.close()
+
+
+updating  a table in python
+--------------------------
+import MySQLdb
+conn=MySQLdb.connect("localhost","root","root","test")
+cursor=conn.cursor()
+sql="update emp1 set name='manohar1' where id=1"
+cursor.execute(sql)
+cursor.execute("commit")
+conn.close()
+
+deleting a row in a table
+-------------------------
+import MySQLdb
+conn=MySQLdb.connect("localhost","root","root","test")
+cursor=conn.cursor()
+sql="delete from emp1 where id=1"
+cursor.execute(sql)
+cursor.execute("commit")
+conn.close()
+
+select data from a table
+------------------------
+import MySQLdb
+conn=MySQLdb.connect("localhost","root","root","test")
+cursor=conn.cursor()
+sql="delete from emp1 where id=1"
+cursor.execute(sql)
+cursor.execute("commit")
+conn.close()
+
+import MySQLdb
+conn=MySQLdb.connect("localhost","root","root","test")
+cursor=conn.cursor()
+sql="select *from emp1 "
+cursor.execute(sql)
+res=cursor.fetchall()
+#cursor.execute("commit")
+print(res)
+conn.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+    
+
+
+
+
+
+
+
+
+
+
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       
+
+        
+
+
+
+
+        
+        
+        
+        
+        
+
+
+         
+         
+        
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+
+
+         
+         
+        
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+         
+        
+     
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Object declaration has  2 parts
+
+emp=Employee()
+
+i)referencevariable
+Referencevariable holds address of object
+
+emp-->reference variables
+
+ii)Constructor calling
+A constructor calling will invoke(call) a constructor.
+
+Employee()-->constrcutor calling.
+
+whenever an object is created for a class
+memory is allocated for that objects in a memory area
+heap.
+
+
+An object consists instance variables of a class,
+instance variables are declared using kyword self inside a function
+instance functions are declared with parameter is self.
+
+Every object has its own copy of instance variables.
+
+if data  changes from one object to another declared such data
+using instance variables.
+
+setValues()--->sets values to Employee()
+
+display()-->display values from Employee()
+
+functions are shared 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
