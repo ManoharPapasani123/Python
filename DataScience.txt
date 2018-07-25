@@ -1,0 +1,6907 @@
+﻿https://towardsdatascience.com/?gi=8382ebf760a5
+BigData Analytics
+realpython.org
+learnpython.org
+https://www.codementor.io/
+
+
+BigData(Data Engineer)                      Analytics(Data Analyst)
+                                            Data Scientist
+
+i)volume,varieties,velocity.
+            |
+----------------------------------
+|                   |            |
+static data                   Flume
+(old data)
+BatchData       semi/Micro   Realtime
+                 batch
+                         
+static tables
+lookup tables
+
+i)Hadoop-->Hdfs+MR
+
+Hdfs-->storage
+MR-->Processing
+
+Limitation
+----------
+It is written in 
+java.
+
+2)Hive-->MR--->o/p
+  sql engine
+
+----------
+Hive| Pig|
+----------
+MapReduce|
+----------
+Hdfs     |
+----------
+
+
+3)Pig(ETL)-->MR-->O/p
+piglatin
+
+Data engineer
+
+Collect data
+process data
+dump data
+
+
+Analytics
+---------
+webApplication-->Amazon
+9am-6pm
+25-35
+
+Json----->.log file
+xml
+html
+
+Data is generated in .log()
+collect data from .log
+read the data
+and anaylse data from 25-35
+
+
+To collect realtime data we use a tool called flume
+                     events
+webApp---->  source -------->sink
+                    channel
+                     Agent 
+Limitation of flume
+-------------------
+At any point of time souce/channel/sink may fail.
+
+Flume is not 100% consistent.
+
+2)apache Kafka
+powerful realtime messgaing tool.
+100% message delivery.
+                        topic
+Producer-->      Kafka  ---->        consumer
+
+Activemq
+Tibco
+Rabbitmq
+
+At a time one queue is distributed
+where as kafka at a time we can have all queues as distributed
+Default kafka store day for 7 days.
+
+Micro batch
+-----------
+E1--------E2
+   Micro->secs 
+   batch->mins
+
+spark streaming
+
+
+MR-->
+
+Map            reduce
+---------    
+|       |
+Read  write
+|       |
+---------
+    |
+   data
+
+reduce
+---------    
+|       |
+Read  write
+|       |
+---------
+    |
+   data
+
+MR directly effects on disk
+
+Spark
+Batch+Mean Realtime
+
+Interactive spark sql
+
+Iteartive 
+spark Mlib
+spark graph
+
+
+spark replaces MR not hadoop
+
+------------------------------------------------------
+sparksql spark |streaming |  spark mlib | spark graph |
+------------------------------------------------------
+spark core   |
+-------------
+HDFS/s3/blob |
+-------------
+
+
+csv--->spark--->hive.
+csv-->spark-->NO sql DB.
+spark treats csv as unstructured.
+
+Excel-->utf8
+        utf16
+        utf32
+
+
+Data scientist
+EDA-->Explanatory data analysis.
+      Basic statistics.
+
+EDA--->[Basic Insights]
+       tableau
+       qlick view
+       R
+       Python
+       Excel
+
+Level-1 reporting BI(Business intelligence)
+
+
+Case study
+----------
+GE-->Turbo chargers
+
+Ford-->NGS
+
+water lock mechanism on battery
+
+
+Level-2(Machine learning)
+-------------------------
+supervised    unsupervised
+
+
+Vehicle
+Day-1
+
+Day-50
+
+
+supervised
+we know input--->we know output
+Prediction
+Regression
+classification
+
+unsupervised 
+we know input-->we don't know output
+clustering
+
+Machine learning
+
+Today is raining --->yes
+                     no
+Predictable easily
+
+Deep learning-->
+Prediction is difficult
+
+2 rabbit photos-->male/female
+need more iterative analysis
+
+i)CNN(conventional neural network)
+ii)RNN(Recursive neural network)
+iii)ANN(Artificial neural network)
+
+NLP(Natural Language Processing)
+NLTK(Natural Language Tool kit)
+
+Python
+Numpy
+pandas
+scikit
+matplotlib
+
+
+AI-->stats+Mathematics+ML     +DL+NLP
+          +Data visuvalization
+
+Python-80%
+R-20%
+
+1)core Python(40hr)
+
+2)pandas(8hr)
+How cleanse data
+Process data
+dump data.
+
+3)Numpy(8hr)(N dimensional Arrays)
+Linear Algebra
+
+4)Scikit Learn(ML)
+Selection of a data model
+
+5)MatPlotLIB(8hr)
+Data visualization
+
+
+Python
+|
+--------------------
+|                  |
+Python 2.x       Python3.x
+
+i)Python IDLE-->Basic level Need seperate installation for advanced 
+                 topics like pandas.
+ii)Anaconda(Python+scientific packages)
+      |--  spyder
+      |--  Jupytor-->Data Scientist(No debugging)
+      |--  IPython
+iii)Pycharm(Jet Brains)(Debugging)
+
+
+Python IDLE
+
+Java vs python(Helloworld)
+
+class Hello
+{
+public static void main(String args[])
+{
+   System.out.println("Hello world");
+}
+}
+
+
+>>>print("hello world")
+
+
+import pandas as pd
+
+ModuleNotFoundError:No module found pandas
+
+
+Advantages of python
+--------------------
+1)simple to learn and easy to implement.
+
+2)Reserved words
+java-->53
+Python-30
+
+3)open source/free
+4)It is an OOP and POP
+
+OOP
+---
+class Demo:
+  def m1(self):
+     print("Hello")
+d=Demo
+d.m1()
+
+
+POP
+---
+x=10
+def m1():
+  print("Hello")
+m1()
+
+
+4)Type inference
+    or
+  dynamically typed
+
+5)Python is platform independent.
+
+6)Extensible and embedded.
+
+Extensible
+Python
+-----------
+|c/c++/java|
+-----------
+
+Embedded
+--------
+Java
+-----------
+|python   |-->Jython
+-----------
+
+Python versions
+        |
+---------------
+|              |
+2.x           3.x
+
+7)Python supports scintific API
+     |
+     |------>Numpy(Numerical platform)
+     |
+     |------>Pandas(Data Processing+Data cleansing+Data Visualization)
+     |
+     |------>Scikit(Data Modelling+Data Evaluation)
+     |
+     |---->Theano(GPU processing)
+     |
+     |----->Matplotlib
+
+Python 2.x vs Python 3.x
+
+i)print
+
+2.x-->print "helloworld";
+
+3.x-->print("helloworld")
+
+
+2)division
+
+2.x-->a/b-->strictly integer division.
+3.x-->a/b-->floating point division.
+
+3)xrange()  vs range()
+2.x
+xrange(10)
+print
+0-9
+
+Everything is an object
+
+3.x
+range()
+print
+0-9
+
+Everything is a List
+
+4)
+2.x-->ASCII
+3.x-->unicode
+
+5)_future_module
+__future__ module is to help in migration. We can use Python 3.x
+
+If we are planning Python 3.x support in our 2.x code,we can ise_future_ imports it in our code.
+
+6)Raising exceptins
+raise IOError,"file error"
+raise IOError("file error")
+
+7)input()
+  raw_input()
+
+8)Exception Handling
+
+2.x
+try:
+   #statements
+except NameError,err:
+   #statements
+
+
+3.x
+try:
+   #statements
+except NameError as err,...:
+   #statements
+
+
+
+9).next vs next
+
+2.x
+my_generator = (letter for letter in 'abcdefg')
+
+next(my_generator)
+my_generator.next()
+
+3.x
+my_generator=(letter for letter in 'abcdefgh')
+>>> next(my_generator)
+'a'
+>>> next(my_generator)
+'b'
+>>> next(my_generator)
+'c'
+>>> next(my_generator)
+'d'
+>>> next(my_generator)
+'e'
+>>> next(my_generator)
+'f'
+>>> next(my_generator)
+'g'
+>>>
+>>> next(my_generator)
+'h'
+
+10)2.x -->int,long
+   3.x-->int
+
+Note:Python store all variables in reserved memory.
+
+Identifiers
+-----------
+An identifier is used to idetify a variablename,classname,function_name
+
+Rules
+-----
+It should start with underscore(_)/alphabet later we can use numbers.
+No special symbols except(_).
+Never ever use keywords as identifiers.
+
+ex:
+abc123="manohar"
+abc=10
+123abc=20(x)
+.abc(x)
+_abc(private)
+__abc(strongly private)
+
+x=10
+y=20
+x,y=10,20(packing)
+x+y--->This logic is converted as x.__add__(y)
+
+How to check keywords in python
+
+>>> import keyword
+>>> keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+33 keywords in python
+
+How to check whether a word is keyword
+--------------------------------------
+>>> keyword.iskeyword('for')
+True
+>>> keyword.iskeyword('demo')
+False
+
+
+How to clear a screen
+---------------------
+>>> import os
+>>> clear=lambda:os.system('cls')
+
+Datatypes
+---------
+Predefined literals in python
+True,False,None--->Null
+
+Usecase
+                             sqlserver
+Excel---->Python(pandas)----> ()
+                             |  |
+                              ()
+if row['logdesc']!='None':
+     //
+else
+     //
+
+Number system
+-------------
+we have 4 number systems in python
+
+i)decimal
+Base10-->0-9
+
+By default python uses decimal number system
+
+
+ii)binary
+Base 2->0,1
+
+we use prefix 0b/0B to bin data
+>>> x=0b10101
+>>> x
+21
+>>> x=0B10101
+>>> x
+21
+bin()-->convert a decimal to bin() form
+>>>x=10 
+>>>bin(x)
+>>>x
+'0b1010'
+
+
+usecase
+-------
+
+FDR-Data
+-------------
+|  |  |  |  |
+--------------
+
+
+
+iii)octal 
+Base 8-->0-7
+
+x=0o10
+8
+x=0O10
+8
+
+iv)hexadecimal
+
+
+
+a,b=10,20
+c=a<b
+type(c)
+c
+
+True+True-->2
+True+False->1
+
+Internally python considers 
+True-1
+False-0
+
+complex(a+bj)
+-------------
+a-real part
+b-imaginary
+j-sqrt(-1)
+
+case1
+-----
+complex(x)
+x=10
+
+>>> complex(10)
+(10+0j)
+
+case2
+-----
+x,y=10,20
+z=complex(x,y)==>10+20j
+z.real
+z.img
+
+>>> z=complex(10,20)
+>>> z.real
+10.0
+>>> z.imag
+20.0
+>>>
+
+z=0b1111+20j
+z=10+0x110j
+
+>>> z=0b1111+20j
+>>> z
+(15+20j)
+
+Note:
+>>> z=0b1111+0x1111j
+  File "<stdin>", line 1
+    z=0b1111+0x1111j
+                   ^
+SyntaxError: invalid syntax
+
+Note:real part accepts all number systems
+decimal
+binary
+octal
+hexa
+
+where as imaginary part accepts only decimal number system
+Integer
+decimal
+
+10+j20-->error
+
+x="gv"
+y="ipl"
+x=complex(x,y)-->TypeError.
+
+Note:Integer,float,string,bool and complex datatypes are fundamental datatypes in python.
+
+All fundamental datatypes in python are immutable.
+
+>>> x=10
+>>> id(x)
+500291520
+>>> y=10
+>>> id(y)
+500291520
+>>> z=10
+>>> id(z)
+500291520
+>>>
+
+
+x=10
+y=10
+z=10
+
+Immutable 
+if already an object eexist with same value that addrres is shared to other references also.
+
+we modify a particular reference a new object is created but old object is not replaced.
+
+slice operator
+--------------
+slice operator is applied for all python object
+string
+collections
+
+s='vidhatri'
+It has bith forward and backward indexing
+
+ 0  1  2  3  4  5  6  7
+|v |i| d| h| a| t| r| i
+-8 -7 -6 -5 -4 -3 -2 -1
+
+s[0]
+s[1]
+s[-1]
+s[-2]
+
+[begingindex:endindex]
+begindex-->inclusive
+endindex-->exclusive
+
+s='python'
+s[0:3]//pyt
+s[2:5]//tho
+s[1:]//ython
+s[:4]//pyth
+
+Note:
+Always start index should be less than end index
+
+s[-1:-4]--'' ---->It is violating rule
+s[-4:-1]--tho
+s[-3:]//hon
+s[:-2]//pyth
+
+[beginindex:endindex:step]
+
+s="pythonprogramming"
+s[1:4:1]
+
+>>> s="pythonprogramming"
+>>> s[1:4:1]
+'yth'
+>>> s[1:4:2]
+'yh'
+>>> s[1:4:3]
+'y'
+>>> s[1:4:4]
+'y'
+>>> s[1:4:5]
+'y'
+>>> s[1:10:2]
+'yhnrg'
+
+
+Note:complex datatype is helpful in scientific calculations
+
+slice operator
+
+left to right 0 to n-1
+right to left  -1 to -n
+
+immutable
+---------
+we cannot change the value.
+
+mutable
+-------
+we can change the value
+
+Int range is 0 to 256(immutable)
+
+if any value exceeds the given range 0-256 then int objects are mutable.
+
+>>> x=10
+>>> y=10
+>>> x is y
+True
+>>>
+
+>>> x=1000
+>>> y=1000
+>>> x is y
+False
+
+x=257
+y=257
+
+
+Note:In python by default objects are created for values  from 0-256 before the interpretor is started itself.
+
+if we initialize any objects from 0-256 the address is same for all
+objects.
+
+if we initialize any other value other than 0-256 then a new is object is created.
+
+
+int
+float
+string
+boolean
+complex
+
+
+
+bytes
+-----
+bytes is collection of elements and byte is immutable.
+x=[1,2,3,4,5]
+b=bytes(x)
+type(b)
+
+displaying data
+---------------
+b[0]//1
+b[1]//4
+b[3]//4
+b[-2]
+b[1:4]//error
+
+>>> for i in b:
+...     print(i)
+...
+1
+2
+3
+4
+5
+
+x=[1,2,3,4,5]
+b=bytes(x)
+print(b[1])
+l=len(b)
+print(l)
+for i in range(0,l):
+     print(b[i])
+
+
+b[0]=10
+
+
+we cannot modify bytes becuase they are immutable.
+
+x=[1,10,100,1000]
+b=bytes(x)
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: bytes must be in range(0, 256)
+
+x=[1.1,2.1,4.5]
+b=bytes(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'float' object cannot be interpreted as an integer
+
+
+bytearray
+---------
+bytes and bytearrays  is same but byte array is a mutuble object.
+bytearray also falls under range of 0-256
+
+x=[10,20,30,40,50]
+b=bytearray(x)
+type(b)
+
+
+
+b[0]=100
+
+x=[1,10,100,1000]
+b=bytearray(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: byte must be in range(0, 256)
+
+
+List
+----
+List is a mutuble order of elements(order is preserved)
+
+List is just like an array in other languages.
+
+if you read an element from a list it using  a concept of indexes.
+
+index start from  0 to n-1
+
+List suppports homogenous and heterogenous data.
+
+List is dynamic.
+
+
+list()-->it construct a list from any iterable object.
+         iterable object-->list/dict/set/tuple/string.
+
+x=list()//create an empty list
+print(x)
+[]
+
+x=list([1,2,3,4)//create a list
+x
+[1,2,3,4]
+
+x=list({1,2,3,4})//create a  list
+[1,2,3,4]
+
+x=list({1:'x',2:'y',3:'z'})//create a list
+x
+[1,2,3]
+
+
+
+Methods of List
+---------------
+
+varname.function(parameters)
+
+append()
+It appends a value to a list at the end.
+
+syntax
+------
+reference.append(value)
+
+example
+-------
+index()
+index returns index of a given element.
+
+copy()-->creates a new list from an existing list.
+      -->shallow copying
+
+x=[1,2,3,4,5]
+y=x.copy()
+y.append(6)
+x
+[1,2,3,4,5]
+y
+[1,2,3,4,5,6]
+
+change in y doesn't impact x this is shallow copying.
+
+
+case2
+-----
+x=[1,2,3,4,5]
+y=x
+y.append(6)
+x
+[1,2,3,4,5,6]
+y
+[1,2,3,4,5,6]
+
+In this approach deep copying is done i,e change in y impact x and vice versa.
+
+extend()
+used to add group of values as a collection
+>>> x.extend([7,8,9])
+
+
+insert()
+pop()
+remove()
+reverse()
+sort()
+clear()
+
+
+How to create an empty List
+---------------------------
+l=[]//empty list
+type(l)
+l.append(100)
+l.append(200)
+l.append(300)
+l.append(400)
+l.append(500)
+l.append(100)
+
+l
+
+append()-->add an element to a list
+
+l[0]-->100
+l[-1]-->100
+l[2]
+l[-2]
+l[1:4]
+l[-2:-4]-->'' //not legal
+l[-4:-2]
+l[2: ]
+l[ :4]
+
+usecase
+-------
+>>> l1=[10,20,30,40,50]
+>>> l2=[]
+>>>
+>>> for i in l1:
+...     l2.append(i+100)
+...
+>>> l2
+[110, 120, 130, 140, 150]
+>>>
+>>> l1.index(10)
+0
+>>>
+>>> l1.clear()
+>>> l1
+[]
+
+>>> m=l2.copy()
+>>> m
+[110, 120, 130, 140, 150]
+>>>
+
+usecase
+
+csv file
+--------------
+c1| c2| c3|c4|---->read_csv
+  |   |   |  |
+--------------
+
+extend()-->add multiple elements to a List
+>>> l=[1,2,3]
+>>> l.extend([4,5,6])
+>>> l
+[1, 2, 3, 4, 5, 6]
+
+insert()-->insert element at a given index
+>>> l
+[1, 2, 3, 4, 5, 6]
+>>> l.insert(1,100)
+>>> l
+[1, 100, 2, 3, 4, 5, 6]
+
+
+pop() remove an element at a given index
+
+[1, 100, 2, 3, 4, 5, 6]
+//l.pop(index)
+>>> l.pop(1)
+100
+>>> l
+[1, 2, 3, 4, 5, 6]
+
+>>> l.pop()
+6
+>>> l
+[2, 3, 4, 5]
+
+
+l=[10,15,20,30,40,50]
+//l.remove(value)
+>>> l
+[10,15,20,30,40,50]
+>>> l.remove(10)//remove first occurance.
+
+l=[10,15,20,30,40,50]
+l.reverse()
+
+>>> l=[10,15,20,30,40,50]
+>>> l.reverse()
+>>> l
+[50, 40, 30, 20, 15, 10]
+>>>
+
+>>> l=[10,15,20,10,30,40,50]
+>>> l.sort()
+>>> l
+[10, 10, 15, 20, 30, 40, 50]
+
+shallow copying
+---------------
+if we create a new list by using copy method then change in new list
+doesn't effect old list.
+
+l=[10, 10, 20, 20, 20, 30,40,50]
+l.count(20)
+
+>>> ol=[10, 10, 20, 20, 20, 30,40,50]
+>>> nl=ol
+>>> ol
+[10, 10, 20, 20, 20, 30, 40, 50]
+>>> n1.append(60)
+>>> nl.append(60)
+>>> nl.append(70)
+>>> nl
+[10, 10, 20, 20, 20, 30, 40, 50, 60, 70]
+>>> ol
+[10, 10, 20, 20, 20, 30, 40, 50, 60, 70]
+>>> ol=[10, 10, 20, 20, 20, 30,40,50]
+>>> nl=ol.copy()
+>>> nl
+[10, 10, 20, 20, 20, 30, 40, 50]
+>>> ol
+[10, 10, 20, 20, 20, 30, 40, 50]
+>>> nl.append(60)
+>>> nl.append(70)
+>>> nl
+[10, 10, 20, 20, 20, 30, 40, 50, 60, 70]
+>>> ol
+[10, 10, 20, 20, 20, 30, 40, 50]
+>>>
+
+List comprehension
+------------------
+pw2=[]
+for i in range(1,10):
+     pw2.append(2**i)
+print(pw2)
+
+pw2=[]
+for i in range(1,10):
+     pw2.append(2**i)
+print(pw2)
+     
+syntax
+------
+varname=[expression iteration  condition]
+
+
+l=[2**i for i in range(1,10)]
+print(l)
+
+l=[2**i for i in range(1,10) if i%2==0]
+print(l)
+
+output
+------     
+>>> 
+================ RESTART: E:/Karthikeya/list_comprehension.py ================
+[2, 4, 8, 16, 32, 64, 128, 256, 512]
+>>> 
+================ RESTART: E:/Karthikeya/list_comprehension.py ================
+[2, 4, 8, 16, 32, 64, 128, 256, 512]
+>>> 
+================ RESTART: E:/Karthikeya/list_comprehension.py ================
+[2, 4, 8, 16, 32, 64, 128, 256, 512]
+[2, 4, 8, 16, 32, 64, 128, 256, 512]
+>>> 
+================ RESTART: E:/Karthikeya/list_comprehension.py ================
+[2, 4, 8, 16, 32, 64, 128, 256, 512]
+[2, 4, 8, 16, 32, 64, 128, 256, 512]
+[4, 16, 64, 256]
+>>> 
+
+Above code as below
+-------------------
+nl=[]
+for i in range(1,10):
+     if i%2==0:
+          nl.append(2**i)
+print(nl)
+          
+output
+------
+>>> 
+[4, 16, 64, 256]
+>>> 
+
+Built in functions in List
+--------------------------
+len()
+sum()
+min()
+max()
+all()
+any()
+
+#len()
+l=[10,20,30,40,50]
+x=len(l)
+print(x)
+#sum()
+r1=sum(l)
+print(r1)
+#min()
+r2=min(l)
+print(r2)
+#max()
+r3=max(l)
+print(r3)
+#all()
+r2=min(l)
+print(r2)
+
+
+all
+syntax
+------
+all(iterable)
+
+>>> l=[10,20,30,40,50]
+>>> all(l)
+True
+>>> ll=[0,20,30,40,50]
+>>> all(ll)
+False
+>>>
+
+6)any()
+>>> l=[0,False,0]
+>>> any(l)
+False
+>>> l=[0,False,1]
+>>> any(l)
+True
+
+List
+i)Mutable 
+ordered
+
+Tuple
+Immutable
+ordered
+
+Dictionary
+1)Mutable 
+2)un ordered
+
+
+set
+1)immutable 
+2)unordered
+
+Best for interviews
+
+
+
+[(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+
+equivalent
+
+combs = []
+ for x in [1,2,3]:
+     for y in [3,1,4]:
+         if x != y:
+             combs.append((x, y))
+
+x=[
+...     [1,2,3],
+...     [3,4,5,6]
+... ]
+
+>>> x
+[[1, 2, 3], [3, 4, 5, 6]]
+>>> for i in x:
+...     for x in i:
+...             print(x)
+
+x=[
+...     [1,2,3],
+...     [4,5,6,7],
+...     [5,6,7,8,9]
+... ]
+
+>>> [[row[i] for row in x] for i in range(2)]
+[[1, 4, 5], [2, 5, 6]]
+
+Tuple 
+-----
+Tuple is just like but it is immutable ordered collection of elements.
+Tuple is represented with ()
+Tuple supports homogenous data and heterogenous(recommended heterogenous)
+
+Tuple are not growable(immutable nature)
+if a tuple have  mutuble objects we can modify those values.
+
+ex:
+t=(1,2,3,[4,5,6])
+
+Here we can modify List values.
+
+How to create a tuple
+---------------------
+ t=()
+ t=(1,2,3,[4,5,6],"hello")
+ type(t)
+<class 'tuple'>
+ t=1,2,3,[4,5,6],"hello"
+ type(t)
+ <class 'tuple'>
+ t=1
+ type(t)
+<class 'int'>
+ t=1,
+ type(t)
+<class 'tuple'>
+
+How to access an element from a tuple
+-------------------------------------
+t=1,2,3,[4,5,6],"hello"
+t[0]//1
+t[-1]//hello
+t[3]//[4,5,6]
+t[3][1]//5
+>>> t[3][1]=50
+>>> t[3][1]
+50
+t[1:4]
+t[-1:-4]//''
+t[-4:-1]//2,3
+
+tuple methods
+-------------
+index()
+count()
+
+t=(1,2,3,[4,5,6],"hello")
+t.index([4,5,6])//3
+
+t=(10,10,20,20,30,30,30,[4,5,6])
+t.count(30)//3
+
+Note:tuple  gives better performance than List
+
+Built in functions in  tuple
+----------------------------
+1)len()
+t=(10,20,30,40,50)
+len(t)
+
+2)min()
+t=(10,20,30,40,50)
+min(t)
+
+3)max()
+t=(10,20,30,40,50)
+max(t)
+
+4)sorted()
+t=(10,20,30,40,50)
+sorted(t)
+
+5)sorted()
+print(sorted(t,reverse=False))//asc
+print(sorted(t,reverse=True))//desc
+
+
+6)cmp(2.x)
+t1=(10,20,30)
+t2=(40,50,60)
+t3=(10,20,30)
+
+print(cmp(t1,t3))
+0
+print(cmp(t2,t1))
+1
+print(cmp(t1,t2))
+-1
+
+Note:
+Tuple is used to deal with heterogenous data.
+List is used to deal homogenous data.
+
+
+tuple comprehension
+-------------------
+pw2=[]
+for i in range(1,10)
+      pw2.append(2**i)
+
+print(pw2)
+
+lc=[exp iteration condition]
+tc=(exp for statement )
+
+>>> t=(2**i for i in range(1,10))
+>>> t
+>>> for i in t:
+...     print(i)
+...
+2
+4
+8
+16
+32
+64
+128
+256
+512
+
+y=(2**i for i in range(1,10))
+x=tuple(y)
+print(x)    
+
+
+x=(1,2,3,4,[10,20,30,40])
+for i in x:
+    if type(i)==list:
+        for t in i:
+            print(t)
+    else:
+        print(i)
+
+
+
+Dictionary(Dict)
+----------------
+It is mutable
+order is not preserved
+It allows heterogenous.
+The implementation of dictionary in the form of key:value.
+
+keys always unique.
+values are duplicted.
+
+Dictionaries are growable and shrinkable in nature.
+Dictionaries are represented with { }
+
+
+d={}
+
+>>> gvipl
+{1: 'python', 2: 'datascience', 3: 'hadoop', 4: 'java'}
+>>> for i in gvipl:
+...     print(i)
+...
+1
+2
+3
+4
+>>> for i in gvipl:
+...     print(i,gvipl[i])
+...
+1 python
+2 datascience
+3 hadoop
+4 java
+>>>
+
+d=dict({})
+
+dictionaries are not following indexing and slicing operator.
+>>> d={}
+>>> type(d)
+<class 'dict'>
+>>> d=dict({})
+>>> type(d)
+<class 'dict'>
+>>> d[1]='a'
+>>> d
+{1: 'a'}
+>>> d[2]='b'
+>>> d
+{1: 'a', 2: 'b'}
+
+>>> d[1]='x'
+>>> d
+{1: 'x', 2: 'b'}
+
+d[1]
+'a'
+d[2]
+'b'
+
+{}
+dict()
+
+seperate key,value pair with colon(:)
+varname={k1:v1,k2:v2,.......}
+
+we use key to perform operations on dict.
+
+2 ways to extract values from dict
+
+[]
+get()
+
+>>> for i in x:
+...     print(i,x.get(i))
+...
+1 100
+2 200
+3 300
+4 400
+5 500
+
+d={1:'rose',2:'attipu',3:'irish',4:'orchids',5:'marry gold'}
+
+Iterate dict and print all flowers starting with vowel
+
+get()-->returns an element from a given index.
+
+
+startswith()
+
+d={1:'rose',2:'attipu',3:'irish',4:'orchids',5:'marry gold'}
+
+for i in d:
+    str=d.get(i)
+    if str.startswith(('a','e','i','o','u','A','E','I','O','U')):
+        print(str)
+
+d={1:'rose',2:'attipu',3:'irish',4:'orchids',5:'marry gold'}
+
+for i in d:
+    str=d.get(i)
+    if str.startswith('a') or str.startswith('e') or str.startswith('i') or str.startswith('o') or str.startswith('u') or str.startswith('A') or str.startswith('E') or str.startswith('I') or str.startswith('O') or str.startswith('U'):
+        print(str)
+
+
+dictionary API
+--------------
+d[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 4
+
+>>> d.get(4)
+>>> d.get(1)
+'x'
+>>>
+>>> d.keys()
+dict_keys([1, 2])
+>>> d.values()
+dict_values(['x', 'b'])
+>>>
+shallow copying
+---------------
+>>> e=d.copy()
+>>> e
+{1: 'x', 2: 'b'}
+>>> e[3]='c'
+>>> d
+{1: 'x', 2: 'b'}
+>>> e
+{1: 'x', 2: 'b', 3: 'c'}
+
+deep copying
+------------
+>>> x=d
+>>> x
+{1: 'x', 2: 'b'}
+>>> x[3]='c'
+>>> d
+{1: 'x', 2: 'b', 3: 'c'}
+>>> x
+{1: 'x', 2: 'b', 3: 'c'}
+>>>
+
+
+d.clear()
+>>> e.clear()
+>>> e
+{}
+
+d.remove()
+d//exception
+
+>>> del d
+
+>>> d={1:'a',2:'b',3:'c'}
+>>> d.items()
+dict_items([(1, 'a'), (2, 'b'), (3, 'c')])
+>>>
+
+>>> y=list(x.items())
+>>> y
+[(1, 100), (2, 200), (3, 300), (4, 400), (5, 500)]
+>>> for i in y:
+...     print(i[0],' ', i[1])
+...
+1   100
+2   200
+3   300
+4   400
+5   500
+>>>
+
+>>> d={}
+>>> keys=[1,2,3]
+>>> d1=d.fromkeys(keys)
+>>> d1
+{1: None, 2: None, 3: None}
+>>>
+
+d={}
+>>> keys=[1,2,3]
+>>> values='a','b','c'
+>>> d1=d.fromkeys(keys,values)
+>>> d1
+{1: 'num', 2: 'num', 3: 'num'}
+
+>>> d={1:'a',2:'b',3:'c',4:'d'}
+>>> print(d.pop(4))
+d
+>>> d
+{1: 'a', 2: 'b', 3: 'c'}
+
+>>> d={1:'a',2:'b',3:'c',4:'d'}
+>>> d.popitem()
+(4, 'd')
+>>> d
+{1: 'a', 2: 'b', 3: 'c'}
+>>>
+
+Most useful keys
+----------------
+get()
+keys()
+values()
+
+
+d={1:"one",2:"three"}
+d1={2:"two"}
+d.update(d1)
+
+d1={3:"three"}
+d.update(d1)
+print(d)
+
+>>> d1={3:"three"}
+>>> d.update(d1)
+>>> print(d)
+{1: 'one', 2: 'two', 3: 'three'}
+
+>>> d={1:'a',2:'b',3:'c'}
+>>> type(d)
+<class 'dict'>
+>>> d[1]='p'
+>>> d[4]='d'
+>>> d.setdefault(1,'e')
+'p'
+>>> d.setdefault(4,'d')
+'d'
+>>> d
+{1: 'p', 2: 'b', 3: 'c', 4: 'd'}
+
+Note:Indexing and slicing is not applicable for dictionary
+
+>>> keys=[1,2,3,4,5]
+>>> values=['a','b','c','d','e']
+>>> keys
+[1, 2, 3, 4, 5]
+>>> values
+['a', 'b', 'c', 'd', 'e']
+>>> d={}
+>>> for k,v in zip(keys,values):
+...     d[k]=v
+...
+>>> d
+{1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}
+>>>
+
+
+set
+---
+2 types of set
+
+It is immutable(frozen set(python(1.x))
+set is mutable(python 2.x).
+In set order is not preserved.
+set doesn't allow duplicates.
+set supports heterogenous data.
+set doesn't support indexing and slicing operator.
+set supports mathematical operations like union(|),intersection(&),difference(-) etc operations.
+
+creating set
+------------
+1)s={}
+type(s)
+
+way-1)
+s={10,20,30,40,50}
+type(s)
+
+way-2)
+s=set()
+type(s)
+
+
+list
+[]
+list()
+
+tuple
+()
+tuple()
+
+{}
+dict()
+
+
+way-3)
+l=[10,10,20,20,20,30,40]
+type(l)
+s=set(l)
+type(s)
+
+
+l=[1,2,3,4,5,6,1,2,3,4]
+
+()-->tuple
+[]-->list
+{}-->dict
+{1:'a',2:'b',....}
+{1,2,3}-->set
+
+
+Methods in set
+--------------
+1)add()-->add an element to a set
+>>> s={10,20,30}
+>>> s.add(40)
+>>> s
+{40, 10, 20, 30}
+
+2)update()
+l=[10,20,30]
+l.extended(40,50,60)
+
+s={10,20,30}
+s.update(40,50,60)/error
+s.update([40,50,60])/error
+
+Note:set update method expecting an iteratable object like List,tuple etc
+s.update(range(5))
+
+
+3)clear()
+s={10,20,30,40}
+s.clear()
+s
+
+4)copy()
+s={10,20,30,40}
+s1=s.copy()
+s1
+s
+
+5)remove()
+s={10,20,30,40,50}
+s.remove(50)
+s.remove(50)//exception
+
+
+6)discard()
+s={10,20,30,40,50}
+s.discard(50)
+s.discard(50)//no exception
+
+
+remove()  vs discard()
+
+7)pop()
+remove a random value.
+
+s={10,20,30,40,50}
+s.pop()
+
+Mathematical operations in set
+------------------------------
+s1={1,2,3,4}
+s2={3,4,5,6}
+
+i)union
+s1.union(s2)
+s1|s2
+
+ii)intersection()
+s1.intersection(s2)
+s1&s2
+s1.intersection_update(s2)
+
+iii)difference(-)
+s1.difference(s2)
+s1.difference_update(s2)
+
+s1.difference(s2)
+{1, 2}
+>>> s1-s2
+{1, 2}
+>>> s1
+{1, 2, 3, 4}
+>>> s2
+{3, 4, 5, 6}
+>>> s1.difference_update(s2)
+>>> s1
+{1, 2}
+>>> s2
+{3, 4, 5, 6}
+
+4)symmetric_difference()
+s1={1,2,3,4}
+s2={3,4,5,6}
+
+s1.symmetric_difference(s2)
+>>> s1={1,2,3,4}
+>>> s2={3,4,5,6}
+>>>
+>>> s1.symmetric_difference(s2)
+{1, 2, 5, 6}
+
+>>> s1.symmetric_difference_update(s2)
+>>> s1
+{1, 2, 5, 6}
+
+symmetric difference is also called as anti join
+
+issubset()
+s1={1,2,3}
+s2={1,2,3,4,5}
+s1.issubset(s2)//True
+
+s1={1,2,3}
+s2={1,2,4,5,6}
+s1.issubset(s2)//False
+
+issuperset()
+>>> s1.issuperset(s2)
+False
+>>> s2.issuperset(s1)
+True
+
+
+isdisjoint()
+>>> s1={1,2,3}
+>>> s2={3,4,5}
+>>> s1.isdisjoint(s2)
+False
+>>> s2.isdisjoint(s1)
+False
+>>> s2={4,5}
+>>> s1.isdisjoint(s2)
+True
+>>> s1.isdisjoint(s2)
+True
+
+len()
+sum()
+max()
+min()
+all()
+any()
+
+
+frozen set
+----------
+s=set()
+l=[10,20,30,40]
+fs=frozenset(l)
+type(fs)
+fs.add(10)
+
+>>> s=set()
+>>> l=[10,20,30,40]
+>>> fs=frozenset(l)
+>>> type(fs)
+<class 'frozenset'>
+>>> fs.add(10)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'frozenset' object has no attribute 'add'
+>>> fs.remove(10)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'frozenset' object has no attribute 'remove'
+>>>
+
+
+range()
+-------
+s=range(5)//[0,1,2,3,4]
+
+
+len()
+max()
+min()
+sum()
+all()
+any()
+
+
+in
+not in
+
+
+Operators
+---------
+Missed session.
+
+Transfer statments
+------------------
+1)break
+
+Break statement is used in loop statements.
+
+for i in range(1,10):
+  if i==5:
+    break;
+print(i)
+
+2)continue
+for i in range(1,11):
+    if(i<=5):
+        continue
+    print(i)
+
+
+UseCase
+-------
+A csv file with null(None)
+where ever i find null is should skip them
+
+if Mel_Type==None:
+   continue
+
+pass
+----
+def f1():pass
+Generally asbtract method are declared with pass 
+if any method doesn't have implementation then declare with pass.
+
+case2:
+if True:
+  pass
+
+Input and output statements
+---------------------------
+>>> a,b=[int(x) for x in input("enter two numbers").split()]
+enter two numbers1 2
+>>> a
+1
+>>> b
+2
+
+>>> a,b=[int(x) for x in input("enter two numbers").split(',')]
+enter two numbers1,2
+>>> a
+1
+>>> b
+2
+
+string methods
+--------------
+len()
+count()
+find()-->find the index of the first occurance of a value.
+         return index if element found otherwise -1.
+         find index in a forward direction.
+
+ 
+File operations
+---------------
+Files are used to store data perminently.
+
+Text files
+----------
+employee.txt
+employee.csv
+employee.xls/xlsx
+employee.json
+employee.xml
+employee.html
+employee.xlsm
+
+Binary files
+------------
+abc.jpg
+abc.png
+abc.mp3
+abc.mp4
+
+
+we have 2 types of file formats in python
+-----------------------------------------
+text file format[default file format]
+examples
+--------
+.txt
+.csv
+.tsv
+etc
+
+Binary file format
+
+we use to deal with images,video,audio,streaming data etc.
+
+.jpg
+.png
+.mp3
+.mp4
+etc
+
+Text file format
+----------------
+Methods of file
+
+i)open()
+
+syntax
+------
+varname=open("filename","mode")
+
+
+
+ex:
+f=open('c:/abc.txt','r')
+
+The default mode is read.
+
+2)read()
+
+read() method read data from a file line by line.
+
+syntax
+------
+f.read()
+
+ex:
+data=f.read()
+
+Python is offering another 3 read() functions
+
+syntax
+
+f.read(n)
+
+syntax
+
+f.readline()-->exactly read one line.
+
+syntax
+
+f.readlines()-->read all data.
+
+
+abc.txt
+abcdef\n
+ghiklm
+nopqrst
+
+f.read()
+f.read(6)-->read first 6 chars
+
+eno,ename,sal,gender,dno
+1,mano,10000.00,f,10
+2,mano1,20000.00,f,20
+3,mano2,30000.00,m,30
+4,mano3,40000.00,m,40
+5,mano4,50000.00,f,50
+
+header=f.readline()
+data=f.readlines()
+
+read() vs readlines()
+
+
+writing into a file
+-------------------
+write()-->write data to a file
+
+f=open('c:/abc.txt','w')
+
+f.write('python\n')
+f.write('is\n')
+f.write('simple\n')
+
+Note:if we are using open() ,then we must close the file using close().
+
+f.close() 
+
+ex:
+f=open('e:/abc.txt','w')
+f.write("python\n")
+f.write("is\n")
+f.write("simple\n")
+f.close()
+
+
+ex2
+---
+f=open('e:/abc.txt','w')
+li=['python\n','programming\n','language\n']
+f.writelines(li)
+f.close()
+
+ex 3)
+fp=open('e:/rains.txt','w')
+
+li=[]
+while True:
+     li.append(input('enter string')+"\n")
+     print("do you want to continue,enter y or n")
+     status=input('enter status')
+     
+     if(status=='n'):
+          break
+     
+fp.writelines(li)
+fp.close()
+print(li)
+
+print("file is written successfully")
+
+
+
+
+reading data
+-----------
+f=open('e:/abc.txt','r')
+data=f.read()
+f.close()
+print(data)
+
+reading employee file line by line
+----------------------------------
+f=open('e:/vidhatri/employee.txt','r')
+header=f.readline()
+line1=f.readline()
+line2=f.readline()
+line3=f.readline()
+f.close()
+print(header)
+print(line1)
+print(line2)
+print(line3)
+
+a-append.
+x-exclusively writing data.
+if the file already exist it returns an error.
+
+rb-->read binary file
+wb-->write binary file
+
+#step1
+x=0b100101
+y=0b100101
+
+f1=open("F:\\binary.png",'wb')
+f1.write(bytes(x))
+f1.write(bytes(y))
+f1.close()
+print("write success")
+
+
+fclose()
+
+
+
+File attributes
+---------------
+f=open('e:/vidhatri/employee.txt','r')
+print("File name is ",f.name)
+print("File mode is ",f.mode)
+print("File is readable ",f.readable())
+print("File is writable ",f.writable())
+print("File is closed ",f.closed)
+f.close()
+print("File is closed ",f.closed)
+
+
+with open('e:/abc.txt','r') as f:
+     data=f.read()
+     print(data)
+
+
+Note:if we use "with open" it is not necessary to close a file.
+
+Reading a file line by line
+
+
+f=open('e:/employees.csv','r',encoding='utf-8')
+data=f.readlines()
+for rows in data:
+     print(rows)
+f.close()
+
+string
+
+ASCII       UNICODE
+0-255       0-65535
+
+utf-8       utf-16
+
+
+random access methods
+tell()
+returns the current position of cursor 
+
+f=open('e:/abc.txt','r',encoding='utf-8')
+print(f.tell())
+print(f.read(2))
+print(f.tell())
+print(f.read(3))
+print(f.tell())
+f.close()
+
+
+seek()
+position a cursor at given index in a file.
+
+f=open('e:/abc.txt','r')
+f.seek(2)
+print(f.tell())
+print(f.read(5))
+f.close()
+
+Reading a file and writing to a List
+------------------------------------
+f=open('e:/employees.csv','r',encoding='utf-8')
+data=f.readlines()
+s=[]
+for rows in data:
+     s.append(rows)
+f.close()
+print(s)
+
+checking file exists or not
+---------------------------
+import os,sys
+fname=input('enter filename')
+if os.path.isfile(fname):
+     print("File Exists:",fname)
+     f=open(fname,'r')
+else:
+     print("File does not exist:",fname);
+     sys.exit(0)
+print("the content of the file is:")
+data=f.read()
+print(data)
+f.close()
+
+
+reading and writing images
+--------------------------
+f1=open("E:\\IMG-20171129-WA0004.jpg","rb")
+f2=open("f:\\abc.jpg","wb")
+data=f1.read()
+dwrite=f2.write(data)
+f1.close()
+f2.close()
+print(dwrite)
+
+
+3)close()
+closes a file.
+
+Take read a random number from a keyboard
+
+1-->1 Q&A
+
+create 2 lists 
+
+qlist-->questions
+alist-->answers
+
+
+2-->2 Q&A
+3-->3 Q&A
+..
+9
+
+Take a DataSet and write to a dictionary
+
+1,aaaa,10000,m,11
+
+{eno1:1,name1:aaaa,sal1:1000,gender1:m,dno1:11,eno1:1,name1:aaaa,sal1:1000,gender1:m,dno1:11,eno1:1,name1:aaaa,sal1:1000,gender1:m,dno1:11,eno1:1,name1:aaaa,sal1:1000,gender1:m,dno1:11}
+
+
+Handling a csv file
+-------------------
+we use a module called csv to handle csv files.
+
+import csv
+
+csv.reader()
+csv.writer()
+csv.DictReader()
+csv.DictWriter()
+
+
+eno,name,sal,gender,dno
+1,aaa,10000,m,10
+2,bbb,20000,f,11
+3,ccc,30000,m,12
+4,ddd,40000,m,11
+5,eee,40000,f,13
+
+save employee.csv
+
+import csv
+
+with open('e:/emp.csv','r') as f:
+    emp=csv.reader(f)
+    for i in emp:
+        print(i)
+
+
+eno,name,sal,gender,dno
+1, aaa, 10000, m, 10
+2, bbb, 20000, f, 11
+3, ccc, 30000, m, 12
+4, ddd, 40000, m, 11
+5, eee, 40000, f, 13
+
+
+removing spaces from a csv file
+-------------------------------
+dialect()--This  function is used to remove spaces from a csv file.
+
+
+eno,name,sal,gender,dno
+1, aaa, 10000, m, 10
+2, bbb, 20000, f, 11
+3, ccc, 30000, m, 12
+4, ddd, 40000, m, 11
+5, eee, 40000, f, 13
+
+
+import csv
+
+csv.register_dialect('myDialect',delimiter=',',skipinitialspace=True)
+
+with open('e:/emp.csv','r') as csvFile:
+    data=csv.reader(csvFile,dialect='myDialect')
+
+    print(data)
+    
+
+"sn","Name","Quotes"
+1,buddha,"what you think is what we become"
+2,Manohar,"knowledge is not injurious to health"
+3,vivek,"never give up"
+
+import csv
+
+csv.register_dialect('myDialect',delimiter=',',quoting=csv.QUOTE_ALL,skipinitialspace=True)
+
+with open('e:/csvfilequotes.csv','r') as csvFile:
+    data=csv.reader(csvFile,dialect='myDialect')
+
+    for row in data:
+        print(row)
+
+Removing pipes in the file
+--------------------------
+"pencil"|"eraser"|"sharpner"
+"book"|"chair"|"table"
+"inky"|"pinky"|"ponky"
+
+import csv
+
+csv.register_dialect('myDialect',delimiter='|',quoting=csv.QUOTE_ALL,skipinitialspace=True)
+
+with open('e:/csvfilepipes.csv','r') as csvFile:
+    data=csv.reader(csvFile,dialect='myDialect')
+
+    for row in data:
+       print(row)
+
+writing into a file
+
+import csv
+with open('e:/employeedata.csv','w',newline='') as csvFile:
+    ptr=csv.writer(csvFile)
+    ptr.writerow(["eno","name","sal","gender","dno"])
+    ptr.writerow([1,'aaa',10000,'m',11])
+    ptr.writerow([1,'aaa',10000,'m',12])
+
+
+Task1
+-----
+import csv
+
+fp=open('e:/employeedata1.csv','w',newline='')
+ptr=csv.writer(fp)
+
+i=1
+n=int(input('enter how many rows you want'))
+
+ptr.writerow(['eno','name','sa','gender','dno'])
+
+
+    
+while True:
+     li=[]
+     
+     eno=int(input('enter eno'))
+     ename=input('enter ename')
+     sal=float(input('enter sal'))
+     gender=input('enter gender')
+     if(gender=='m' or gender=='f'):
+           li.append(gender)
+
+     dept=[10,11,12,13,14,15,16,17,18,19,20]
+     dno=int(input('enter dno'))
+
+     li.append(eno)
+     li.append(ename)
+     li.append(sal)
+     li.append(dno)
+
+     ptr.writerow(li)
+     if(i>=n):
+          break
+     i=i+1
+     
+fp.close()
+
+
+Task1
+-----
+Read emp dataset and write data into a collection in the form of key and value pairs
+eno,name,sal,gender,dno
+1, aaa, 10000, m, 10
+2, bbb, 20000, f, 11
+3, ccc, 30000, m, 12
+4, ddd, 40000, m, 11
+5, eee, 40000, f, 13
+
+output
+------
+{eno1:1,name1:aaa,...,eno2:2,name2:bbbb,.....}
+
+
+read the file employeedata again
+--------------------------------
+DictReader()
+This used to read a csv file and display data in the form of key and value pairs.
+
+Dictwriter()
+This used to store data in csv file in the form of key and value pairs.
+
+
+These are combination dictionary read and write methods.
+
+import csv
+
+with open('e:/emp.csv','r') as csvFile:
+    data=csv.DictReader(csvFile,delimiter=',')
+    for d in data:
+        print(d)
+
+
+Task1
+-----
+create a emp.csv file
+open file extract data and convert each row into key and values and add it to a 
+dictinary.
+
+{eno:1,ename:'aaaa',.....} 
+
+
+writing data into csv file usinig DictWriter
+--------------------------------------------
+
+import csv
+
+with open("e:/emp111718.csv",'w',newline='') as f:
+     header=['eno','name','sal','gender','dno']
+     wptr=csv.DictWriter(f,fieldnames=header,delimiter=',')
+     wptr.writeheader()
+     wptr.writerow({'eno':1,'name':'aaa','sal':100.00,'gender':'m','dno':11})
+     wptr.writerow({'eno':2,'name':'bbb','sal':100.00,'gender':'m','dno':11})
+     
+print("write success")
+          
+
+reading a file and writing into a dictionary
+--------------------------------------------
+import csv
+
+d={}
+
+keys=['eno','name','sal','gender','dno']
+with open('e:/emp.csv','r') as csvFile:
+    data=csv.reader(csvFile,dialect='myDialect')
+
+    for row in data:
+           i=0
+           for v in row:
+               val=v.split(',')
+               for k in val:
+                   d[keys[i]]=k
+                   i=i+1
+print(d)
+
+
+
+file copy
+---------
+read a csv file conver to dictionary and write it into another csv file.
+
+import csv
+
+with open('e:/emp.csv','r') as csvFile:
+    data=csv.DictReader(csvFile)
+
+    with open('e:/emp1.csv','w') as csvFile2:
+            fieldnames=['eno','name','sal','gender','dno']
+            wdata=csv.DictWriter(csvFile2,fieldnames=fieldnames,delimiter='\t')
+            #Writing data header
+	    wdata.writeheader()
+     #writing data rows
+    for line in data:
+        wdata.writerow(line)
+
+
+Json(java script object notion) files using python
+--------------------------------------------------
+A Json object is equivalent to Dictionary object  in python.
+
+{
+"eno":1,
+"name":"manohar",
+"sal":1000.00,
+"gender":"m",
+"age":16
+}
+
+Json         Python
+Object       dict
+array        list
+string       str
+number{int}  int
+number{real} float
+true	     True
+false        False
+null	     None
+
+
+if data is in the form of heirarchical then the best file format is Json.
+As per json one single row is considered as a document(heirarchical style).
+
+fname-vidhatri
+lname-yalla
+age-1
+gender-f
+
+{
+  "fname":"vidhatri",
+  "lname":"yalla",
+   "age":1
+   "gender":"f"
+}
+
+
+
+
+How to load json
+----------------
+import json
+
+json.load()-->read()
+json.dump()->write()
+
+json.load()-->it is equal to  a read method,it reads a  json object and convert to
+              a dictionary.
+
+json.dump()-->json.dump() equal to write method which and it converts python dictionary to a json object.
+
+if we want to deal with json files in python we require a additional package called it as json.
+
+Json(Java script object notion) is light weighted.
+
+Now a days 60% of the data is in Json format.
+
+ex:
+Microsoft Azure introduced a file format called cosmos which internally uses Json.
+
+Parent of Json is Bson(Binary script object notion).
+
+Single record in json we call it as document.
+
+set of docs is called as collections.
+
+In rdbms a single row is equivalent to a json document.
+
+In rdbms table is equivalent to collection(set of documents).
+
+In rdbms database equivalent to a Json object.
+
+In Json object the schema is in the form of key,values.
+
+
+{
+"name":"gvipl",
+"year":2010,
+"courses":["Bigdata","spark","DataScience","Aws"],
+"salary":2000.38,
+"ratings":true,
+"canteen":Null
+}
+
+json lint-->used to validate json.
+
+Json viewer->format the json structure.
+
+import pandas
+error
+
+How to install a package in python.
+
+pip install modulename
+
+pip install pandas
+
+reading a json file states.json
+import json
+
+with open('e:/states.json') as f:
+     data=json.load(f)
+
+     for state in data['states']:
+          print(state)
+
+
+{
+name:"gvipl"
+year:2010
+}
+
+pretty() function format data.
+
+# The standard string repr for dicts is hard to read:
+>>> my_mapping = {'a': 23, 'b': 42, 'c': 0xc0ffee}
+>>> my_mapping
+{'b': 42, 'c': 12648430. 'a': 23}  # 😞
+
+# The "json" module can do a much better job:
+>>> import json
+>>> print(json.dumps(my_mapping, indent=4, sort_keys=True))
+{
+    "a": 23,
+    "b": 42,
+    "c": 12648430
+}
+
+# Note this only works with dicts containing
+# primitive types (check out the "pprint" module):
+>>> json.dumps({all: 'yup'})
+TypeError: keys must be a string
+
+Removing a a specific document and rewrting the documents in another file.
+
+import json
+
+with open('e:/states.json') as f:
+     data=json.load(f)
+
+     for state in data['states']:
+          del state['area_codes']
+          print(state)
+     with open('e:/states2.json','w') as f:
+          json.dump(data,f)
+          
+
+Handling excel files in python(xls/xlsx/xlsm)
+---------------------------------------------
+To handle excel files in python we require an additional package called xlrd.
+
+How to install xlrd module
+--------------------------
+pip install xlrd
+
+open excel,prepare data
+
+eno,name,sal
+1,aaaa,1000
+2,bbbb,2000
+3,cccc,3000
+
+save as emp.xslx
+
+#import pandas as pd
+
+reading a cell from an excel
+----------------------------
+import xlrd
+
+loc=("e:/employee.xlsx")
+
+wb=xlrd.open_workbook(loc)
+sheet=wb.sheet_by_index(0)
+print(sheet.cell_value(0,0))
+
+dispalying no of rows and cols from excel sheet
+-----------------------------------------------
+import xlrd
+import pandas as pd
+
+loc=("e:/employee.xlsx")
+
+wb=xlrd.open_workbook(loc)
+sheet=wb.sheet_by_index(0)
+print(sheet.nrows,sheet.ncols)
+
+
+reading a complete excel sheet
+------------------------------
+import xlrd
+import pandas as pd
+
+loc=("e:/employee.xlsx")
+
+wb=xlrd.open_workbook(loc)
+sheet=wb.sheet_by_index(0)
+
+for i in range(sheet.nrows):
+     print()
+     for j in range(sheet.ncols):
+          print(sheet.cell_value(i,j),end=' ')
+     
+          
+
+How to handle xml files
+-----------------------
+we use the module xml to handle xml files.
+
+Xml is tag based language,it has starting and ending tag
+
+open notepad
+ 	 
+<icecream>
+     <types>
+          <item name="i1">choclate</item>
+          <item name="i2">aaavenilla</item>
+          <item name="i3">strawbarry</item>
+    </types>
+</icecream>
+
+save as icecream.xml
+    
+<data>
+  <items>
+      <item name="item1"  quantity="1">powder</item>
+      <item name="item2">fair and lovely</item>
+      <item name="item3">kajal</item>
+  </items>
+</data>
+
+<root>
+  <child1>
+
+
+
+
+xml
+---------------
+|  dom         
+| ------------------
+|      minidom      |
+|  ---------------- |
+|  |     parse()  | |
+|  ---------------- |
+--------------------|
+
+xml.dom.minidom.parse()
+
+
+Reading an xml file using xml module
+------------------------------------
+from xml.dom import minidom as md
+mydoc=md.parse("e:/python_online/data.xml")
+print(mydoc.nodeName)
+print(mydoc.firstChild.tagName)
+
+items=mydoc.getElementsByTagName('item')
+print(items[0].attributes['name'].value)
+
+for ele in items:
+     print(ele.attributes['name'].value)
+
+print(items[0].firstChild.data)
+print(items[1].childNodes[0].data)
+
+
+for  ele in items:
+     print(ele.firstChild.data)
+
+
+Exception Handling
+------------------
+                             BaseException
+
+Exception           SystemExit     GeneratorExit    KeyBoardInterruptedException
+
+AttributeError
+ArithmeticError
+  |
+ZeroDivisionError
+FloatingPointError
+OverflowError
+
+
+EOFError
+NameError
+ValueError
+
+LookupError
+|
+KeyError
+IndexError
+
+OsError
+|
+FileNotFoundError
+InterruptedError
+PermissionError
+TimeOutError
+
+TypeError
+
+
+Exceptions handling in Python is very similar to Java.The code, which harbours the risk of an exception, is embedded in a try block. But whereas in Java exceptions are caught by catch clauses, we have statements introduced by an "except" keyword in Python. 
+It's possible to create "custom-made" exceptions: With the raise statement it's possible to force a specified exception to occur.
+
+usecase1
+--------
+>>> n = int(input("Please enter a number: "))
+Please enter a number: 23.5
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '23.5'
+
+usecase2
+--------
+print(10/00)
+
+example3
+--------
+while True:
+    try:
+        n = input("Please enter an integer: ")
+        n = int(n)
+        break
+    except ValueError:
+        print("No valid integer! Please try again ...")
+print("Great, you successfully entered an integer!")
+
+Multiple Except Clauses
+
+A try statement may have more than one except clause for different exceptions. But at most one except clause will be executed.
+
+Our next example shows a try clause, in which we open a file for reading, read a line from this file and convert this line into an integer. There are at least two possible exceptions:
+
+an IOError
+ValueError
+
+Just in case we have an additional unnamed except clause for an unexpected error
+
+example4:
+---------
+
+try:
+    f = open('integers.txt')
+    s = f.readline()
+    i = int(s.strip())
+except IOError as e:
+        print(e)
+except ValueError:
+    print("No valid integer in line.")
+except:
+    print("Unexpected error:")
+
+
+Except block with multiple exception
+------------------------------------     
+An except clause may name more than one exception in a tuple of error names, as we see in the following example:
+
+example5:
+--------
+try:
+    f = open('integers.txt')
+    s = f.readline()
+    i = int(s.strip())
+except (IOError, ValueError e):
+    print("An I/O error or a ValueError occurred")
+except:
+    print("An unexpected error occurred")
+    raise
+
+
+example5
+--------
+We want to demonstrate now, what happens, if we call a function within a try block and if an exception occurs inside the function call:
+def f():
+
+def f1():
+    x=int(input('enter x'))
+    print(x)
+try:
+    f1()
+except:
+    print("exception caught")
+
+print("Th end")
+
+
+print("Let's get on")
+
+example6:
+---------
+We will extend our example now so that the function will catch the exception directly:
+
+def f1():
+    try:
+         x=int(input('enter x'))
+         print(x)
+
+    except:
+        print("exception caught")
+    
+
+f1()
+print("Th end")
+print("Let's get on")
+
+
+example7:
+--------
+We add now a "raise", which generates the ValueError again, so that the exception will be propagated to the caller:
+
+def f():
+    try:
+        x = int("four")
+    except ValueError as e:
+        print("got it in the function :-) ", e)
+        raise
+
+try:
+    f()
+except ValueError as e:
+    print("got it :-) ", e)
+
+print("Let's get on")
+
+
+The best or the Pythonic way to do this, consists in defining an exception class which inherits from the Exception class. You will have to go through the chapter on "Object Oriented Programming" to fully understand the following example:
+
+
+class MyException(Exception):
+     pass
+
+balance=float(input("enter balance :"))
+amount=float(input("enter balance to withdraw:"))
+if(amount>balance):
+     try:
+         raise MyException("In sufficient funds")
+     except MyException:
+         print("Insufficient balance")
+else:
+    print("Transaction success")
+     
+
+clean-up Actions (try ... finally)
+try:
+    x = float(input("Your number: "))
+    inverse = 1.0 / x
+finally:
+    print("There may or may not have been an exception.")
+print("The inverse: ", inverse)
+
+
+"finally" and "except" can be used together for the same try block, as can be seen the following Python example:
+
+try:
+    x = float(input("Your number: "))
+    inverse = 1.0 / x
+except ValueError:
+    print("You should have given either an int 
+
+or a float")
+except ZeroDivisionError:
+    print("Infinity")
+finally:
+    print("There may or may not have been an exception.")
+
+
+else Clause
+
+The try ... except statement has an optional else clause. An else block has to be positioned after all the except clauses. An else clause will be executed if the try clause doesn't raise an exception. 
+
+The following example opens a file and reads in all the lines into a list called "text":
+
+import sys
+file_name = sys.argv[1]
+text = []
+try:
+    fh = open(file_name, 'r')
+    text = fh.readlines()
+    fh.close()
+except IOError:
+    print('cannot open', file_name)
+
+if text:
+    print(text[100])
+
+python exception_test.py integers.txt
+
+import sys
+file_name = sys.argv[1]
+text = []
+try:
+    fh = open(file_name, 'r')
+except IOError:
+    print('cannot open', file_name)
+else:
+    text = fh.readlines()
+    fh.close()
+
+if text:
+    print(text[100])
+
+eno,name,sal,gender,dno
+1,aaa,1000.00,f,11
+2,bbb,2000.00,m,12
+3,ccc,3000.00,f,13
+4,ddd,4000.00,m,14
+5,eee,4000.00,m,14
+
+read data 
+split each row 
+write data of each col to one list and arrange data on dictionary 
+
+eno:[1,2,3,4,5],ename:[aaaa,bbbb,ccc,dddd,eee],......
+
+
+Functions
+---------
+The box or a packet is called as function
+A function perform a specific task.
+
+
+Advantages of functions
+-----------------------
+1)code reusability.
+2)code readability
+3)reduces length of the code
+4)debugging becomes simple.
+
+Python supports 2 types of functions
+i)Built in functions.
+ii)user defined functions.
+
+Built in functions
+------------------
+These functions are available in python API.
+
+like
+min()
+max()
+id()
+type()
+etc
+
+User defined functions 
+----------------------
+functions developed by developer based on the requirement.
+
+we use the keyword def.
+syntax
+------
+def function_name(parameters):
+   '''doc string'''
+    return
+
+Note:
+The return statement return statement in python is optional
+if we are not returning any value using return statement,a function returns None.
+
+
+ex:
+def f1():
+ '''default function'''
+ 	print("Hello")
+
+How to call a function
+----------------------
+function_name()
+
+ex:
+f1()
+
+ex2)def f1(a,b):
+     return a+b
+x=f1(10,20)
+print(x)
+
+with in the function body if we are using any parameters those parameters are called formal parameters.
+
+Parameters passing to a  function call are called actual parameters.
+
+Actual parameters are split into 4 types
+----------------------------------------
+positional parameters/args
+keyed parameters/args
+default parameters
+variable length parameter
+
+positional parameters
+---------------------
+position order is mandatory for positional parameters.
+
+def f1(a,b):
+     sum_ab=a+b
+     sub_ab=a-b
+     print("sum of a,b is :",sum_ab)
+     print("sub of a,b is :",sub_ab)
+     
+f1(10,20)
+
+positional with correct order
+-----------------------------
+def emp_f1(name,age):
+     print("The name is:",name)
+     print("The age ",age)
+     
+emp_f1("vidhatri",1)
+
+
+positional with incorrect order
+-----------------------------
+ex:
+def emp_f1(name,age):
+     print("The name is:",name)
+     print("The age ",age)
+     
+emp_f1(1,"vidhatri")
+
+Note:Order must be taken care.
+
+
+keyed arguments
+---------------
+Actual parameters declared iwth key names are called keyed parameters.
+Here we order is not a problem.
+
+ex 1)
+def emp_f1(name,age):
+     print("The name is:",name)
+     print("The age ",age)
+     
+emp_f1(name="vidhatri",age=1)#caller
+
+ex 2)
+def emp_f1(age,name):
+     print("The name is:",name)
+     print("The age ",age)
+
+emp_f1(name="vidhatri",age=1)
+
+
+if we are using a combination of positional arguments and keyed arguments always positional args should come before keyed arguments.
+
+
+emp_f1(name="abc",age=33)
+emp_f1("abc",age=33)
+emp_f1(age=33,"abc")//check this
+emp_f1(name="abc",33)
+
+default parameters
+------------------
+Formal parameters initiazed with some default values are called default parameters.
+Default are used of caller is not passing values.
+       #formal/dummy/temporary
+def f1(a=10,b=20):
+     sum_ab=a+b
+     sub_ab=a-b
+     print("sum of a,b is :",sum_ab)
+     print("sub of a,b is :",sub_ab)
+
+f1()     
+f1(10,20)#actual
+f1(10)
+
+variable length argument
+------------------------
+A variable length argument accepts values from a caller of different size.
+
+
+ex 1)
+def  f1(*args):
+     print(args)
+
+
+f1()
+f1(1)
+f1(1,2)
+f1(1,2,3)
+f1(1,2,3,4)
+f1(1,2,3,4,5)
+
+def sum_value(*args):
+     sum=0
+     print(args[0])
+     for i in args:
+          sum=sum+i
+     print(sum)
+
+print(sum_value())
+print(sum_value(1))
+print(sum_value(1,2,3))
+print(sum_value(1,2,3,4,5))
+print(sum_value(1,2,3,4,5,6))
+
+Note:variable length parameter is a tuple in python.
+Note:Always normal parameters must be declared before variable length parameters otherwise it leads to erro.
+
+def  f1(a,*args):
+       print(a,args)
+
+f1(1)
+f1(1,2)
+f1(1,2,3)
+f1(1,2,3,4)
+f1(1,2,3,4,5)
+f1(1,2,3,4,5,6)
+
+returning value from a function
+-------------------------------
+we can return a value from a function by using keyword return.
+we can also return multiple values from a function in python which is not possible in other languages.
+
+syntax
+------
+return value
+or
+return varname
+
+ex 1)
+def  addition(a,b):
+     c=a+b
+     return c
+
+result=addition(10,20)
+print(result)
+
+
+
+
+Multiple return values
+----------------------
+Languages like c/cpp/java returns a single value but in case of python it returns multiple values at a time.
+
+def f1(a,b):
+     sum_ab=a+b
+     sub_ab=a-b
+     mul_ab=a-b
+     div_ab=a-b
+     return sum_ab,sub_ab,mul_ab,div_ab
+
+     
+x=f1(100,200)
+type(x)#tuple
+print(x)
+
+function vs method
+------------------
+A function present in a class is called a method.
+A method calling is done using instance of the class or ClassName.
+
+function vs module vs library
+-----------------------------
+A function smallest unit of work in python.
+
+-----------
+|  f1()   |
+|  f2()   |
+|  f3()   |
+|  f4()   |
+|  f5()   |
+-----------
+
+
+Module is collection of functions.
+collection of modules are called as libraries.
+
+xyz(module1)             pqr(module2)
+-----                    -----------   
+f1() |                     f5()
+f2() |                     f6()
+f3() |                     f7()
+f4() |                     f8()
+-----                    ------------
+----------------------------------------
+    abc
+
+from abc.pqr.f5()
+
+Types of variables
+------------------
+Python supports 2 types of variables.
+
+i)local variables.
+ii)global variables.
+
+global variables
+-----------------
+A variable is declared outside of the function is called as a global variable.
+A global variable is accessed by all the functions with in the module.
+
+ex 1)
+a=10
+
+def f1():
+     print(a)
+
+def f2():
+     print(a)
+
+f1()
+f2()
+     
+ex 2)
+a=10
+
+def f1():
+     a=20
+     print(a)
+
+def f2():
+     print(a)
+
+f1()
+f2()
+     
+
+ex 3)
+def f1():
+     a=20
+     print(a)
+
+def f2():
+     print(a)
+
+f1()
+f2()
+     
+NameError
+
+ex 4)
+def f1():
+     global a
+     a=20
+     print(a)
+
+def f2():
+     print(a)
+
+f1()
+f2()
+
+ex 5)
+def f1():
+     global a
+     a=20
+     print(a)
+
+def f2():
+     global a
+     a=30
+     print(a)
+
+def f3():
+     print(a)
+
+f1()
+f2()
+f3()
+
+ex 6)
+a=10
+def f1():
+     global a
+     a=111
+     print(a)
+
+def f2():
+     print(a)
+
+
+f1()
+f2()
+     
+variable declared within the function is called as local variable.
+we can access local variables only with in that function
+
+Note:If global variable and local variable having the same name then we can access
+global variable inside a function as follows.
+
+ex 7)
+a=10
+def f1():
+     a=20
+     print(a)
+     print(globals()['a'])
+
+def f2():
+     print(a)
+
+
+f1()
+f2()
+     
+
+Recursive functions
+-------------------
+A function that calls itself is known as recursive function.
+ex:factorial(n)=n*factorial(n-1)
+
+Advantages
+----------
+1)we can reduce code length and improves the code readability.
+2)we can solve complex problems very easily..
+
+def factorial(n):
+     if n==0:
+          return 1
+     else:
+          r=n*factorial(n-1)
+     return r
+
+5*factoial(4)
+5*4*factorail(3)
+5*4*3*factorail(2)
+5*4*3*2*factorail(1)
+5*4*3*2*1*factorail(0)
+            1
+120
+
+print(factorial(5))
+
+5*4*3*2*1*0  
+
+n=5
+
+r=5*4*3*2*1*1-->120
+
+i=0
+def f1():
+     global i
+     i=i+1
+     print("suresh")
+     if(i<=10):
+          f1()
+
+f1()
+     
+
+Anonymous functions
+-------------------
+A function without any name is known as anonymous function or lambda functions.
+The main use of anonymous functions is instant use.
+
+Lambda function
+---------------
+we use keyword lambda to define lambda functions.
+
+ex 1)
+lambda n:n*n
+
+syntax
+------
+lambda list_args:expression
+
+def  f1(a,b):
+     c=a+b
+     return c
+
+print(f1(10,20))
+
+x=lambda a,b:a+b
+print(x(10,30))
+     
+
+Note:functions are also objects.
+
+
+ex 2)
+x=lambda a,b:a+b
+print(x(10,20))
+
+ex 3)
+x=lambda a,b:a if a>b else b
+print(x(100,20))
+
+ex 4)
+x=lambda a,b,c:a if a>b and a>c  else b if  b>c  else c
+print(x(10000,2000,300))
+
+
+Note:
+1) lambda internally returns an expression value and we are not required to write return statement explicitly.
+
+2)sometimes we can pass a function as an argument to another fucntion in such cases lambda functions are best choice.
+
+3)filter,map,reduce function as argument in such cases lambda are best choice.
+
+map(func,seq)
+filter(func,seq)
+reduce(func,seq)
+
+#map()
+-----
+x=[1,2,3,4,5]-->[101,102,103,104,105]
+a=0
+for i in x:
+     x[a]=i+100
+     a=a+1
+print(x)
+
+
+filter()
+
+x=[1,2,3,4,5]
+
+for i in x:
+     if(i>=3):
+        print(i)
+
+reduce()
+
+x=[1,2,3,4,5]
+sum=0
+for i in x:
+     sum=sum+i
+print(sum)
+
+
+Mysql-->pip install pymysql
+       import pymysql
+
+
+filter()
+--------
+we can use filter function to filter values from the given sequence based in some condition.
+
+syntax
+------
+filter(function,sequnce)
+
+ex 5)
+def isEven(x):
+     if(x%2==0):
+          return True
+     else:
+          return False
+
+l=[0,5,10,15,20,25,30]
+
+l1=list(filter(isEven,l))
+print(l1)
+
+
+ex 6)
+l=[0,5,10,15,20,25,30]
+l1=list(filter(lambda x:x%2==0,l))
+print(l1)
+
+map()
+
+if we want to iterate every element in a sequence of data and apply some functionality then python is offering a function called map().
+
+syntax
+------
+map(function,sequence)
+
+ex 7)
+l=[1,2,3,4,5]
+
+def sumlist(x):
+     return 100+x
+
+l1=list(map(sumlist,l))
+print(l1)
+
+ex 8)
+l=[1,2,3,4,5]
+
+l1=list(map(lambda x:x+100,l))
+print(l1)
+
+Note:
+we can apply map function on top of multiple list but make sure all list should have same length.
+
+ex 9)
+l=[1,2,3,4,5]
+l1=list(map(lambda x:x*x,l))
+print(l1)
+
+ex 10)
+l1=[1,2,3,4,5]
+l2=[2,3,4,5,6]
+l3=list(map(lambda x,y:x*y,l1,l2))
+print(l3)
+
+Note:
+lambda operator can have any number of arguments, but it can have only one expression. 
+
+
+reduce() function
+-----------------
+It is used to reduce sequence of elements into a single element by applying the specified function.
+
+syntax
+------
+reduce(function,sequence)
+
+Note:
+reduce() is available in present in module called functools modules and which should write import statement.
+
+from functools import*
+x=[1,2,3,4,5]
+
+def add(a,b):
+     c=a+b
+     a=b
+     b=c
+     return c
+
+l=reduce(add,x)
+print(l)
+
+
+ex 11)
+from functools import *
+l1=[1,2,3,4,5]
+l3=reduce(lambda x,y:x+y,l1)
+print(l3)
+
+ex 12)
+from functools import *
+l1=[1,2,3,4,5]
+l3=reduce(lambda x,y:x*y,l1)
+print(l3)
+
+ex 13)
+from functools import *
+l3=reduce(lambda x,y:x*y,range(1,10))
+print(l3)
+
+function alisaing
+-----------------
+For an existing function we can give another name,which is nothing but function aliasing.
+
+ex 14)
+def f1(name):
+     print("hello",name)
+
+f2=f1
+
+print(id(f1))
+print(id(f2))
+
+f1('mano')
+f2('vidha')
+
+
+Note:In the above example only one function but we can call that function by using either f1() ir f2()
+
+if we delete one name still we can access that function by using alias name.
+
+ex 15)
+def f1(name):
+     print("hello",name)
+
+f2=f1
+
+print(id(f1))
+print(id(f2))
+
+del f1
+
+#f1('mano')#NameError
+f2('vidha')
+
+
+function decorator
+------------------
+Decorator is a function which can take a function as argument and extend its functionality and returns modified function with extended functionality.
+
+The advantage of decorator is we can extend the functionality of a function with out modifying that function.
+
+def decor(func):
+     def inner(name):
+               if name=="mano":
+                    print("hello mano today its raining")
+               else:
+                    func(name)
+     return inner
+                    
+@decor
+def f1(name):
+     print("Hello",name,"Good Morning")
+     
+f1('mano')
+f1('vidhatri')
+
+Note: In Python, functions are “first-class citizens.” This means that they are on par with any other object (integers, strings, lists, modules, and so on). You can dynamically create or destroy them, pass them to other functions, return them as values, and so forth.
+
+
+Nested functions
+----------------
+we can declare a function inside another functions,such type of functions are called nested functions.
+
+if i want to reuse the same functionality with in the function n number of times then we should use nested function.
+
+
+ex 1)
+def  outer():
+    print("outer function ")
+    def inner():
+        print("inner function")
+    return inner
+
+f1=outer()
+f1()
+
+ex 2)
+def  outer():
+    def inner(a,b):
+        print("The sum is ",a+b)
+        print("The product is ", a*b)
+    inner(1,2)
+    inner(10, 20)
+
+outer()
+
+Encapsulation
+You use inner functions to protect them from everything happening outside of the function, meaning that they are hidden from the global scope.
+
+Here’s a simple example that highlights that concept:
+
+def outer(num1):
+    def inner_increment(num1):  # Hidden from outer code
+        return num1 + 1
+    num2 = inner_increment(num1)
+    print(num1, num2)
+
+inner_increment(10)
+# outer(10)
+
+Note: Keep in mind that this is just an example. Although this code does achieve the desired result, it’s probably better to make inner_increment() a top-level “private” function using a leading underscore: _inner_increment().
+
+def factorial(number):
+
+    # Error handling
+    if not isinstance(number, int):
+        raise TypeError("Sorry. 'number' must be an integer.")
+    if not number >= 0:
+        raise ValueError("Sorry. 'number' must be zero or positive.")
+
+    def inner_factorial(number):
+        if number <= 1:
+            return 1
+        return number*inner_factorial(number-1)
+    return inner_factorial(number)
+
+# Call the outer function.
+print(factorial(4))
+
+Perhaps you have a giant function that performs the same chunk of code in numerous places. For example, you might write a function that processes a file, and you want to accept either an open file object or a file name:
+
+def process(file_name):
+    def do_stuff(file_process):
+        for line in file_process:
+            print(line)
+    if isinstance(file_name, str):
+        with open(file_name, 'r') as f:
+            do_stuff(f)
+    else:
+        do_stuff(file_name)
+
+Note: Again, it is common to just make do_stuff() a private top-level function, but if you want to hide it away as an internal function, you can
+
+How about a practical example?
+
+Let’s say you want to know the number of WiFi hotspots in New York City. Yes, the city has the raw data to tell us. Visit the site and download the CSV:
+
+def process(file_name):
+
+    def do_stuff(file_process):
+        wifi_locations = {}
+
+        for line in file_process:
+            values = line.split(',')
+            # Build the dict and increment values.
+            wifi_locations[values[1]] = wifi_locations.get(values[1], 0) + 1
+
+        max_key = 0
+        for name, key in wifi_locations.items():
+            all_locations = sum(wifi_locations.values())
+            if key > max_key:
+                max_key = key
+                business = name
+        print('There are {0} WiFi hotspots in NYC, and {1} has the most with {2}.'.format(all_locations, business, max_key))
+
+    if isinstance(file_name, str):
+        with open(file_name, 'r') as f:
+            do_stuff(f)
+    else:
+        do_stuff(file_name)
+
+
+process('E:/DataScience/NYC_Wi-Fi_Hotspot_Locations.csv')
+
+
+Decorators,Iterators,Generators
+-------------------------------
+Decorator takes a function as a argument.
+Decorator adds extended functionality to existing function without modifying existing function.
+
+
+create a decorator to handle zero divisin error
+-----------------------------------------------
+def div(f1):
+    def div_check(a,b):
+        if(b==0):
+            print("Denominator must not be zero")
+        else:
+            f1(a,b)
+    return div_check
+
+@div
+def f1(a,b):
+    print(a/b)
+
+f1(10,1)
+f1(10,0)
+
+
+Decorator chaining
+------------------
+we can define multiple decorators for the same function and all these decorators will form decorator chaining. 
+
+
+def decor1(func):
+    def inner():
+        x=func()
+        return  x*x
+    return inner
+def decor(func):
+    def inner():
+        x = func()
+        return 2 * x
+    return inner
+
+@decor1
+@decor
+def f2():
+    return 10
+
+print(f2())
+
+Iterator
+--------
+Iterators are everywhere in python.They are implemented within for loops,
+comprehensions,generators etc but hidden in plain sight.
+
+Iterator in python is simply an object which returns single element at a time.
+
+Technically speaking,Python iterator object must implement two special methods,
+__iter__() and __next__(),collectively called the iterator protocol.
+
+Iterating through the Iterator in python
+----------------------------------------
+we use the next() function to manually iterate through all the items of an iterator.once it reaches the end of the list it will raise StopIteration.
+Following is an example.
+
+ex 1)
+
+my_list=[4,7,0,3]
+my_iter=iter(my_list)
+
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+
+StopIteration
+
+Drawbacks of iterator
+---------------------
+There is a lot of overhead in building an iterator in python.
+
+Python generators are a simple way of creating iterators.All the overhead we mentioned above are auotmatically handled by generators in python.
+
+Generators
+----------
+def my_gen():
+    n=1
+    print("This is printed first")
+    yield n
+
+    n+=1
+    print("This is printed second")
+    yield n
+
+    n+=1
+    print("This is printed third")
+    yield n
+
+a=my_gen()
+next(a)
+next(a)
+next(a)
+
+
+
+
+Modules
+-------
+A module is collection of variables,functions and classes.
+The program itself in python is a module.
+The file name is the module name with the suffix .py appended
+Definitions from a module can be imported into other modules or into the main module.
+module is reusable.
+module provides readability.
+modules avoids naming collisions.
+
+Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program.
+
+Functions, modules and packages  promote code modularization.
+
+Note:
+save a module in Lib folder inside  installtion folder so that we have access to the modules from anywhere in our local machine.
+
+test123.py
+a=10
+
+def f1():
+     print("abc")
+
+def f2():
+     print("bbc")
+     
+save as in 
+
+ex 2)
+>>> import test123
+>>> test123.a
+10
+>>> test123.f1()
+abc
+>>> test123.f2()
+bbc
+
+
+
+ex 1)
+
+0 1 1 2 3 5 ....
+
+# Fibonacci numbers module
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a,b=b,a+b
+    print()
+
+def fib2(n):   # return Fibonacci series up to n
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        a, b = b, a+b
+    return result
+
+
+save as fibo.py
+
+
+The import statement
+
+We can use any Python source file as a module by executing an import statement in some other Python source file.
+
+When interpreter encounters an import statement, it imports the module if the module is present in the search path. A search path is a list of directories that the interpreter searches for importing a module. For example, to import the module module.py, we need to put the following command at the top of the script :
+
+syntax
+------
+import module1,module2,......
+
+ex1:
+import math,os,sys
+
+ex2:
+import module
+
+How access members of a module
+------------------------------
+syntax
+------
+modulename.varname
+or
+modulename.function_name(parameterlist)
+or
+modulename.classname
+
+ex:
+module.f1()
+module.f2(10,20)
+
+
+>>>import fibonacci
+>>>fibonacci.fib(10)
+>>>fibonacci.fib2(10)
+>>>fibonacci.__name__
+
+If you intend to use a function often you can assign it to a local name:
+>>> fib = fibonacci.fib
+>>> fib(100)
+
+
+The Module Search Path
+
+Continuing with the above example, let’s take a look at what happens when Python executes the statement:
+
+import fibo
+
+When the interpreter executes the above import statement, it searches for fibo.py in a list of directories assembled from the following sources:
+
+1)current directory from which module is run.
+
+2)Pythonpath
+
+3)python installtion folder
+
+
+The resulting search path is accessible in the Python variable sys.path, which is obtained from a module named sys:
+
+ex 3)
+import  sys
+print(sys.path)
+
+['E:/DataScience', 'C:\\Python36-32\\Lib\\idlelib', 'C:\\Python36-32\\python36.zip', 'C:\\Python36-32\\DLLs', 'C:\\Python36-32\\lib', 'C:\\Python36-32', 'C:\\Python36-32\\lib\\site-packages']
+
+you can put the module file in any directory of your choice and then modify sys.path at run-time so that it contains that directory.
+
+>>> sys.path.append(r'f:/python')
+>>> sys.path
+
+Once a module has been imported, you can determine the location where it was found with the module’s __file__ attribute:
+
+ex 4)
+>>> import fibo
+>>> fibo.__file__
+'F:\\Python\\fibo.py'
+
+ex 5)
+>> import random
+>>> random.__file__
+'C:\\Python36-32\\lib\\random.py'
+
+
+import <module_name>
+The simplest form is the one already shown above:
+
+Note that this does not make the module contents directly accessible to the caller. Each module has its own private symbol table, which serves as the global symbol table for all objects defined in the module. Thus, a module creates a separate namespace, as already noted.
+
+The statement import <module_name> only places <module_name> in the caller’s symbol table. The objects that are defined in the module remain in the module’s private symbol table.
+
+From the caller, objects in the module are only accessible when prefixed with <module_name> via dot notation, as illustrated below.
+
+After the following import statement, fibo is placed into the local symbol table. Thus, mod has meaning in the caller’s local context:
+
+ex 6)
+x>>> import  fibo
+>>> fibo
+<module 'fibo' from 'e:/DataScience\\fibo.py'>
+
+But fib and fib2 remain in the module’s private symbol table and are not meaningful in the local context:
+
+>>> fib(10)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'fib' is not defined
+>>> fib2(10)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'fib2' is not defined
+
+
+To be accessed in the local context, names of objects defined in the module must be prefixed by mod:
+
+ex 7)
+
+>>> fibo.fib(10)
+0 1 1 2 3 5 8
+>>> fibo.fib2(10)
+[0, 1, 1, 2, 3, 5, 8]
+
+ex 8)
+
+a=10
+b=20
+
+def f1():
+     print("hi")
+
+def f2(a,b):
+     print("hi",a,b)
+
+def f3(a,b,c):
+     print("hi",a,b,c)
+
+def f4(a,b,c,d):
+     print("hi",a,b,c,d)
+
+def f5(a,b,c,d,e):
+     print("hi",a,b,c,d,e)
+
+class Foo:
+      pass
+     
+save modules.py
+
+
+The from import Statement
+
+An alternate form of the import statement allows individual objects from the module to be imported directly into the caller’s symbol table:
+
+import .. has the following syntax :
+
+from <module_name> import <name(s)>
+
+Following execution of the above statement, <name(s)> can be referenced in the caller’s environment without the <module_name> prefix:
+
+ex 9)
+
+from modules import f1,f2
+
+f1()
+f2(10,20)
+f3(1,2,3)
+f4(1,2,3,4)
+f5(1,2,3,4,50
+
+ex 10)
+
+from modules import Foo
+
+>>>x=Foo()
+>>>x
+
+<module.Foo object at 0x02E3AD50>
+
+Because of form .. import..  ,the  object names directly placed into the caller’s symbol table, any objects that already exist with the same name will be overwritten:
+
+ex 11)
+
+>>> a=100
+>>> a
+100
+>>> from modules import a
+>>> a
+10
+>>>
+
+
+ex12)
+
+def  tri(b,h):
+     return 1/2*b*h
+
+def  rec(l,b):
+     return 1/2*b*h
+
+def  circle(r):
+     return 3.14*r*r
+     
+save as shapes.py
+
+Python Importing Multiple Modules Example
+Several comma-separated modules may be specified in a single import statement:
+
+import  modulename1,modulename2,......
+
+
+ex 13)
+
+import  shapes,modules
+
+print(shapes.tri(10.0,20.0))
+module.f1()
+     
+
+You can import whole of the module using
+
+syntax
+------
+from <module_name> import *
+
+ex 14)
+from modules import *
+
+f1()
+f2(10,20)
+
+Note:
+This isn’t necessarily recommended in large-scale production code. It’s a bit dangerous because you are entering names into the local symbol table en masse.
+
+
+ex 15)
+from module,shapes import *
+
+f1()
+f2(10,20)
+tri(10,20)
+
+//error
+
+from <module_name> import <name> as <alt_name>
+
+It is also possible to import individual objects but enter them into the local symbol table with alias names:
+
+
+ex 16)
+>>> from modules import a as integer,f1 as fun1
+>>> a
+10
+>>> fun1()
+hi
+
+object aliasing solve naming collisions.
+
+import <module_name> as <alt_name>
+You can also import an entire module under an alternate name:
+
+import <module_name> as <alt_name>
+
+ex 17)
+
+>>> import modules as mod
+>>> mod.a
+10
+>>> mod.f1()
+hi
+
+
+
+Module contents can be imported from within a function definition. In that case, the import does not occur until the function is called:
+
+ex 18)
+def b1():
+   from modules import f1
+   f1()
+
+b1()
+
+Python 3 does not allow the indiscriminate import * syntax from within a function:
+
+ex 19)
+>>> def b1():
+...     from modules import *
+...     f1()
+...
+  File "<stdin>", line 1
+SyntaxError: import * only allowed at module level
+>>>
+
+A try statement with an except ImportError clause can be used to guard against unsuccessful import attempts:
+
+ex 20)
+try:
+   import boo
+except ImportError:
+   print("module not found")
+
+module not found
+
+
+ex 21)
+
+ try:
+    # Existing module, but non-existent object
+    from modules import dodo
+ except ImportError:
+     print('Object not found in module')
+
+
+Object not found in module
+
+The dir() Function
+The built-in function dir() returns a list of defined names in a namespace. Without arguments, it produces an alphabetically sorted list of names in the current local symbol 
+
+ex 22)
+>>> dir()
+
+>>> l=[1,2,3,4,5]
+
+>>> dir()
+
+>>> class Foo:
+      pass
+
+>>> dir()
+
+>>> x=Foo()
+>>> x
+
+>>> dir()
+
+Note how the first call to dir() above lists several names that are automatically defined and already in the namespace when the interpreter starts. As new names are defined (l,Foo, x), they appear on subsequent calling of dir().
+
+This can be useful for identifying what exactly has been added to the namespace by an import statement:
+
+ex 23)
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'clear', 'os', 'sys']
+
+>>> import modules
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'clear', 'modules', 'os', 'sys']
+
+>>> modules.a
+10
+
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'clear', 'modules', 'os', 'sys']
+
+>>> from modules import a
+>>> a
+10
+
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'clear', 'modules', 'os', 'sys']
+
+ex  24) 
+
+>>> from modules import a as integer
+>>> integer
+10
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'clear', 'integer', 'modules', 'os', 'sys']
+
+When given an argument that is the name of a module, dir() lists the names defined in the module:
+
+ex  25) 
+
+>>> import modules
+>>> dir(modules)
+['Foo', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'b', 'f1', 'f2', 'f3', 'f4', 'f5']
+
+
+ex 26)
+
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'clear', 'integer', 'modules', 'os', 'sys']
+
+>>> from modules import *
+>>> dir()
+['Foo', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'b', 'clear', 'f1', 'f2', 'f3', 'f4', 'f5', 'integer', 'modules', 'os', 'sys']
+
+Executing a Module as a Script
+
+
+Any .py file that contains a module is essentially also a Python script, and there isn’t any reason it can’t be executed like one.
+
+Here again is modules.py as it was defined above:
+
+C:\Users\user>e:
+E:\>cd DataScience
+E:\DataScience>python modules.py
+
+Now it should be a little more interesting:
+
+10
+20
+hi
+hi 1 2
+
+E:\DataScience>
+Unfortunately, now it also generates output when imported as a module:
+
+>>> import modules
+10
+20
+hi
+hi 1 2
+>>>
+
+
+This is probably not what you want. It isn’t usual for a module to generate output when it is imported.
+
+Wouldn’t it be nice if you could distinguish between when the file is loaded as a module and when it is run as a standalone script?
+
+Ask and ye shall receive.
+
+When a .py file is imported as a module, Python sets the special dunder variable __name__ to the name of the module. However, if a file is run as a standalone script, __name__ is (creatively) set to the string '__main__'. Using this fact, you can discern which is the case at run-time and alter behavior accordingly:s
+
+modules1.py
+----------
+a=10
+def f1():
+  print(a)
+class Foo:
+      pass
+     
+
+if(__name__=='__main__'):
+		print(a)
+		f1()
+		x=Foo()
+                print(x)
+
+save
+
+E:\DataScience>python modules1.py
+10
+20
+hi
+hi 1 2
+
+>>> import  modules1
+>>> modules.a
+10
+
+Modules are often designed with the capability to run as a standalone script for purposes of testing the functionality that is contained within the module. This is referred to as unit testing. For example, suppose you have created a module fact.py containing a factorial function, as follows:
+
+
+fact.py
+
+def fact(n):
+    return 1 if n == 1 else n * fact(n-1)
+
+if (__name__ == '__main__'):
+    import sys
+    if len(sys.argv) > 1:
+        print(fact(int(sys.argv[1])))
+
+The file can be treated as a module, and the fact() function imported:
+
+>>> from fact import fact
+>>> fact(6)
+720
+	
+But it can also be run as a standalone by passing an integer argument on the command-line for testing:
+
+E:\DataScience>python fact.py  6
+720
+
+E:\DataScience>python fact.py  5
+120
+
+Reloading a Module
+
+#fact.py
+a=10
+print(a)
+
+def fact(n):
+    return 1 if n == 1 else n * fact(n-1)
+
+if (__name__ == '__main__'):
+    import sys
+    if len(sys.argv) > 1:
+        print(fact(int(sys.argv[1])))
+
+>>> import fact
+>>> fact.a
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'fact' has no attribute 'a'
+
+>>> import importlib
+>>> importlib.reload(fact)
+10
+<module 'fact' from 'e:/DataScience\\fact.py'>
+>>> fact.a
+10
+>>>
+
+Built in Modules in Python:
+
+There are many built in modules in Python. Some of them are as follows:
+
+math, random , threading , collections , os , mailbox , string , time , tkinter etc..
+
+Each module has a number of built in functions which can be used to perform various functions.
+
+1) math:
+
+Using math module , you can use different built in mathematical functions.
+
+Functions:
+
+Function	Description
+ceil(n)	        It returns the next integer number of the given number
+sqrt(n)	        It returns the Square root of the given number.
+exp(n)	        It returns the natural logarithm e raised to the given number
+floor(n)	It returns the previous integer number of the given number.
+log(n,baseto)	It returns the natural logarithm of the number.
+pow(baseto, exp)It returns baseto raised to the exp power.
+sin(n)	        It returns sine of the given radian.
+cos(n)	        It returns cosine of the given radian.
+tan(n)	        It returns tangent of the given radian.
+
+
+import math  
+a=4.6  
+print math.ceil(a)  
+print math.floor(a)  
+b=9  
+print math.sqrt(b)  
+print math.exp(3.0)  
+print math.log(2.0)  
+print math.pow(2.0,3.0)  
+print math.sin(0)  
+print math.cos(0)  
+print math.tan(45)  
+
+Constants	  Descriptions
+Pi	          Returns constant ? = 3.14159...
+ceil(n)	          Returns constant e= 2.71828...
+
+import math  
+  
+print math.pi  
+print math.e  
+
+
+2) random:
+
+The random module is used to generate the random numbers. It provides the following two built in functions:
+
+
+Function	Description
+random()	It returns a random number between 0.0 and 1.0 where 1.0 is exclusive.
+
+randint(x,y)	It returns a random number between x and y where both the numbers are inclusive.
+
+
+import random  
+  
+print random.random()  
+print random.randint(2,8)  
+
+
+Python Packages
+
+Suppose you have developed a very large application that includes many modules. As the number of modules grows, it becomes difficult to keep track of them all if they are dumped into one location. This is particularly so if they have similar names or functionality. You might wish for a means of grouping and organizing them.
+
+packages
+--------
+A package is collection of modules.
+functions/modules/packages are used to modularise code.
+A package is reusable
+A package avoids naming conflict.
+
+until Python 3.3 version using __init__.py is necessary.In latest versions is not mandotary.
+
+Directory
+  __init__.py
+  module1.py
+  module2.py
+
+By default the folder in which we place .py files is a package.
+
+DataScience
+   moudles.py
+   shapes.py
+
+import packages
+---------------
+we can import in 3 ways
+i)Normal import
+ii)from .. import ..
+iii)from .. import *
+
+Aliasing
+
+Normal import
+-------------
+syntax
+------
+Type1
+-----
+import packagename.module1,packagename.module2,......
+
+Type2
+-----
+import packagename.module1 as alias1,packagename.module1 as alias2,...
+
+ex 1)
+>>> import DataScience.shapes
+>>> DataScience.shapes.tri(10.0,20.0)
+100.0
+
+>>> import DataScience.shapes as s
+>>> s.tri(10.0,20.0)
+100.0
+>>>
+
+
+from.. import ..
+----------------
+
+syntax
+------
+from packagename import module1,module2,...
+
+from packagename import module1 as alias1,module2 as alias2,...
+
+>>> from DataScience import modules,shapes
+>>> shapes.tri(1,2)
+1.0
+>>> modules.a
+10
+>>> modules.f1()
+hi
+
+type3:
+from packagename import *
+we should use this approach set all the modules in list in __init_.py
+
+Importing multiple packages
+
+>>> import DataScience.modules,DataScience.shapes
+>>> import DataScience.modules,python_online.aaaa
+>>> modules.a
+>>> DataScience.modules.a
+10
+>>> python_online.aaaa.f1()
+hello
+>>>
+
+subpackages
+-----------
+A package within another package.
+
+pack1
+   a.py
+   pack2
+   b.py
+
+
+How to import subpackages
+-------------------------
+import pack1.pack2.module1,pack1.pack2.module2,....
+
+>>> import pack11.pack2.a
+>>> pack11.pack2.a.f1()
+jessy
+>>>
+
+importing package in a function
+-------------------------------
+>>> def f1():
+...     import DataScience.modules as m
+...     m.f1()
+...
+>>> f1()
+hi
+>>>
+
+
+numpy-->Numerical python
+------------------------
+Python objects:	
+high-level number objects: integers, floating point
+containers: lists (costless insertion and append), dictionaries (fast lookup)
+
+
+Numpy provides
+--------------
+extension package to Python for multi-dimensional arrays
+closer to hardware (efficiency)
+designed for scientific computation (convenience)
+Also known as array oriented computing
+
+ex 1)
+import numpy as np
+a=np.array([1,2,3,4,5])
+print(a)
+
+usecases of numpy
+-----------------
+
+
+
+execution time ananlysis of numpy
+----------------------------------
+Python Array execution
+
+%timeit [i**2 for i in range(1000)]
+1000 loops, best of 3: 279 µs per loop
+
+numpy Array execution
+---------------------
+import  numpy as np
+a=np.arange(1000)
+%timeit a**2
+
+The slowest run took 192.66 times longer than the fastest. This could mean that an intermediate result is being cached.
+1000000 loops, best of 3: 1.73 µs per loop
+
+It is used to process and manage multi dimensional arrays also used to perform linear algebra operations.
+
+In linear algebra most operations are based on double and multi dimensional arrays.
+
+In machine learning also most of the models are expecting input data as multi dimensional arrays.
+
+Arrays
+
+when should we use 
+
+single 
+one dimensional Array is used to maintain list of values of homogenous types
+list of marks
+list of names
+list of prices
+list of objects
+list of fruits
+
+you'll use an array: a list of songs, a list of each keystroke a user clicks. Even in the JSON data format, you'll often use an array to hold a list of objects.
+
+TwoD
+       
+       onion    carrot  beetroot
+Mon     10       20       30
+Tue     20       10       40
+Wed     40       20       10
+Thu     10       10       10
+Fri     55       22       11
+Sat     11       66        11
+
+This 2D array with rows as weeks and cols as vegetables.
+
+Multi dimensional[more than 2D]
+Collection of more than 2Dimensions is known as Multi dimensional arrays.
+
+NumPy’s array class is called ndarray. 
+It is also known by the alias array.
+Note that numpy.array is not the same as the Standard Python Library class array.array, which only handles one-dimensional arrays and offers less functionality. 
+
+The more important attributes of an ndarray object are:
+
+ndarray.ndim
+
+the number of axes (dimensions) of the array.
+
+ndarray.shape
+the nmber of rows and cols
+
+ndarray.size
+the total number of elements of the array. This is equal to the product of the elements of shape.
+
+ndarray.dtype
+an object describing the type of the elements in the array. 
+One can create or specify dtype’s using standard Python types. 
+Additionally NumPy provides types of its own. numpy.int32, numpy.int16, and numpy.float64 are some examples.
+
+ndarray.itemsize
+the size in bytes of each element of the array. 
+For example, an array of elements of type float64 has itemsize 8 (=64/8), while one of type complex32 has itemsize 4 (=32/8). 
+It is equivalent to ndarray.dtype.itemsize.
+
+ndarray.data
+the buffer containing the actual elements of the array. 
+Normally, we won’t need to use this attribute because we will access the elements in an array using indexing facilities.
+
+
+Contructing 1D Arrays
+---------------------
+import numpy as np
+
+a = np.array([1, 2, 3, 4])
+
+print(a.shape)
+print(a.ndim)
+print(a.size)
+print(a.dtype)
+print(a.itemsize)
+print(a.data)
+
+
+
+Contructing 2D Arrays
+---------------------
+import numpy as np
+
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [1, 1, 1, 1],
+              [2, 3, 4, 5]
+              ])
+
+print(a.shape)
+print(a.ndim)
+print(a.size)
+print(a.dtype)
+print(a.itemsize)
+print(a.data)
+
+
+Contructing 3D Arrays
+---------------------
+import numpy as np
+
+a = np.array([[[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [1, 1, 1, 1],
+              [2, 3, 4, 5]
+              ],
+             [[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [1, 1, 1, 1],
+              [2, 3, 4, 5]
+              ]]
+             )
+
+print(a.shape)
+print(a.ndim)
+print(a.data)
+print(a.itemsize)
+print(a.dtype)
+print(a.size)
+
+
+creating array and setting shape for an array
+---------------------------------------------
+import  numpy as np
+a = np.arange(15).reshape(3, 5)
+print(a)
+
+
+There are several ways to create arrays.
+
+For example, you can create an array from a regular Python list or tuple using the array function. 
+The type of the resulting array is deduced from the type of the elements in the sequences.
+
+
+Numpy also provides many functions to create arrays:
+
+
+# Create an array of all zeros
+import  numpy as np
+a=np.zeros((3,3),dtype='int64')
+print(a)
+
+# Create an array of all ones
+import  numpy as np
+a=np.ones((3,3),dtype='int64')
+print(a)
+
+
+# Create a constant array
+import  numpy as np
+a=np.full((3,3),7,dtype='int64')
+print(a)
+
+# Create a 2x2 identity matrix
+import  numpy as np
+a=np.eye(3)
+print(a)
+
+# Create an array filled with random values
+import  numpy as np
+a=np.random.random((3,3))
+print(a)
+
+Array indexing
+Numpy offers several ways to index into arrays.
+
+Slicing: Similar to Python lists, numpy arrays can be sliced. Since arrays may be multidimensional, you must specify a slice for each dimension of the array:
+
+import numpy as np
+
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# Use slicing to pull out the subarray consisting of the first 2 rows
+# and columns 1 and 2; b is the following array of shape (2, 2):
+# [[2 3]
+#  [6 7]]
+
+b1 = a[0:1,1:3]
+b2 = a[0:2,1:3]
+b3 = a[0:3,1:3]
+
+
+print("Slice 1 :\n",b1)
+print("Slice 2 :\n",b2)
+print("Slice 3 :\n",b3)
+
+
+# A slice of an array is a view into the same data, so modifying it
+# will modify the original array.
+
+print(a[0,1])
+print(b3[0,0])
+
+b3[0,0]=200
+
+print(a[0,1])
+print(b3[0,0])
+
+You can also mix integer indexing with slice indexing. However, doing so will yield an array of lower rank than the original array. Note that this is quite different from the way that MATLAB handles array slicing:
+
+
+import numpy as np
+
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+
+# Two ways of accessing the data in the middle row of the array.
+# Mixing integer indexing with slices yields an array of lower rank,
+# while using only slices yields an array of the same rank as the
+# original array:
+
+row1=a[0,:]# Rank 1 view of the first row of a
+row2=a[1,:]# Rank 1 view of the second row of a
+row3=a[2,:]# Rank 1 view of the third row of a
+
+row11=a[0:1,:]# Rank 2 view of the first row of a
+row22=a[1:2,:]# Rank 2 view of the second row of a
+row33=a[2:3,:]# Rank 2 view of the third row of a
+
+
+print(row1)
+print(row2)
+print(row3)
+print(row11)
+print(row22)
+print(row33)
+
+print(row1,row1.shape)
+print(row11,row11.shape)
+
+# We can make the same distinction when accessing columns of an array:
+col1=a[:,0]
+col2=a[:,1]
+col3=a[:,2]
+
+col11=a[:,0:1]
+col22=a[:,1:2]
+col33=a[:,2:3]
+
+
+print(col1)
+print(col2)
+print(col3)
+
+print(col11)
+print(col22)
+print(col33)
+
+print(col1,col1.shape)
+print(col11,col11.shape)
+
+
+‎A project to analyze large survey result that contains many open-ended responses using pandas, NLTK and some interesting techniques for text-based data.
+
+Here is the link to the video:
+
+https://youtu.be/Aj7xJ0k7W_U
+
+Please note the AYLIEN Application ID and Key were deleted after recording the video. You need to subscribe to AYLIEN free services to get your own ID and Key.
+
+You can access the code from here.
+
+https://github.com/hodhabi/MyTextAnalysisINPython
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
