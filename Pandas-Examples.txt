@@ -1,0 +1,801 @@
+
+How to read data from file using Pandas
+---------------------------------------
+Ex 1)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+orders.head()
+
+Ex 2)
+import pandas as pd
+
+user_cols = ['user_id', 'age', 'gendar', 'occupation', 'zip_code']
+movies = pd.read_table('movieusers.csv', sep='|', header=None, names=user_cols)
+movies.head()
+
+How to select series from a Dataframe
+-------------------------------------
+
+Ex 3)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.head()
+
+type(ufo)
+
+type(ufo['City'])
+
+ufo.shape
+
+ufo['Location'] = ufo.City +','+ ufo.State
+
+ufo.head()
+
+
+What is the difference between method and attribute
+---------------------------------------------------
+Ex 4)
+import pandas as pd
+
+movies = pd.read_csv('imdb_1000.csv')
+
+movies.head()
+
+movies.describe()
+
+movies.shape
+
+movies.dtypes
+
+movies.describe(include=['object'])
+
+How to rename the columns in Pandas
+-----------------------------------
+Ex 5)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+ufo.head()
+
+Approch-1
+ufo.columns
+
+ufo.rename(columns = {'Colors Reported':'Colors_Reported','Shape Reported':'Shape_Reported'}, inplace=True)
+
+ufo.head()
+
+Approch-2
+ufo_cols = ['city', 'colors reported', 'shape reported', 'state', 'time']
+ufo.columns = ufo_cols
+
+ufo.head()
+
+Approch-3
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv', names=ufo_cols, header=0)
+
+ufo.head()
+
+ufo.columns
+
+ufo.columns = ufo.columns.str.replace(' ','-')
+
+ufo.head()
+
+How to remove column or row in pandas dataframe
+-----------------------------------------------
+Ex 6)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.drop('Colors Reported', axis=1, inplace=True)
+
+ufo.head()
+
+Ex 7)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.drop(['City','State'], axis=1, inplace=True)
+
+ufo.head()
+
+Ex 8)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.drop([0,1], axis=0, inplace=True)
+
+ufo.head()
+
+(or)
+
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.drop([0,1], inplace=True) (//axis = 0 is default value)
+
+ufo.head()
+
+How to sort the Dataframe and Series in Pandas
+----------------------------------------------
+Ex 9)
+import pandas as pd
+
+movies = pd.read_csv('imdb_1000.csv')
+
+New Approch(Pandas 1.7+)
+movies.title.sort_values(ascending=False)
+
+movies.sort_values('title', ascending=False)
+
+movies.sort_values(['content_rating','duration'])
+
+Old Approch(Pandas >1.7)
+movies.title.order(ascending=False)
+
+movies.sort('title', ascending=False)
+
+How to Filter the data in Pandas
+--------------------------------
+Ex 10)
+import pandas as pd
+
+movies = pd.read_csv('imdb_1000.csv')
+
+movies.head()
+
+Approch-1
+---------
+booleans = []
+
+step-1
+for length in movies['duration']:
+    if length >= 200:
+        booleans.append(True)
+    else:
+        booleans.append(False)
+        
+booleans[0:10]
+
+step-2
+is_long = pd.Series(booleans)
+is_long.head()
+
+step-3
+movies[is_long]
+
+Approch-2
+is_long = movies.duration >= 200
+is_long.head()
+
+Approch-3
+movies[movies.duration >= 200]
+
+(or)
+
+movies[movies.duration >= 200]['genre']
+
+(or)
+
+movies.loc[movies.duration >= 200,'genre']
+
+How to filter multiple series values in pandas
+----------------------------------------------
+Ex 11)
+import pandas as pd
+
+movies = pd.read_csv('imdb_1000.csv')
+
+movies.head()
+
+#movies[(movies.duration >= 200) & (movies.genre == 'Drama')]
+
+#movies[(movies.duration >= 200) | (movies.genre == 'Drama')]
+
+#(movies.duration >= 200) & (movies.genre == 'Drama')
+
+(movies.duration >= 200) | (movies.genre == 'Drama')
+
+How to select few columns from csv file using pandas
+----------------------------------------------------
+Ex 12)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv', usecols=[0,4])
+
+ufo.head()
+
+(or)
+
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv',usecols=['City','State'])
+
+ufo.head()
+
+How to iterate series in pandas dataframe
+-----------------------------------------
+Ex 13)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+for c in ufo.City:
+    print(c)
+
+How to iterate pandas dataframe
+-------------------------------
+Ex 14)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+for index, row in ufo.iterrows():
+    print(index, row.City, row.State)
+
+How to filter numeric datatypes in pandas
+-----------------------------------------
+Ex 15)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv')
+drinks.dtypes
+
+import numpy as np
+drinks.select_dtypes(include=[np.number]).dtypes
+
+How to get all stats of describe()
+----------------------------------
+Ex 16)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv')
+drinks.dtypes
+
+drinks.describe(include= 'all')
+
+(or)
+
+drinks.describe(include= ['object','float64'])
+
+How to use axis parameter in Pandas
+-----------------------------------
+Ex 17)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv')
+
+#drinks.head()
+
+drinks.drop('continent', axis=1).head()
+
+Ex 18)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv')
+
+#drinks.head()
+
+drinks.drop(2, axis=0).head()
+
+Ex 19)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv')
+
+#drinks.head()
+
+drinks.mean(axis = 'index').head()
+
+
+Ex 20)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv')
+
+#drinks.head()
+
+drinks.mean(axis = 'columns').head()
+
+How to use string methods in Pandas
+------------------------------------
+Ex 21)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders.item_name.str.upper()
+
+Ex 22)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders[orders.item_name.str.contains('Chicken')]
+
+Ex 23)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders.choice_description.str.replace('[','').head()
+
+Ex 24)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders.choice_description.str.replace(']','').head()
+
+Ex 25)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders.choice_description.str.replace('[','').str.replace(']','').head()
+
+Ex 26)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders.choice_description.str.replace('[\[\]]', '').head()
+
+How to change datatype of series in Pandas
+------------------------------------------
+Ex 27)
+drinks['beer_servings'] = drinks.beer_servings.astype(float)
+
+drinks.dtypes
+
+Ex 28)
+drinks = pd.read_csv('drinks.csv', dtype={'beer_servings':float})
+
+drinks.dtypes
+
+Ex 29)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders.item_price.str.replace('$','').astype(float).mean()
+
+Ex 30)
+import pandas as pd
+
+orders = pd.read_table('chipotle.tsv')
+
+#orders.head()
+
+orders.item_name.str.contains('Chicken').astype(int).head()
+
+How to use group by in Pandas
+-----------------------------
+Ex 31)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv')
+
+#drinks.head()
+
+drinks.beer_servings.mean()
+
+drinks.head()
+
+drinks.groupby('continent').beer_servings.mean()
+
+drinks.groupby('continent').beer_servings.agg(['min','max','count','mean'])
+
+%matplotlib inline
+drinks.groupby('continent').mean().plot(kind='bar')
+
+How to explore Pandas series
+----------------------------
+Ex 32)
+import pandas as pd
+
+movies = pd.read_csv('imdb_1000.csv')
+
+movies.head()
+
+movies.dtypes
+
+movies.genre.describe()
+
+movies.genre.value_counts()
+
+movies.genre.value_counts(normalize=True)
+
+type(movies.genre.value_counts())
+
+movies.genre.value_counts().head()
+
+movies.genre.unique()
+
+movies.genre.nunique()
+
+pd.crosstab(movies.genre, movies.content_rating)
+
+movies.duration.describe()
+
+movies.duration.mean()
+
+movies.duration.value_counts().head()
+
+%matplotlib inline
+movies.duration.plot(kind='hist')
+
+movies.genre.value_counts().plot(kind='bar')
+
+How to handle missing values in pandas
+---------------------------------------
+Ex 33)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.tail()
+
+ufo.isnull().tail()
+
+ufo.notnull().tail()
+
+ufo.isnull().sum()
+
+ufo[ufo.City.isnull()].head()
+
+ufo.shape
+
+ufo.dropna(how='any').shape
+
+ufo.shape
+
+ufo.dropna(how='all').shape
+
+ufo.dropna(subset=['City', 'Shape Reported'], how='any').shape
+
+ufo.dropna(subset=['City', 'Shape Reported'], how='all').shape
+
+ufo['Shape Reported'].value_counts().head()
+
+ufo['Shape Reported'].value_counts(dropna=False).head()
+
+ufo['Shape Reported'].fillna(value='VARIOUS', inplace=True)
+
+ufo['Shape Reported'].value_counts().head()
+
+How do I select multiple rows and columns from a pandas DataFrame
+--------------------------------------------------------
+Ex 34)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.head(3)
+
+loc method
+----------
+The loc method is used to select rows and columns by label. You can pass it:
+
+A single label
+A list of labels
+A slice of labels
+A boolean Series
+A colon (which indicates "all labels")
+
+
+# row 0, all columns
+ufo.loc[0, :]
+
+# rows 0 and 1 and 2, all columns
+ufo.loc[[0, 1, 2], :]
+
+
+# rows 0 through 2 (inclusive), all columns
+ufo.loc[0:2, :]
+
+:
+# this implies "all columns", but explicitly stating "all columns" is better
+ufo.loc[0:2]
+
+# rows 0 through 2 (inclusive), column 'City'
+ufo.loc[0:2, 'City']
+
+# rows 0 through 2 (inclusive), columns 'City' and 'State'
+ufo.loc[0:2, ['City', 'State']]
+
+# rows 0 through 2 (inclusive), columns 'City' through 'State' (inclusive)
+ufo.loc[0:2, 'City':'State']
+
+# accomplish the same thing using 'head' and 'drop'
+ufo.head(3).drop('Time', axis=1)
+
+
+# rows in which the 'City' is 'Oakland', column 'State'
+ufo.loc[ufo.City=='Oakland', 'State']
+
+
+iloc method
+-----------
+The iloc method is used to select rows and columns by integer position. You can pass it:
+
+A single integer position
+A list of integer positions
+A slice of integer positions
+A colon (which indicates "all integer positions")
+
+# rows in positions 0 and 1, columns in positions 0 and 3
+ufo.iloc[[0, 1], [0, 3]]
+
+# rows in positions 0 through 2 (exclusive), columns in positions 0 through 4 (exclusive)
+ufo.iloc[0:2, 0:4]
+
+# rows in positions 0 through 2 (exclusive), all columns
+ufo.iloc[0:2, :]
+
+Ex 35)
+import pandas as pd
+
+drinks = pd.read_csv('drinks.csv', index_col='country')
+
+drinks.head()
+
+
+# row with label 'Albania', column in position 0
+drinks.ix['Albania', 0]
+
+# row in position 1, column with label 'beer_servings'
+drinks.ix[1, 'beer_servings']
+
+Rules for using numbers with ix:
+
+If the index is strings, numbers are treated as integer positions, and thus slices are exclusive on the right.
+
+If the index is integers, numbers are treated as labels, and thus slices are inclusive.
+
+# rows 'Albania' through 'Andorra' (inclusive), columns in positions 0 through 2 (exclusive)
+drinks.ix['Albania':'Andorra', 0:2]
+
+# rows 0 through 2 (inclusive), columns in positions 0 through 2 (exclusive)
+ufo.ix[0:2, 0:2]
+
+Inplace parameter in Pandas
+---------------------------
+Ex 36)
+import pandas as pd
+
+ufo = pd.read_csv('ufo.csv')
+
+ufo.head()
+
+ufo.shape
+
+# remove the 'City' column (doesn't affect the DataFrame since inplace=False)
+ufo.drop('City', axis=1).head()
+
+
+# confirm that the 'City' column was not actually removed
+ufo.head()
+
+# remove the 'City' column (does affect the DataFrame since inplace=True)
+ufo.drop('City', axis=1, inplace=True)
+
+
+# confirm that the 'City' column was actually removed
+ufo.head()
+
+How to create dummy or indicator varaibles in Pandas
+----------------------------------------------------
+Ex 37)
+import pandas as pd
+
+# read the training dataset from Kaggle's Titanic competition
+train = pd.read_csv('kaggletrain.csv')
+
+train.head()
+
+
+# create the 'Sex_male' dummy variable using the 'map' method
+train['Sex_male'] = train.Sex.map({'female':0, 'male':1})
+
+train.head()
+
+# alternative: use 'get_dummies' to create one column for every possible value
+pd.get_dummies(train.Sex).head()
+
+
+Generally speaking:
+
+If you have "K" possible values for a categorical feature, you only need "K-1" dummy variables to capture all of the information about that feature.
+One convention is to drop the first dummy variable, which defines that level as the "baseline".
+
+# drop the first dummy variable ('female') using the 'iloc' method
+pd.get_dummies(train.Sex).iloc[:, 1:].head()
+
+
+# add a prefix to identify the source of the dummy variables
+pd.get_dummies(train.Sex, prefix='Sex').iloc[:, 1:].head()
+
+# use 'get_dummies' with a feature that has 3 possible values
+pd.get_dummies(train.Embarked, prefix='Embarked').head(10)
+
+# save the DataFrame of dummy variables and concatenate them to the original DataFrame
+embarked_dummies = pd.get_dummies(train.Embarked, prefix='Embarked').iloc[:, 0:]
+train = pd.concat([train, embarked_dummies], axis=1)
+train.head()
+
+How to work with Date and Time values in Pandas
+-----------------------------------------------
+Ex 38)
+import pandas as pd
+
+
+# read a dataset of UFO reports into a DataFrame
+ufo = pd.read_csv('ufo.csv')
+
+ufo.head()
+
+
+# 'Time' is currently stored as a string
+ufo.dtypes
+
+
+# convert 'Time' to datetime format
+ufo['Time'] = pd.to_datetime(ufo.Time)
+
+ufo.head()
+
+ufo.dtypes
+
+# convenient Series attributes are now available
+ufo.Time.dt.hour.head()
+
+ufo.Time.dt.weekday_name.head()
+
+ufo.Time.dt.dayofyear.head()
+
+
+# convert a single string to datetime format (outputs a timestamp object)
+ts = pd.to_datetime('1/1/1999')
+ts
+
+# compare a datetime Series with a timestamp
+ufo.loc[ufo.Time >= ts, :].head()
+
+# perform mathematical operations with timestamps (outputs a timedelta object)
+ufo.Time.max() - ufo.Time.min()
+
+# timedelta objects also have attributes you can access
+(ufo.Time.max() - ufo.Time.min()).days
+
+
+# allow plots to appear in the notebook
+%matplotlib inline
+
+
+# count the number of UFO reports per year
+ufo['Year'] = ufo.Time.dt.year
+ufo.Year.value_counts().sort_index().head()
+
+
+# plot the number of UFO reports per year (line plot is the default)
+ufo.Year.value_counts().sort_index().plot()
+
+How do I find and remove duplicate rows in pandas?
+---------------------------------------------------
+
+Ex 39) user_cols = ['user_id', 'age', 'gender', 'occupation', 'zip_code']
+
+users = pd.read_table('movieusers.csv', sep='|', header=None, names=user_cols, index_col='user_id')
+
+users.head()
+
+users.shape
+
+
+# detect duplicate zip codes: True if an item is identical to a previous item
+
+users.zip_code.duplicated().tail()
+
+
+# count the duplicate items (True becomes 1, False becomes 0)
+users.zip_code.duplicated().sum()
+
+# detect duplicate DataFrame rows: True if an entire row is identical to a previous row
+
+users.duplicated().tail()
+
+# count the duplicate rows
+users.duplicated().sum()
+
+Logic for duplicated:
+----------------------
+keep='first' (default): Mark duplicates as True except for the first occurrence.
+
+keep='last': Mark duplicates as True except for the last occurrence.
+
+keep=False: Mark all duplicates as True.
+
+
+# examine the duplicate rows (ignoring the first occurrence)
+users.loc[users.duplicated(keep='first'), :]
+
+
+# examine the duplicate rows (ignoring the last occurrence)
+users.loc[users.duplicated(keep='last'), :]
+
+
+# examine the duplicate rows (including all duplicates)
+users.loc[users.duplicated(keep=False), :]
+
+
+# drop the duplicate rows (inplace=False by default)
+users.drop_duplicates(keep='first').shape
+
+
+users.drop_duplicates(keep='last').shape
+
+
+users.drop_duplicates(keep=False).shape
+
+
+# only consider a subset of columns when identifying duplicates
+users.duplicated(subset=['age', 'zip_code']).sum()
+
+users.drop_duplicates(subset=['age', 'zip_code']).shape
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
