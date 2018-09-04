@@ -1,0 +1,56 @@
+a.ravel():
+(i) Return only reference/view of original array
+(ii) If you modify the array you would notice that the value of original array also changes.
+(iii) Ravel is faster than flatten() as it does not occupy any memory.
+(iv) Ravel is a library-level function.
+
+a.flatten() :
+(i) Return copy of original array
+(ii) If you modify any value of this array value of original array is not affected.
+(iii) Flatten() is comparatively slower than ravel() as it occupies memory.
+(iv) Flatten is a method of an ndarray object.
+
+
+Ex:
+import numpy as np
+ 
+# Create a numpy array
+a = np.array([(1,2,3,4),(3,1,4,2)])
+ 
+# Let's print the array a
+print ("Original array:\n ") 
+print(a)
+ 
+# To check the dimension of array (dimension =2) ( and type is numpy.ndarray )
+print ("Dimension of array-> " , (a.ndim))
+ 
+ 
+print("\nOutput for RAVEL \n") 
+# Convert nd array to 1D array
+b = a.ravel()
+ 
+# Ravel only passes a view of original array to array 'b'
+print(b)
+b[0]=1000
+print(b)
+ 
+# Note here that value of original array 'a' at also a[0][0] becomes 1000
+print(a)
+ 
+# Just to check the dimension i.e. 1 (and type is same numpy.ndarray )
+print ("Dimension of array->" ,(b.ndim))
+ 
+print("\nOutput for FLATTEN \n") 
+ 
+# Convert nd array to 1D array
+c = a.flatten()
+ 
+# Flatten passes copy of original array to 'c'
+print(c)
+c[0]=0
+print(c)
+ 
+# Note that by changing value of c there is no affect on value of original array 'a'
+print(a)
+ 
+print ("Dimension of array-> " , (c.ndim))

@@ -1,0 +1,452 @@
+Python Object-oriented Programming
+-----------------------------------
+
+1) Classes and Instance Variables in Python
+
+ex 1) class Employee:
+ 	pass
+	
+      emp1 = Employee()
+      emp2 = Employee()
+
+      print(emp1)
+      print(emp2)
+
+      emp1.firstname = 'kalyan'
+      emp1.lastname = 'k'
+      emp1.emil = 'kalyan.k@gvipl.com'
+      emp1.pay = 200000
+
+      emp2.firstname = 'krishna'
+      emp2.lastname = 'k'
+      emp2.email = 'krishna.k@gvipl.com'
+      emp2.pay = 100000
+
+      print(emp1.email)
+      print(emp2.pay)
+
+
+ex 2) class Employee:
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+  
+	
+      emp1 = Employee('kalyan','k',200000)
+      emp2 = Employee('krishna','p',100000)
+
+      
+      print(emp1.email)
+      print(emp2.pay)
+
+#print('{} {}'.format(emp1.firstname,
+emp1.lastname))
+
+
+
+ex 3) class Employee:
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+
+
+	def fullname(self):
+	   retutn '{} {}'.format(self.firstname,
+self.lastname)
+  
+	
+      emp1 = Employee('kalyan','k',200000)
+      emp2 = Employee('krishna','p',100000)
+
+      
+      print(emp1.email)
+      print(emp2.pay)
+      print(emp1.fullname())
+      print(emp2.fullname())
+      print(Employee.fullname())
+      
+
+ex 4) class Employee:
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+
+
+	def fullname():
+	   retutn '{} {}'.format(self.firstname,
+self.lastname)
+  
+	
+      emp1 = Employee('kalyan','k',200000)
+      emp2 = Employee('krishna','p',100000)
+
+      
+   
+      print(emp1.fullname())
+      print(emp2.fullname())
+      print(Employee.fullname(emp1))
+
+
+Class Variables:
+----------------
+
+ex 5) class Employee:
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+
+       def fullname(self):
+           retutn '{} {}'.format(self.firstname,
+self.lastname)
+
+      def apply_raise(self):
+	  self.pay = int(self.pay * 1.04)
+
+
+emp1 = Employee('Kalyan', 'k',200000)
+emp2 = Employee('Krishna','p',100000)
+
+
+print(emp1.pay)
+emp1.apply_raise()
+print(emp1.pay)
+
+
+ex 6) class Employee:
+     
+        raise_amount = 1.04
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+
+       def fullname(self):
+           retutn '{} {}'.format(self.firstname,
+self.lastname)
+
+      def apply_raise(self):
+	  self.pay = int(self.pay * self.raise_amount) //Employee.raise_amount
+
+
+emp1 = Employee('Kalyan', 'k',200000)
+emp2 = Employee('Krishna','p',100000)
+
+
+print(emp1.pay)
+emp1.apply_raise()
+print(emp1.pay)
+	   
+
+#print(emp1.__dict__)
+#print(Employee.__dict__)
+
+#Employee.raise_amount = 1.05
+
+print(Employee.raise_amount)
+print(emp1.raise_amount)
+
+
+ex 7) class Employee:
+     
+        num_of_emps = 0
+        raise_amount = 1.04
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+        Employee.num_of_emps +=1
+
+       def fullname(self):
+           retutn '{} {}'.format(self.firstname,
+self.lastname)
+
+      def apply_raise(self):
+	  self.pay = int(self.pay * self.raise_amount) //Employee.raise_amount
+
+
+print(Employee.num_of_emps)
+
+emp1 = Employee('Kalyan', 'k',200000)
+emp2 = Employee('Krishna','p',100000)
+
+
+print(Employee.num_of_emps)
+
+Regular methods,Class methods and Static Methods
+---------------------------------
+ex 8) class Employee:
+     
+        num_of_emps = 0
+        raise_amount = 1.04
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+        Employee.num_of_emps +=1
+
+       def fullname(self):
+           retutn '{} {}'.format(self.firstname,
+self.lastname)
+
+      def apply_raise(self):
+	  self.pay = int(self.pay * self.raise_amount) //Employee.raise_amount
+
+@classmethod
+def set_raise_amt(cls, amount):
+    cls.raise_amt = amount
+
+emp_1 = Employee('kalyan', 'kumar', 50000)
+emp_2 = Employee('Test', 'Employee', 60000)
+
+Employee.set_raise_amt(1.05)
+
+print(Employee.raise_amt)
+print(e1.raise_amt)
+print(e2.raise_amt)
+
+emp_str_1 = 'Kalyan-k-100000'
+emp_str_2 = 'anil-kumar-200000'
+emp_str_3 = 'pradeep-kumar-50000'
+
+first, last, pay = emp_str_1.split('-')
+new_emp_1 = Employee(first, last,pay)
+
+
+ex 9) class Employee:
+     
+        num_of_emps = 0
+        raise_amount = 1.04
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+        Employee.num_of_emps +=1
+
+       def fullname(self):
+           retutn '{} {}'.format(self.firstname,
+self.lastname)
+
+      def apply_raise(self):
+	  self.pay = int(self.pay * self.raise_amount) //Employee.raise_amount
+
+@classmethod
+def set_raise_amt(cls, amount):
+    cls.raise_amt = amount
+
+@classmethod
+def from_string(cls,emp_Str):
+    first,last,pay = emp_Str.split('-')
+    return cls(first,last,pay)
+
+emp_1 = Employee('kalyan', 'kumar', 50000)
+emp_2 = Employee('Test', 'Employee', 60000)
+
+Employee.set_raise_amt(1.05)
+
+print(Employee.raise_amt)
+print(e1.raise_amt)
+print(e2.raise_amt)
+
+emp_str_1 = 'Kalyan-k-100000'
+emp_str_2 = 'anil-kumar-200000'
+emp_str_3 = 'pradeep-kumar-50000'
+
+new_emp_1 = Employee.from_string(emp_str_1)
+
+print(new_emp_1.email)
+
+ex 10)
+ class Employee:
+     
+        num_of_emps = 0
+        raise_amount = 1.04
+ 	
+      	def __init__(self, firstname,lastname, pay)
+	self.firstname = firstname
+        self.lastname = lastname
+        self.pay = pay
+        self.email = firstname + '.' +lastname + '@gvipl.com'
+        Employee.num_of_emps +=1
+
+       def fullname(self):
+           retutn '{} {}'.format(self.firstname,
+self.lastname)
+
+      def apply_raise(self):
+	  self.pay = int(self.pay * self.raise_amount) //Employee.raise_amount
+
+@classmethod
+def set_raise_amt(cls, amount):
+    cls.raise_amt = amount
+
+@classmethod
+def from_string(cls,emp_Str):
+    first,last,pay = emp_Str.split('-')
+    return cls(first,last,pay)
+
+
+@staticmethod
+def is_workday(day):
+    if day.weekday() == 5 or day.weekday() == 6:
+      return False
+ return True
+
+
+
+emp_1 = Employee('kalyan', 'kumar', 50000)
+emp_2 = Employee('Test', 'Employee', 60000)
+
+import datetime
+my_date = datetime.date(2018,03,10)
+print(Employee.is_workday(my_date))
+
+Inheritance
+------------
+ex 11)
+class Employee:
+
+    raise_amt = 1.04
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.email = first + '.' + last + '@email.com'
+        self.pay = pay
+
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amt)
+
+
+class Developer(Employee):
+    raise_amt = 1.10
+
+    def __init__(self, first, last, pay, prog_lang):
+        super().__init__(first, last, pay)
+        #Employee.__init__(self, first, last, pay)
+        self.prog_lang = prog_lang
+
+
+class Manager(Employee):
+
+    def __init__(self, first, last, pay, employees=None):
+        super().__init__(first, last, pay)
+        #Employee.__init__(self, first, last, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+
+    def print_emps(self):
+        for emp in self.employees:
+            print('-->', emp.fullname())
+
+emp_1 = Employee('kalyan', 'kumar', 50000)
+emp_2 = Employee('Test', 'Employee', 60000)
+
+print(dev_1.pay)
+dev_1.apply_raise()
+print(dev_1.pay)
+
+# print(help(Developer))
+
+mgr_1 = Manager('Sunil', 'palaparthy', 90000, [dev_1])
+
+print(mgr_1.email)
+
+mgr_1.add_emp(dev_2)
+mgr_1.remove_emp(dev_1)
+
+mgr_1.print_emps()
+
+print(isinstance(mgr_1,Employee))
+print(issubclass(Developer,Employee))
+
+Magic or Dunder methods
+------------------------
+
+ex 12)
+class Employee:
+
+    raise_amt = 1.04
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.email = first + '.' + last + '@email.com'
+        self.pay = pay
+
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amt)
+
+    def __repr__(self):
+        return "Employee('{}', '{}', {})".format(self.first, self.last, self.pay)
+
+    def __str__(self):
+        return '{} - {}'.format(self.fullname(), self.email)
+
+    def __add__(self, other):
+        return self.pay + other.pay
+
+    def __len__(self):
+        return len(self.fullname())
+
+
+emp_1 = Employee('kalyan', 'kumar', 50000)
+emp_2 = Employee('Test', 'Employee', 60000)
+
+# print(emp_1 + emp_2)
+
+print(len(emp_1))
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+      

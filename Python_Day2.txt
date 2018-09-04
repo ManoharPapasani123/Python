@@ -1,0 +1,1989 @@
+1)List[]
+--------
+List: an ordered mutable collection of objects.
+
+A list in Python is very similar to the notion of an array in other
+programming languages, in that you can think of a list as being an indexed
+collection of related objects, with each slot in the list numbered from zero
+upward.
+
+Unlike arrays in a lot of other programming languages, though, lists are
+dynamic in Python, in that they can grow (and shrink) on demand. There
+is no need to predeclare the size of a list prior to using it to store any objects.
+
+Lists are also heterogeneous, in that you do not need to predeclare the type
+of the object you’re storing—you can mix’n’match objects of different types
+in the one list if you like.
+
+Lists are mutable, in that you can change a list at any time by adding,
+removing, or changing objects.
+
+ex 1) How to create list
+      
+      #empty list
+      my_list = []
+
+      #list of integers
+      my_list = [1,2,3,4,5]
+      
+      # list with mixed datatypes
+      my_list = [1, "Hello", 3.4]
+      
+      #nested_list
+      my_list = ["mouse", [8, 4, 6], ['a']]
+
+
+How to access elements from a list?
+-----------------------------------
+There are various ways in which we can access the elements of a list.
+
+1) List Index
+-------------
+We can use the index operator [] to access an item in a list. Index starts from 0. 
+So, a list having 5 elements will have index from 0 to 4.
+
+Trying to access an element other that this will raise an IndexError. The index must be an integer.
+We can't use float or other types, this will result into TypeError.
+
+Nested list are accessed using nested indexing.
+
+ex 1)my_list = ['p','r','o','b','e']
+
+
+    # Output: p
+    
+ print(my_list[0])
+
+
+ 
+    # Output: o
+     
+print(my_list[2])
+    
+    # Output: e
+
+     print(my_list[4])
+
+
+    
+   # Error! Only integer can be used for indexing
+# 
+     my_list[4.0]
+  
+   
+
+# Nested List 
+     
+n_list = ["Happy", [2,0,1,5]]
+
+
+
+   # Nested indexing
+
+   
+
+# Output: a
+     
+print(n_list[0][1]) 
+   
+   
+
+# Output: 5
+
+     print(n_list[1][3])
+
+
+2) Negative indexing
+--------------------
+Python allows negative indexing for its sequences. 
+The index of -1 refers to the last item, -2 to the second last item and so on.
+
+ex 1) my_list = ['p','r','o','b','e']
+
+
+
+     # Output: e
+
+       print(my_list[-1])
+
+
+
+     # Output: p
+
+       print(my_list[-5])
+
+
+How to slice lists in Python?
+-----------------------------
+We can access a range of items in a list by using the slicing operator (colon).
+
+ex 1) my_list = ['p','r','o','g','r','a','m','i','z']
+
+   # elements 3rd to 5th
+     
+print(my_list[2:5])
+
+
+
+   # elements beginning to 4th
+
+     print(my_list[:-5])
+
+   
+
+# elements 6th to end
+
+     print(my_list[5:])
+
+   
+
+# elements beginning to end
+     
+print(my_list[:])
+
+
+How to change or add elements to a list?
+----------------------------------------
+
+List are mutable, meaning, their elements can be changed unlike string or tuple.
+
+We can use assignment operator (=) to change an item or a range of items.
+
+ex 1) # mistake values
+
+      odd = [2, 4, 6, 8]
+
+
+
+      # change the 1st item    
+
+      odd[0] = 1            
+      
+
+# Output: [1, 4, 6, 8]
+       
+print(odd)
+
+      
+
+# change 2nd to 4th items
+      
+odd[1:4] = [3, 5, 7]  
+
+
+      # Output: [1, 3, 5, 7]
+       
+print(odd)  
+
+
+We can add one item to a list using append() method or add several items using extend() method.
+
+ex 2) odd = [1, 3, 5]
+
+      odd.append(7)
+
+     # Output: [1, 3, 5, 7]
+     print(odd)
+
+     odd.extend([9, 11, 13])
+
+    # Output: [1, 3, 5, 7, 9, 11, 13]
+    print(odd)
+
+
+We can also use + operator to combine two lists. This is also called concatenation.
+
+The * operator repeats a list for the given number of times.
+
+ex 3) odd = [1,3,5]
+      
+      #output:[1, 3, 5, 7, 9, 11]
+      print(odd + [7,9,11])
+    
+      #Output: ["re", "re", "re"]
+      print(["re"] * 3)
+
+Furthermore, we can insert one item at a desired location by using the method insert() 
+or insert multiple items by squeezing it into an empty slice of a list.
+
+ex 4) odd = [1, 9]
+
+
+      odd.insert(1,3)
+
+
+     # Output: [1, 3, 9] 
+      
+ print(odd)
+
+
+
+      odd[2:2] = [5, 7]
+
+
+     # Output: [1, 3, 5, 7, 9]
+       
+print(odd)
+
+How to delete or remove elements from a list?
+---------------------------------------------
+We can delete one or more items from a list using the keyword del. It can even delete the list entirely.
+
+ex 1) my_list = ['p','r','o','b','l','e','m']
+
+
+   
+    # delete one item
+
+      del my_list[2]
+
+
+    # Output: ['p', 'r', 'b', 'l', 'e', 'm']
+      
+print(my_list)
+
+
+
+    # delete multiple items
+      
+del my_list[1:5]
+    
+
+# Output: ['p', 'm']
+      
+print(my_list)
+
+
+
+    # delete entire list
+
+      del my_list       
+
+
+    # Error: List not defined
+
+     print(my_list)
+
+We can use remove() method to remove the given item or pop() method to remove an item at the given index.
+
+The pop() method removes and returns the last item if index is not provided. This helps us implement lists as stacks (first in, last out data structure).
+
+We can also use the clear() method to empty a list.
+  
+ex 2) my_list = ['p','r','o','b','l','e','m']
+
+     
+my_list.remove('p')
+
+
+     # Output: ['r', 'o', 'b', 'l', 'e', 'm']
+     
+print(my_list)
+
+
+
+     # Output: 'o'
+     
+print(my_list.pop(1))
+
+     
+
+# Output: ['r', 'b', 'l', 'e', 'm']
+     
+print(my_list)
+
+
+
+     # Output: 'm'
+     
+print(my_list.pop())
+
+
+
+     # Output: ['r', 'b', 'l', 'e']
+     
+print(my_list)
+
+     
+
+my_list.clear()
+     
+
+# Output: []
+     
+print(my_list)
+
+Some examples of Python list methods:
+ex 3) my_list = [3, 8, 1, 6, 0, 8, 4]
+
+
+
+     # Output: 1
+
+     print(my_list.index(8))
+
+
+
+     # Output: 2
+
+     print(my_list.count(8))
+
+
+
+     my_list.sort()
+
+
+    # Output: [0, 1, 3, 4, 6, 8, 8]
+    
+print(my_list)
+
+
+
+    my_list.reverse()
+
+
+   # Output: [8, 8, 6, 4, 3, 1, 0]
+   
+print(my_list)
+
+List Methods
+------------
+1)append()
+
+The append() method adds an item to the end of the list.
+
+The append() method adds a single item to the existing list. It doesn't return a new list; rather it modifies the original list.
+
+syntax:- list.append(item)
+
+append() Parameters
+The append() method takes a single item and adds it to the end of the list.
+
+The item can be numbers, strings, another list, dictionary etc.
+
+Return Value from append()
+As mentioned, the append() method only modifies the original list. It doesn't return any value.
+
+ex 1) animal =['cat','dog','rabbit']
+      animal.append('guinea pig')
+      print('Updated animal list: ', animal)
+
+ex 2) #Adding List to a List
+      animal = ['cat', 'dog', 'rabbit']
+      wild_animal = ['tiger', 'fox']
+      animal.append(wild_animal)
+      print('Updated animal list: ', animal)
+
+It's important to notice that, a single item (wild_animal list) is added to the animal list in the above program.
+
+If you need to add items of a list to the another list (rather than the list itself), extend() method is used.
+
+
+2)extend()
+The extend() extends the list by adding all items of a list (passed as an argument) to the end.
+
+syntax:- list.append(list1)
+
+extend() Parameters
+As mentioned, the extend() method takes a single argument (a list) and adds it to the end.
+
+If you need to add elements of other native datatypes (like tuple and set) to the list, you can simply use:
+
+list.extend(list(tuple_type))
+
+Return Value from extend()
+The extend() method only modifies the original list. It doesn't return any value.
+
+ex 1) language = ['French', 'English', 'German']
+      language1 = ['Spanish', 'Portuguese']
+      language.extend(language1)
+      print('Language List: ', language)
+
+
+ex 2)#Add Elements of Tuple and Set to List
+
+     # language list
+
+     language = ['French', 'English', 'German']
+
+
+     # language tuple
+
+     language_tuple = ('Spanish', 'Portuguese')
+     
+
+# language set
+
+     language_set = {'Chinese', 'Japanese'}
+     
+
+# appending element of language tuple
+     
+language.extend(language_tuple)
+     
+
+print('New Language List: ', language)
+     
+
+# appending element of language set
+     language.extend(language_set)
+
+
+     print('Newest Language List: ', language)
+
+The native datatypes like tuple and set passed to extend() method is automatically converted to list. And, the elements of the list are appended to the end.
+
+You can also add items of a list to another list using + or += operator. For example,
+
+ex 3)a = [1, 2]
+     b = [3, 4]
+
+     a += b
+
+     # Output: a = [1, 2, 3, 4]
+     print('a = ', a)
+
+
+
+3)insert()
+The insert() method inserts the element to the list at the given index.
+
+syntax:-list.insert(index, element)
+
+insert() Parameters
+The insert() function takes two parameters:
+
+index - position where element needs to be inserted
+element - this is the element to be inserted in the list
+
+Return Value from insert()
+The insert() method only inserts the element to the list. It doesn't return any value.
+
+ex 1)vowel = ['a', 'e', 'i', 'u']
+     vowel.insert(3, 'o')
+     print('Updated List: ', vowel)
+
+ex 2)#Inserting a Tuple (as an Element) to the List
+
+     mixed_list = [{1, 2}, [5, 6, 7]]
+     number_tuple = (3, 4)
+     mixed_list.insert(1, number_tuple)
+     print('Updated List: ', mixed_list)
+
+
+It is important to note that the index in Python starts from 0 not 1.
+
+If you have to insert element in 4th place, you have to pass 3 as an index. Similarly, if you have to insert element in 2nd place, you have to use 1 as an index.
+
+
+4)remove()
+
+The remove() method searches for the given element in the list and removes the first matching element.
+
+syntax:- list.remove(element)
+
+remove() Parameters
+The remove() method takes a single element as an argument and removes it from the list.
+
+If the element(argument) passed to the remove() method doesn't exist, valueError exception is thrown.
+
+Return Value from remove()
+The remove() method only removes the given element from the list. It doesn't return any value.
+
+
+ex 1) animal = ['cat', 'dog', 'rabbit', 'guinea pig']
+      animal.remove('rabbit')
+      print('Updated animal list: ', animal)
+
+ex 2) animal = ['cat', 'dog', 'dog', 'guinea pig', 'dog']
+      animal.remove('dog')
+      print('Updated animal list: ', animal)
+
+ex 3) animal = ['cat', 'dog', 'rabbit', 'guinea pig']
+      animal.remove('fish')
+      print('Updated animal list: ', animal)
+
+The remove() method removes the element which is passed as an argument.
+
+However, if you need to delete elements based on index (like fourth element or last element), you need to use either pop() method or del operator.
+
+5)pop()
+
+The pop() method removes and returns the element at the given index (passed as an argument) from the list.
+
+syntax:- list.pop(index)
+
+pop() parameter
+The pop() method takes a single argument (index) and removes the element present at that index from the list.
+
+If the index passed to the pop() method is not in the range, it throws IndexError: pop index out of range exception.
+
+The parameter passed to the pop() method is optional. If no parameter is passed, the default index -1 is passed as an argument which returns the last element. 
+
+Return Value from pop()
+The pop() method returns the element present at the given index.
+
+Also, the pop() method removes the element at the given index and updates the list.
+
+
+ex 1)language = ['Python', 'Java', 'C++', 'French', 'C']
+     return_value = language.pop(3)
+
+     print('Return Value: ', return_value)
+     print('Updated List: ', language)
+
+ex 2)language = ['Python', 'Java', 'C++', 'Ruby', 'C']
+
+     print('When index is not passed:') 
+
+     print('Return Value: ', language.pop())
+     
+print('Updated List: ', language)
+
+
+
+    print('\nWhen -1 is passed:') 
+    
+print('Return Value: ', language.pop(-1))
+    
+print('Updated List: ', language)
+
+    print('\nWhen -3 is passed:') 
+    
+print('Return Value: ', language.pop(-3))
+
+    print('Updated List: ', language)
+
+The pop() method returns and removes the element at the given index.
+
+However, if you need to remove the given element from the list, you need to use remove() method.
+
+6)clear()
+
+The clear() method removes all items from the list.
+
+syntax:- list.clear()
+
+clear() Parameters
+The clear() method doesn't take any parameters.
+
+Return Value from clear()
+The clear() method only empties the given list. It doesn't return any value.
+
+ex 1)list = [{1, 2}, ('a'), ['1.1', '2.2']]
+     list.clear()
+
+7)index()
+
+The index() method searches an element in the list and returns its index.
+
+In simple terms, index() method finds the given element in a list and returns its position.
+
+However, if the same element is present more than once, index() method returns its smallest/first position.
+
+Note: Index in Python starts from 0 not 1.
+
+syntax:-list.index(element)
+
+index() Parameters
+The index method takes a single argument:
+
+element - element that is to be searched.
+Return value from index()
+The index() method returns the index of the element in the list.
+If not found, it raises a ValueError exception indicating the element is not in the list.
+
+ex 1) vowels = ['a', 'e', 'i', 'o', 'i', 'u']
+      index = vowels.index('e')
+      print('The index of e:', index)
+      index = vowels.index('i')
+      print('The index of i:', index)
+
+
+ex 2) vowels = ['a', 'e', 'i', 'o', 'u']
+      index = vowels.index('p')
+      print('The index of p:', index)
+
+
+ex 3) random = ['a', ('a', 'b'), [3, 4]]
+      index = random.index(('a', 'b'))
+      print("The index of ('a', 'b'):", index)
+      index = random.index([3, 4])
+      print("The index of [3, 4]:", index)
+
+8)count()
+
+The count() method returns the number of occurrences of an element in a list.
+
+In simple terms, count() method counts how many times an element has occurred in a list and returns it.
+
+syntax:- list.count(element)
+
+count() Parameters
+The count() method takes a single argument:
+
+element - element whose count is to be found.
+
+Return value from count()
+The count() method returns the number of occurrences of an element in a list.
+
+ex 1) vowels = ['a', 'e', 'i', 'o', 'i', 'u']
+      count = vowels.count('i')
+      print('The count of i is:', count)
+      count = vowels.count('p')
+      print('The count of p is:', count)
+
+ex 2) random = ['a', ('a', 'b'), ('a', 'b'), [3, 4]]
+      count = random.count(('a', 'b'))
+      print("The count of ('a', 'b') is:", count)
+      count = random.count([3, 4])
+      print("The count of [3, 4] is:", count)
+
+9)sort()
+
+The sort() method sorts the elements of a given list.
+
+The sort() method sorts the elements of a given list in a specific order - Ascending or Descending.
+
+syntax:- list.sort(key=..., reverse=...)
+
+Alternatively, you can also use Python's in-built function sorted() for the same purpose.
+
+sorted(list, key=..., reverse=...)
+
+Note: Simplest difference between sort() and sorted() is: sort() doesn't return any value while, sorted() returns an iterable list.
+
+
+sort() Parameters
+By default, sort() doesn't require any extra parameters. However, it has two optional parameters:
+
+reverse - If true, the sorted list is reversed (or sorted in Descending order)
+key - function that serves as a key for the sort comparison
+
+
+Return value from sort()
+sort() method doesn't return any value. Rather, it changes the original list.
+
+If you want the original list, use sorted().
+
+
+ex 1)vowels = ['e', 'a', 'u', 'o', 'i']
+     vowels.sort()
+     print('Sorted list:', vowels)
+
+ex 2)vowels = ['e', 'a', 'u', 'o', 'i']
+     vowels.sort(reverse=True)
+     print('Sorted list (in Descending):', vowels)
+
+
+10)reverse()
+
+The reverse() method reverses the elements of a given list.
+
+syntax:- list.reverse()
+
+reverse() parameter
+The reverse() function doesn't take any argument.
+
+Return Value from reverse()
+The reverse() function doesn't return any value. It only reverses the elements and updates the list.
+
+
+ex 1) os = ['Windows', 'macOS', 'Linux']
+      
+print('Original List:', os)
+      os.reverse()
+      print('Updated List:', os)
+
+ex 2)os = ['Windows', 'macOS', 'Linux']
+     
+print('Original List:', os)
+     #Syntax: reversed_list = os[start:stop:step] 
+
+     reversed_list = os[::-1]
+     print('Updated List:', reversed_list)
+
+11)copy()
+
+The copy() method returns a shallow copy of the list.
+
+A list can be copied with = operator. For example:
+
+old_list = [1, 2, 3]
+?new_list = old_list
+
+The problem with copying the list in this way is that if you modify the new_list, the old_list is also modified.
+
+ex 1) old_list = [1, 2, 3]
+
+      new_list = old_list
+
+
+      # add element to list
+
+      new_list.append('a')
+
+
+      print('New List:', new_list )
+
+      print('Old List:', old_list )
+
+
+However, if you need the original list unchanged when the new list is modified, you can use copy() method. This is called shallow copy.
+
+syntax:- new_list = list.copy()
+
+copy() parameters
+The copy() method doesn't take any parameters.
+
+Return Value from copy()
+The copy() function returns a list. It doesn't modify the original list.
+
+
+ex 1) list = ['cat', 0, 6.7]
+      new_list = list.copy()
+      new_list.append('dog')
+      print('Old List: ', list)
+
+      print('New List: ', new_list)
+
+
+ex 2) list = ['cat', 0, 6.7]
+      new_list = list[:]
+      new_list.append('dog')
+      print('Old List: ', list)
+      
+print('New List: ', new_list)
+
+
+List Comprehension: Elegant way to create new List
+---------------------------------------------------
+List comprehension is an elegant and concise way to create new list from an existing list in Python.
+
+List comprehension consists of an expression followed by for statement inside square brackets.
+
+Here is an example to make a list with each item being increasing power of 2.
+
+ex 1) pow2 = [2 ** x for x in range(10)]
+      print(pow2)
+
+(or)
+
+pow2 = []
+for x in range(10):
+	pow2.append(2 ** x)
+
+print(pow2)
+
+A list comprehension can optionally contain more for or if statements. 
+An optional if statement can filter out items for the new list. Here are some examples.
+
+ex 2)pow2 = [2 ** x for x in range(10) if x > 5]
+     pow2
+     [64, 128, 256, 512]
+
+(or)
+
+pow2 = []
+for x in range(10):
+    if x > 5:
+        pow2.append(2 ** x)
+print(pow2)
+
+ex 3) odd = [x for x in range(10) if x % 2 == 1]
+
+(or)
+
+odd = []
+for x in range(10):
+	if x % 2 == 1:
+		odd.append(x)
+
+print(odd)
+
+ex 4) [x+y for x in ['Python ','C '] for y in ['Language','Programming']]
+      ['Python Language', 'Python Programming', 'C Language', 'C Programming']
+
+
+We can test if an item exists in a list or not, using the keyword in.
+
+ex 1) my_list = ['p','r','o','b','l','e','m']
+
+
+
+    # Output: True
+
+    print('p' in my_list)
+
+
+   
+    # Output: False
+    
+print('a' in my_list)
+   
+    
+
+# Output: True
+    
+print('c' not in my_list)
+
+Iterating Through a List
+------------------------
+Using a for loop we can iterate though each item in a list.
+
+ex 1)for fruit in ['apple','banana','mango']:
+
+	    print("I like",fruit)
+
+Built-in Functions with List
+----------------------------
+Built-in functions like all(), any(), enumerate(), len(), max(), min(), list(), sorted() etc. 
+are commonly used with list to perform different tasks.
+
+1)all()
+
+The all() method returns True when all elements in the given iterable are true. If not, it returns False.
+
+syntax :- all(iterable)
+
+The all() method takes a single parameter:
+
+iterable - any iterable (list, tuple, dictionary, etc.) which contains the elements
+
+Return Value from all()
+
+The all() method returns:
+
+True - If all elements in an iterable are true
+False - If any element in an iterable is false
+
+ex 1) # all values true
+      
+l = [1, 3, 4, 5]
+
+      print(all(l))
+
+
+
+     # all values false
+     
+l = [0, False]
+
+     print(all(l))
+
+    
+
+# one false value
+
+    l = [1, 3, 4, 0]
+
+     print(all(l))
+
+
+
+   # one true value
+   
+l = [0, False, 5]
+   
+print(all(l))
+
+   
+
+# empty iterable
+
+   l = []
+   
+print(all(l))
+
+2)any()
+
+The any() method returns True if any element of an iterable is true. If not, this method returns False.
+
+syntax :- any(iterable)
+
+any() Parameters
+They any() method takes an iterable (list, string, dictionary etc.) in Python.
+
+Return Value from any()
+The any method returns:
+
+True if at least one element of an iterable is true
+False if all elements are false or if an iterable is empty
+
+
+ex 1) l = [1, 3, 4, 0]
+
+      print(any(l))
+ 
+     
+
+l = [0, False]
+     
+print(any(l))
+     
+     
+
+l = [0, False, 5]
+     
+print(any(l))
+
+     
+
+l = []
+     
+print(any(l))
+
+3)enumerate()
+The enumerate() method adds counter to an iterable and returns it (the enumerate object).
+
+syntax :- enumerate(iterable, start=0)
+
+enumerate() Parameters
+The enumerate() method takes two parameters:
+
+iterable - a sequence, an iterator, or objects that supports iteration
+start (optional) - enumerate() starts counting from this number. If start is omitted, 0 is taken as start.
+
+Return Value from enumerate()
+The enumerate() method adds counter to an iterable and returns it. The returned object is a enumerate object.
+
+You can convert enumerate objects to list and tuple using list() and tuple() method respectively.
+
+ex 1)grocery = ['bread', 'milk', 'butter']
+     
+enumerateGrocery = enumerate(grocery)
+     
+
+print(type(enumerateGrocery))
+
+
+     # converting to list
+
+     print(list(enumerateGrocery))
+ 
+     
+
+# changing the default 
+     counter
+enumerateGrocery = enumerate(grocery, 10)
+     
+print(list(enumerateGrocery))
+
+
+ex 2) grocery = ['bread', 'milk', 'butter']
+
+
+      for item in enumerate(grocery):
+  
+      	print(item)
+
+
+      print('\n')
+
+
+      for count, item in enumerate(grocery):
+	
+  print(count, item)
+      
+
+print('\n')
+
+
+      # changing default start value
+      
+for count, item in enumerate(grocery, 100):
+
+	  print(count, item)
+
+4)len()
+The len() function returns the number of items (length) of an object.
+
+syntax:- len(s)
+
+len() Parameters
+s - a sequence (string, bytes, tuple, list, or range) or a collection (dictionary, set or frozen set)
+
+Return Value from len()
+The len() function returns the number of items of an object.
+
+Failing to pass an argument or passing an invalid argument will raise a TypeError exception
+
+ex 1) l = [1,2,3,4,5]
+      len(l)
+
+5)list()
+
+The list() constructor creates a list in Python.
+
+syntax: list([iterable])
+
+list() Parameters
+Python list() constructor takes a single argument:
+
+iterable (Optional) - an object that could be a sequence (string, tuples) or collection (set, dictionary) or iterator object
+
+Return value from list()
+The list() constructor returns a mutable sequence list of elements.
+
+If no parameters are passed, it creates an empty list
+If iterable is passed as parameter, it creates a list of elements in the iterable
+
+ex 1) l = list(range(10))
+
+ex 2) vowelString = 'aeiou'
+      print(list(vowelString))
+
+6)max()
+
+The max() method returns the largest element in an iterable or largest of two or more parameters.
+
+ex 1) l = [1,2,3,4,5]
+      print(max(l))
+
+7)min()
+
+The min() method returns the smallest element in an iterable or smallest of two or more parameters.
+
+ex 1) l = [1,2,3,4,5]
+      print(min(l))
+
+8)sorted()
+
+The sorted() method returns a sorted list from the given iterable.
+
+The sorted() method sorts the elements of a given iterable in a specific order - Ascending or Descending.
+
+syntax:-sorted(iterable[, key][, reverse])
+
+sorted() Parameters
+sorted() takes two three parameters:
+
+iterable - sequence (string, tuple, list) or collection (set, dictionary, frozen set) or any iterator 
+reverse (Optional) - If true, the sorted list is reversed (or sorted in Descending order)
+key (Optional) - function that serves as a key for the sort comparison
+
+ex 1)pyList = ['e', 'a', 'u', 'o', 'i']
+     
+print(sorted(pyList))
+
+
+ex 2)print(sorted(pyList,reverse=True))
+
+9)sum()
+
+The sum() function adds the items of an iterable and returns the sum.
+
+syntax- sum(iterable, start)
+
+sum() Parameters
+iterable - iterable (list, tuple, dict etc) whose item's sum is to be found. Normally, items of the iterable should be numbers.
+start (optional) - this value is added to the sum of items of the iterable. The default value of start is 0 (if omitted)
+
+
+Return Value from sum()
+The sum() function returns the sum of start and items of the given iterable.
+
+ex 1)numbers = [2.5, 3, 4, -5]
+
+
+    # start parameter is not provided
+
+   numbersSum = sum(numbers)
+
+   print(numbersSum)
+
+
+   # start = 10
+
+   numbersSum = sum(numbers, 10)
+
+   print(numbersSum)  
+      
+
+
+2)Tuple()
+---------
+Tuple: an ordered immutable collection of objects
+
+A tuple is an immutable list. This means that once you assign objects to a tuple,
+the tuple cannot be changed under any circumstance.
+
+In Python programming, a tuple is similar to a list. The difference between the two is that we cannot change the elements of a tuple once it is assigned whereas in a list, elements can be changed.
+
+Advantages of Tuple over List:
+------------------------------
+Since, tuples are quite similiar to lists, both of them are used in similar situations as well.
+
+However, there are certain advantages of implementing a tuple over a list. Below listed are some of the main advantages:
+
+We generally use tuple for heterogeneous (different) datatypes and list for homogeneous (similar) datatypes.
+
+Since tuple are immutable, iterating through tuple is faster than with list. So there is a slight performance boost.
+
+Tuples that contain immutable elements can be used as key for a dictionary. With list, this is not possible.
+If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
+
+Creating a Tuple?
+-----------------
+A tuple is created by placing all the items (elements) inside a parentheses (), separated by comma. The parentheses are optional but is a good practice to write it.
+
+A tuple can have any number of items and they may be of different types (integer, float, list, string etc.).
+
+ex 1) my_tuple = ()
+      
+print(my_tuple)
+
+      my_tuple = (1, 2, 3)
+
+      print(my_tuple)
+
+      my_tuple = (1, "Hello", 3.4)
+      
+print(my_tuple)
+
+      my_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
+
+      print(my_tuple)
+
+
+      my_tuple = 3, 4.6, "dog"
+
+      print(my_tuple)
+      
+
+Creating a tuple with one element is a bit tricky.
+
+Having one element within parentheses is not enough. We will need a trailing comma to indicate that it is in fact a tuple.
+
+ex 2) my_tuple = ("hello")
+
+      print(type(my_tuple))
+
+      my_tuple = ("hello",)
+      
+print(type(my_tuple))
+
+      my_tuple = "hello",
+
+      print(type(my_tuple))
+
+
+Accessing Elements in a Tuple?
+------------------------------
+
+There are various ways in which we can access the elements of a tuple.
+
+1. Indexing
+
+We can use the index operator [] to access an item in a tuple where the index starts from 0.
+
+So, a tuple having 6 elements will have index from 0 to 5. Trying to access an element other that (6, 7,...) will raise an IndexError.
+
+The index must be an integer, so we cannot use float or other types. This will result into TypeError.
+
+Likewise, nested tuple are accessed using nested indexing, as shown in the example below.
+
+ex 1) my_tuple = ('p','e','r','m','i','t')
+      print(my_tuple[0])
+      print(my_tuple[5])
+      print(my_tuple[6]) # IndexError: list index out of range
+
+ex 2) n_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
+      print(n_tuple[0][3])
+      print(n_tuple[1][1])
+      
+2. Negative Indexing
+
+Python allows negative indexing for its sequences.
+
+The index of -1 refers to the last item, -2 to the second last item and so on.
+
+ex 1) my_tuple = ('p','e','r','m','i','t')
+      print(my_tuple[-1])
+      print(my_tuple[-6])
+
+3. Slicing
+
+We can access a range of items in a tuple by using the slicing operator - colon ":".
+
+ex 1) my_tuple = ('p','r','o','g','r','a','m','i','z')
+      # Output: ('r', 'o', 'g')
+      print(my_tuple[1:4])
+
+      # Output: ('p', 'r')
+      print(my_tuple[:-7])
+   
+      # Output: ('i', 'z')
+      print(my_tuple[7:])
+
+Changing a Tuple
+----------------
+
+Unlike lists, tuples are immutable.
+
+This means that elements of a tuple cannot be changed once it has been assigned. But, 
+if the element is itself a mutable datatype like list, its nested items can be changed.
+
+We can also assign a tuple to different values (reassignment).
+
+
+ex 1) my_tuple = (4, 2, 3, [6, 5])
+
+      # TypeError: 'tuple' object does not support item assignment
+      my_tuple[1] = 9
+
+      # Output: (4, 2, 3, [9, 5])
+      my_tuple[3][0] = 9
+
+      print(my_tuple)
+
+
+We can use + operator to combine two tuples. This is also called concatenation.
+
+We can also repeat the elements in a tuple for a given number of times using the * operator.
+
+Both + and * operations result into a new tuple.
+
+ex 2) # Concatenation
+
+      # Output: (1, 2, 3, 4, 5, 6)
+      
+print((1, 2, 3) + (4, 5, 6))
+
+     
+
+# Repeat
+     
+# Output: ('Repeat', 'Repeat', 'Repeat')
+     
+print(("Repeat",) * 3)
+
+
+Deleting a Tuple
+----------------
+As discussed above, we cannot change the elements in a tuple. 
+That also means we cannot delete or remove items from a tuple.
+
+But deleting a tuple entirely is possible using the keyword del.
+
+ex 1) my_tuple = ('p','r','o','g','r','a','m','i','z')
+      # TypeError: 'tuple' object doesn't support item deletion
+      del my_tuple[3]
+
+
+      del my_tuple
+      
+my_tuple # NameError: name 'my_tuple' is not defined
+
+
+Python Tuple Methods
+--------------------
+Methods that add items or remove items are not available with tuple. Only the following two methods are available.
+
+1)count(x)
+2)index(x)
+
+ex 1) my_tuple = ('a','p','p','l','e',)
+
+
+      # Count
+      
+# Output: 2
+      
+print(my_tuple.count('p'))
+     
+      
+
+# Index
+      
+# Output: 3
+      
+print(my_tuple.index('l'))
+
+Other Tuple Operations
+----------------------
+1. Tuple Membership Test
+
+We can test if an item exists in a tuple or not, using the keyword in.
+
+ex 1) my_tuple = ('a','p','p','l','e',)
+
+      
+
+# In operation
+
+      # Output: True
+      
+print('a' in my_tuple)
+
+
+
+      # Output: False
+
+      print('b' in my_tuple)
+
+      
+
+# Not in operation
+
+      # Output: True
+      
+print('g' not in my_tuple)
+
+2. Iterating Through a Tuple
+----------------------------
+Using a for loop we can iterate though each item in a tuple.
+
+ex 1) # Output:
+      
+# Hello Kalyan
+      
+# Hello Kumar
+      
+for name in ('kalyan','Kumar'):
+     
+          print("Hello",name) 
+
+3. Built-in Functions with Tuple
+
+Built-in functions like all(), any(), enumerate(), len(), max(), min(), sorted(), tuple() etc. are commonly used with tuple to perform different tasks.
+
+
+
+
+
+
+
+
+3)Dictionary{}
+--------------
+Dictionary: an unordered set of key/value pairs
+
+Depending on your programming background, you may already know what a
+dictionary is, but you may know it by another name, such as associative array,
+map, symbol table, or hash.
+
+Like those other data structures in those other languages, Python’s dictionary
+allows you to store a collection of key/value pairs. Each unique key has a value
+associated with it in the dictionary, and dictionaries can have any number of
+pairs. The values associated with a key can be any object.
+
+Dictionaries are unordered and mutable. It can be useful to think of Python’s
+dictionary as a two-columned, multirow data structure. Like lists, dictionaries
+can grow (and shrink) on demand.
+
+
+
+How to create a dictionary?
+---------------------------
+Creating a dictionary is as simple as placing items inside curly braces {} separated by comma.
+
+An item has a key and the corresponding value expressed as a pair, key: value.
+
+While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements) and must be unique.
+
+ex 1)# empty dictionary
+     my_dict = {}
+
+    # dictionary with integer keys
+    my_dict = {1: 'apple', 2: 'ball'}
+
+    # dictionary with mixed keys
+    my_dict = {'name': 'John', 1: [2, 4, 3]}
+
+    # using dict()
+    my_dict = dict({1:'apple', 2:'ball'})
+
+   # from sequence having each item as a pair
+   my_dict = dict([(1,'apple'), (2,'ball')])
+
+As you can see above, we can also create a dictionary using the built-in function dict().
+
+How to access elements from a dictionary?
+-----------------------------------------
+While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square brackets or with the get() method.
+
+The difference while using get() is that it returns None instead of KeyError, if the key is not found.
+
+ex 1) my_dict = {'name':'Jack', 'age': 26}
+
+
+      # Output: Jack
+      
+print(my_dict['name'])
+
+      
+
+# Output: 26
+      
+print(my_dict.get('age'))
+
+      
+
+# Trying to access keys which doesn't exist throws error
+
+      # my_dict.get('address')
+      
+# my_dict['address']
+
+How to change or add elements in a dictionary?
+----------------------------------------------
+Dictionary are mutable. We can add new items or change the value of existing items using assignment operator.
+
+If the key is already present, value gets updated, else a new key: value pair is added to the dictionary.
+
+ex 1) my_dict = {'name':'Jack', 'age': 26}
+
+
+   # update value
+   
+my_dict['age'] = 27
+
+   
+
+#Output: {'age': 27, 'name': 'Jack'}
+
+   print(my_dict)
+
+
+   
+   # add item
+   
+my_dict['address'] = 'Downtown'  
+   
+   
+
+# Output: {'address': 'Downtown', 'age': 27, 'name': 'Jack'}
+   
+print(my_dict)
+
+How to delete or remove elements from a dictionary?
+---------------------------------------------------
+We can remove a particular item in a dictionary by using the method pop(). 
+This method removes as item with the provided key and returns the value.
+
+The method, popitem() can be used to remove and return an arbitrary item (key, value) form the dictionary. 
+All the items can be removed at once using the clear() method.
+
+ex 1)# create a dictionary
+     
+squares = {1:1, 2:4, 3:9, 4:16, 5:25}
+  
+
+
+     # remove a particular item
+     
+# Output: 16
+
+     print(squares.pop(4))  
+
+
+
+    # Output: {1: 1, 2: 4, 3: 9, 5: 25}
+
+    print(squares)
+
+
+
+    # remove an arbitrary item
+    
+# Output: (1, 1)
+    
+print(squares.popitem())
+
+    
+
+# Output: {2: 4, 3: 9, 5: 25}
+    
+print(squares)
+
+    
+
+# delete a particular item
+    
+del squares[5] 
+
+    
+
+# Output: {2: 4, 3: 9}
+    
+print(squares)
+
+    
+
+# remove all items
+
+    squares.clear()
+
+    
+
+# Output: {}
+    
+print(squares)
+
+    
+
+# delete the dictionary itself
+    
+del squares
+
+    
+
+# Throws Error
+ 
+    #print(squares)
+
+We can also use the del keyword to remove individual items or the entire dictionary itself.
+
+
+Python Dictionary Methods
+--------------------------
+1)clear()
+
+The clear() method removes all items from the dictionary.
+
+syntax :- dict.clear()
+
+clear() Parameters
+The clear() method doesn't take any parameters.
+
+Return Value from clear()
+The clear() method doesn't return any value (returns None).
+
+ex 1) d = {1: "one", 2: "two"}
+
+
+      d.clear()
+
+      print('d =', d)
+
+You can also remove all elements from the dictionary by assigning empty dictionary {}.
+
+However, there is a difference between calling clear() and assigning {} if there is another variable referencing the dictionary.
+
+ex 2) d = {1: "one", 2: "two"}
+      
+d1 = d
+
+      d.clear()
+
+      print('Removing items using clear()')
+
+      print('d =', d)
+      
+print('d1 =', d1)
+
+
+      
+      d = {1: "one", 2: "two"}
+
+      d1 = d
+
+      d = {}
+      
+print('Removing items by assigning {}')
+
+      print('d =', d)
+      
+print('d1 =', d1)
+
+2)Copy()
+
+They copy() method returns a shallow copy of the dictionary.
+
+syntax :- dict.copy()
+
+copy() Parameters
+The copy() method doesn't take any parameters.
+
+Return Value from copy()
+This method returns a shallow copy of the dictionary. It doesn't modify the original dictionary.
+
+ex 1) original = {1:'one', 2:'two'}
+      
+new = original.copy()
+      
+
+print('Orignal: ', original)
+
+      print('New: ', new)
+
+When copy() method is used, a new dictionary is created which is filled with a copy of the references from the original dictionary.
+
+When = operator is used, a new reference to the original dictionary is created.
+
+
+ex 2) original = {1:'one', 2:'two'}
+
+      new = original
+      
+
+# removing all elements from the list
+
+      new.clear()
+
+
+      print('new: ', new)
+      
+print('original: ', original)
+
+ex 3) original = {1:'one', 2:'two'}
+
+      new = original.copy()
+
+
+      # removing all elements from the list
+      
+new.clear()
+
+
+      print('new: ', new)
+
+      print('original: ', original)
+
+
+3)fromkeys()
+The fromkeys() method creates a new dictionary from the given sequence of elements with a value provided by the user.
+
+syntax :- dictionary.fromkeys(sequence[, value])
+
+fromkeys() Parameters
+The fromkeys() method takes two parameters:
+
+sequence - sequence of elements which is to be used as keys for the new dictionary
+
+value (Optional) - value which is set to each each element of the dictionary
+
+Return value from fromkeys()
+The fromkeys() method returns a new dictionary with the given sequence of elements as the keys of the dictionary.
+
+ex 1) # vowels keys
+      
+keys = {'a', 'e', 'i', 'o', 'u' }
+      
+
+vowels = dict.fromkeys(keys)
+
+      print(vowels)
+
+
+ex 2) # vowels keys
+      
+keys = {'a', 'e', 'i', 'o', 'u' }
+
+      value = 'vowel'
+
+
+      vowels = dict.fromkeys(keys, value)
+      
+print(vowels)
+
+ex 3) # vowels keys
+
+      keys = {'a', 'e', 'i', 'o', 'u' }
+      
+value = [1]
+
+
+      vowels = dict.fromkeys(keys, value)
+      
+print(vowels)
+
+
+      # updating the value
+      
+value.append(2)
+
+      print(vowels)
+
+
+If the provided value is a mutable object (whose value can be modified) like list, dictionary, etc., when the mutable object is modified, each element of the sequence also gets updated.
+
+This is because, each element is assigned a reference to the same object (points to the same object in the memory).
+
+To avoid this issue, we use dictionary comprehension.
+
+ex 4) keys = {'a', 'e', 'i', 'o', 'u' }
+      
+value = [1]
+
+
+      vowels = { key : list(value) for key in keys }
+      
+# you can also use { key : value[:] for key in keys }
+
+      print(vowels)
+      
+
+# updating the value
+      
+value.append(2)
+
+      print(vowels)
+
+Here, for each key in keys, a new list from value is created and assigned to it.
+
+In essence, value isn't assigned to the element but a new list is created from it, which is then assigned to each element in the dictionary.
+
+
+4)get()
+The get() method returns the value for the specified key if key is in dictionary.
+
+syntax :- dict.get(key[, value])
+
+get() Parameters
+The get() method takes maximum of two parameters:
+
+key - key to be searched in the dictionary
+value (optional) - Value to be returned if the key is not found. The default value is None.
+
+Return Value from get()
+The get() method returns:
+
+the value for the specified key if key is in dictionary.
+None if the key is not found and value is not specified.
+value if the key is not found and value is specified.
+
+
+ex 1) person = {'name': 'Phill', 'age': 22}
+      
+
+print('Name: ', person.get('name'))
+      
+print('Age: ', person.get('age'))
+     
+      
+
+# value is not provided
+
+      print('Salary: ', person.get('salary'))
+
+
+
+      # value is provided
+
+      print('Salary: ', person.get('salary', 0.0))
+
+5)items()
+
+The items() method returns a view object that displays a list of dictionary's (key, value) tuple pairs.
+
+syntax:- dictionary.items()
+
+The items() method is similar to dictionary's viewitems() method in Python 2.7
+
+items() Parameters
+The items() method doesn't take any parameters.
+
+Return value from items()
+The items() method returns a view object that displays a list of a given dictionary's (key, value) tuple pair.
+
+ex 1) # random sales dictionary
+      
+sales = { 'apple': 2, 'orange': 3, 'grapes': 4 }
+
+
+      print(sales.items())
+
+
+ex 2) # random sales dictionary
+     
+sales = { 'apple': 2, 'orange': 3, 'grapes': 4 }
+     
+
+items = sales.items()
+
+     print('Original items:', items)
+     
+
+# delete an item from dictionary
+     
+del[sales['apple']]
+     
+print('Updated items:', items)
+
+6)keys()
+The keys() method returns a view object that displays a list of all the keys in the dictionary
+
+syntax :- dict.keys()
+
+keys() Parameters
+The keys() doesn't take any parameters.
+
+Return Value from keys()
+The keys() returns a view object that displays a list of all the keys.
+
+When the dictionary is changed, the view object also reflect these changes.
+
+ex 1) person = {'name': 'Phill', 'age': 22, 'salary': 3500.0}
+
+      print(person.keys())
+      
+
+empty_dict = {}
+      
+print(empty_dict.keys())
+
+
+7)pop()
+The pop() method removes and returns an element from a dictionary having the given key.
+
+syntax:- dictionary.pop(key[, default])
+
+pop() Parameters
+The pop() method takes two parameters:
+
+key - key which is to be searched for removal
+default - value which is to be returned when the key is not in the dictionary
+
+Return value from pop()
+The pop() method returns:
+
+If key is found - removed/popped element from the dictionary
+If key is not found - value specified as the second argument (default)
+If key is not found and default argument is not specified - KeyError exception is raised
+
+
+ex 1) # random sales dictionary
+
+      sales = { 'apple': 2, 'orange': 3, 'grapes': 4 }
+      
+
+element = sales.pop('apple')
+      
+print('The popped element is:', element)
+
+      print('The dictionary is:', sales)
+
+ex 2) # random sales dictionary
+      
+sales = { 'apple': 2, 'orange': 3, 'grapes': 4 }
+      
+
+element = sales.pop('guava')
+
+
+ex 3) # random sales dictionary
+
+     sales = { 'apple': 2, 'orange': 3, 'grapes': 4 }
+
+
+     element = sales.pop('guava', 'banana')
+
+     print('The popped element is:', element)
+
+     print('The dictionary is:', sales)
+
+8)popitem()
+The popitem() returns and removes an arbitrary element (key, value) pair from the dictionary.
+
+syntax:- dict.popitem()
+
+popitem() Parameters
+The popitem() doesn't take any parameters.
+
+Return Value from popitem()
+The popitem()
+
+returns an arbitrary element (key, value) pair from the dictionary
+removes an arbitrary element (the same element which is returned) from the dictionary.
+
+ex 1) person = {'name': 'Phill', 'age': 22, 'salary': 3500.0}
+
+
+      result = person.popitem()
+
+      print('person = ',person)
+      
+print('Return Value = ',result)
+
+The popitem() raises a KeyError error if the dictionary is empty.
+Note: Arbitrary elements and random elements are not same. The popitem() doesn't return a random element. 
+
+
+9)setdefault()
+The setdefault() method returns the value of a key (if the key is in dictionary). If not, it inserts key with a value to the dictionary.
+
+syntax:- dict.setdefault(key[, default_value])
+
+setdefault() Parameters
+The setdefault() takes maximum of two parameters:
+
+key - key to be searched in the dictionary
+default_value (optional) - key with a value default_value is inserted to the dictionary if key is not in the dictionary.
+If not provided, the default_value will be None.
+
+Return Value from setdefault()
+The setdefault() returns:
+
+value of the key if it is in the dictionary
+None if key is not in the dictionary and default_value is not specified
+default_value if key is not in the dictionary and default_value is specified
+
+ex 1) person = {'name': 'Phill', 'age': 22}
+      
+
+age = person.setdefault('age')
+      
+print('person = ',person)
+
+      print('Age = ',age)
+
+
+10)update()
+The update() method updates the dictionary with the elements from the another dictionary object or from an iterable of key/value pairs.
+
+The update() method adds element(s) to the dictionary if the key is not in the dictionary. If the key is in the dictionary, it updates the key with the new value.
+
+syntax:- dict.update([other])
+
+update() Parameters
+The update() method takes either a dictionary or an iterable object of key/value pairs (generally tuples).
+
+If update() is called without passing parameters, the dictionary remains unchanged.
+
+Return Value from update() 
+They update() method updates the dictionary with elements from a dictionary object or an iterable object of key/value pairs.
+
+
+ex 1) d = {1: "one", 2: "three"}
+
+      d1 = {2: "two"}
+      
+
+# updates the value of key 2
+      
+d.update(d1)
+      
+print(d)
+      
+
+d1 = {3: "three"}
+      
+
+# adds element with key 3
+
+      d.update(d1)
+
+      print(d)
+
+11)values()
+The values() method returns a view object that displays a list of all the values in the dictionary.
+
+syntax :- dictionary.values()
+
+values() Parameters
+The values() method doesn't take any parameters.
+
+Return value from values()
+The values() method returns a view object that displays a list of all values in a given dictionary.
+
+ex 1) # random sales dictionary
+      
+sales = { 'apple': 2, 'orange': 3, 'grapes': 4 }
+      
+
+print(sales.values())
+
+
+

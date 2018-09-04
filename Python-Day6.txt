@@ -1,0 +1,475 @@
+Python Functions
+----------------
+You use functions in programming to bundle a set of instructions that you want to use repeatedly or that, because of their complexity, are better self-contained in a sub-program and called when needed. That means that a function is a piece of code written to carry out a specified task. To carry out that specific task, the function might or might not need multiple inputs. When the task is carried out, the function can or can not return one or more values.
+
+There are three types of functions in Python:
+
+1) Built-in functions, such as help() to ask for help, min() to get the minimum value, print() to print an object to the terminal,… You can find an overview with more of these functions here.
+
+2) User-Defined Functions (UDFs), which are functions that users create to help them out
+
+3) Anonymous functions, which are also called lambda functions because they are not declared with the standard def keyword.
+
+Functions vs Methods
+
+A method refers to a function which is part of a class. You access it with an instance or object of the class. A function doesn’t have this restriction: it just refers to a standalone function. This means that all methods are functions but not all functions are methods.
+
+How To Define A Function: User-Defined Functions (UDFs)
+-------------------------------------------------------
+The four steps to defining a function in Python are the following:
+
+1) Use the keyword def to declare the function and follow this up with the function name.
+
+2)Add parameters to the function: they should be within the parentheses of the function. End your line with a colon.
+
+3)Add statements that the functions should execute.
+
+4)End your function with a return statement if the function should output something. Without the return statement, your function will return an object None.
+
+ex 1) def hello():
+	print("Hello World")
+
+ex 2) def hello():
+  	name = str(input("Enter your name: "))
+  	if name:
+    		print ("Hello " + str(name))
+  	else:
+    		print("Hello World") 
+  	return 
+
+The return Statement
+--------------------
+Note that as you’re printing something in your UDF hello(), you don’t really need to return it. 
+There won’t be any difference between the function above and this one:
+
+ex 3) def hello_noreturn():
+	print("Hello World") 
+
+However, if you want to continue to work with the result of your function and try out some operations on it, you will need to use the return statement to actually return a value, such as a String, an integer, …. 
+Consider the following scenario, where hello() returns a String "hello", while the function hello_noreturn() returns None:
+
+ex 4) def hello():
+
+	  print("Hello World")
+        
+  return("hello")
+
+
+      def hello_noreturn():
+	
+  print("Hello World")
+
+	  
+# Multiply the output of `hello()` with 2 
+
+	  hello() * 2
+
+
+	  # (Try to) multiply the output of `hello_noreturn()` with 2 
+          
+hello_noreturn() * 2
+
+The second function gives you an error because you can’t perform any operations with a None. You’ll get a TypeError that says that you can’t do the multiplication operation for NoneType 
+(the None that is the result of hello_noreturn()) and int (2).
+
+functions immediately exit when they come across a return statement, even if it means that they won’t return any value:
+
+Another thing that is worth mentioning when you’re working with the return statement is the fact that you can use it to return multiple values. To do this, you make use of tuples.
+
+Remember that this data structure is very similar to that of a list: it can contain multiple values. However, tuples are immutable, which means that you can’t modify any values that are stored in it! You construct it with the help of double parentheses (). You can unpack tuples into multiple variables with the help of the comma and the assignment operator.
+
+ex 5) def plus(a,b):
+
+	  sum = a + b
+
+	  return (sum, a)
+
+
+
+# Call `plus()` and unpack variables 
+
+sum, a = plus(3,4)
+
+
+# Print `sum()`
+
+print(sum)
+
+Note that the return statement return sum, a would have the same result as return (sum, a): 
+the former actually packs sum and a into a tuple under the hood!
+
+How To Call A Function
+-----------------------
+In the previous sections, you have seen a lot of examples already of how you can call a function. Calling a function means that you execute the function that you have defined - either directly from the Python prompt or through another function (as you will see in the section “Nested Functions”).
+
+ex 6) hello()
+
+How To Add Docstrings To A Python Function
+------------------------------------------
+Another essential aspect of writing functions in Python: docstrings. Docstrings describe what your function does, such as the computations it performs or its return values. These descriptions serve as documentation for your function so that anyone who reads your function’s docstring understands what your function does, without having to trace through all the code in the function definition.
+
+Function docstrings are placed in the immediate line after the function header and are placed in 
+between triple quotation marks. An appropriate Docstring for your hello() function is ‘Prints “Hello World”’.
+
+ex 7) def hello():
+      """Prints "Hello World".
+
+      Returns:
+      None
+      """
+         print("Hello World") 
+         return 
+
+Note that docstrings can be quite longer than the one that is given here as an example. If you’d like to study docstrings in more detail, you best check out some Github repositories of Python libraries 
+such as scikit-learn or pandas, where you’ll find plenty of examples!
+
+Function Arguments in Python
+----------------------------
+Earlier, you learned about the difference between parameters and arguments. In short, arguments are 
+the things which are given to any function or method call, while the function or method code refers to the arguments by their parameter names. There are four types of arguments that Python UDFs can take:
+
+1) Default arguments
+2) Required arguments
+3) Keyword arguments
+4) Variable number of arguments
+
+1) Default Arguments
+
+Default arguments are those that take a default value if no argument value is passed during the function call. You can assign this default value by with the assignment operator =, just like in the following example:
+
+ex 8) def plus(a, b=2):
+	return a+b
+
+
+plus(a=1)
+plus(a=1,b=3)
+
+2) Required Arguments
+
+As the name kind of gives away, the required arguments of a UDF are those that have to be in there. These arguments need to be passed during the function call and in exactly the right order, just like in the following example:
+
+ex 9) def plus(a,b):
+	return a+b
+
+
+plus(2,3)
+or
+plus(a=2,b=3)
+or
+plus(b=3,a=2)
+
+You need arguments that map to the a as well as the b parameters to call the function without getting any errors. If you switch around a and b, the result won’t be different, but it might be if you change plus() to the following:
+
+ex 10) def plus(a,b):
+	retrun a/b
+
+
+plus(2,4)
+
+
+3) Keyword Arguments
+
+If you want to make sure that you call all the parameters in the right order, you can use the keyword arguments in your function call. You use these to identify the arguments by their parameter name. 
+Let’s take the example from above to make this a bit more clear:
+
+ex 11) def plus(a,b):
+	return a+b
+
+
+plus(a=2,b=3)
+or
+plus(b=3,a=2)
+
+Note that by using the keyword arguments, you can also switch around the order of the parameters and still get the same result when you execute your function:
+
+ex 12) def plus(a,b):
+	return a+b
+
+plus(b=3,a=1)
+
+
+4) Variable Number of Arguments
+
+In cases where you don’t know the exact number of arguments that you want to pass to a function, you can use the following syntax with *args:
+
+ex 13) def plus(*args):
+    	return sum(args)
+
+plus(1,2,3)
+
+The asterisk (*) is placed before the variable name that holds the values of all nonkeyword variable arguments. Note here that you might as well have passed *varint, *var_int_args or any other name to the plus() function.
+
+try replacing *args with another name that includes the asterisk. You’ll see that the above code keeps working!
+
+You see that the above function makes use of the built-in Python sum() function to sum all the arguments that get passed to plus(). If you would like to avoid this and build the function completely yourself, you can use this alternative:
+
+ex 14) def plus(*args):
+    	  total = 0
+          for i in args:
+          total += i
+       return total
+
+plus(10,20,30,40,50)
+
+Global vs Local Variables
+--------------------------
+In general, variables that are defined inside a function body have a local scope, and those defined outside have a global scope. That means that local variables are defined within a function block and can only be accessed inside that function, while global variables can be accessed by all functions that might be in your script:
+
+ex 15) init = 1
+       def plus(*args):
+           total = 0
+           for i in args:
+           total += i
+       return total
+
+# Access the global variable
+print("this is the initialized value " + str(init))
+
+# (Try to) access the local variable
+print("this is the sum " + str(total))
+
+
+
+
+
+
+Local vs Global Variables
+-------------------------
+Global variables are the one that are defined and declared outside a 
+function and we need to use them inside a function.
+
+ex 16) def f():
+	print(s)
+
+s = "Hello Python"
+f()
+
+The variable s is defined as the string “Hello Python”, before we call the function f(). 
+The only statement in f() is the “print s” statement. As there is no local s, 
+the value from the global s will be used.
+
+The question is, what will happen, if we change the value of s inside of the function f()? 
+Will it affect the global s as well? We test it in the following piece of code:
+
+ex 17)def f(): 
+     	print(s)
+ 
+    # This program will NOT show error
+    # if we comment below line. 
+    	s = "Me too." 
+    	print(s)
+ 
+# Global scope
+s = "Hello Python"
+f()
+print(s)
+
+To make the above program work, we need to use “global” keyword. We only need to use global keyword in a function if we want to do assignments / change them. global is not needed for printing and accessing. Why? Python “assumes” that we want a local variable due to the assignment to s inside of f(), so the first print statement throws this error message. Any variable which is changed or created inside of a function is local, if it hasn’t been declared as a global variable. To tell Python, that we want to use the global variable, we have to use the keyword “global”, as can be seen in the following example:
+
+ex 18)# This function modifies global variable 's'
+def f():
+    global s
+    print(s)
+    s = "Hello Python"
+    print(s) 
+ 
+# Global Scope
+s = "Python is great!"
+f()
+print(s)
+
+ex 19)
+a = 1
+ 
+# Uses global because there is no local 'a'
+def f():
+    print('Inside f() : ', a)
+ 
+# Variable 'a' is redefined as a local
+def g():    
+    a = 2
+    print('Inside g() : ',a)
+ 
+# Uses global keyword to modify global 'a'
+def h():    
+    global a
+    a = 3
+    print('Inside h() : ',a)
+ 
+# Global scope
+print('global : ',a)
+f()
+print('global : ',a)
+g()
+print('global : ',a)
+h()
+print('global : ',a)
+
+
+Anonymous Functions in Python
+------------------------------
+Anonymous functions are also called lambda functions in Python because instead of declaring them with the standard def keyword, you use the lambda keyword.
+
+ex 20) double = lambda x: x*2
+       
+       
+
+double(5)
+
+above, lambda x: x*2 is the anonymous or lambda function. x is the argument, and x*2 is the expression or instruction that gets evaluated and returned. What’s special about this functions is that it has no name, like the examples that you have seen in the first part of this functions tutorial. If you would have to write the above function in a UDF, the result would be the following:
+
+ex 21) def double(x):
+	   retun x*2
+
+       
+       double(5)
+
+Let’s consider another example of a lambda function where you work with two arguments:
+
+ex 22)# `sum()` lambda function
+      
+sum = lambda x, y: x + y;
+     
+
+# Call the `sum()` anonymous function
+
+     sum(4,5)
+
+
+
+     # "Translate" to a UDF
+     
+def sum(x, y):
+  
+         return x+y
+
+
+You use anonymous functions when you require a nameless function for a short period of time and that is created at runtime. Specific contexts in which this would be relevant is when you’re working with filter(), map() and reduce():
+
+ex 25) from functools import reduce
+
+my_list = [1,2,3,4,5,6,7,8,9,10]
+
+# Use lambda function with `filter()`
+filtered_list = list(filter(lambda x:(x*2 > 10),my_list))
+
+# Use lambda function with `map()`
+mapped_list = list(map(lambda x: x*2, my_list))
+
+# Use lambda function with `reduce()`
+reduced_list = reduce(lambda x, y: x+y, my_list)
+
+print(filtered_list)
+print(mapped_list)
+print(reduced_list)
+
+The filter() function filters, as the name suggests, the original input list my_list on the basis of a criterion >10. With map(), on the other hand, you apply a function to all items of the list my_list. In this case, you multiply all elements with 2.
+
+Note that the reduce() function is part of the functools library. You use this function cumulatively to the items of the my_list list, from left to right and reduce the sequence to a single value, 55, in this case.
+
+
+Using main() as a Function
+--------------------------
+f you have any experience with other programming languages such as Java, you’ll know that a main function is required in order to execute functions. As you have seen in the examples above, this is not necessarily needed for Python. However, including a main() function in your Python program can be handy to structure your code in a logical way - all of the most important components are contained within this main() function.
+
+You can easily define a main() function and call it just like you have done with all of the other functions above:
+
+ex 26)
+def main():
+    hello()
+    print("This is a main function")
+
+main()
+
+However, as it stands now, the code of your main() function will be called when you import it as a module. To make sure that this doesn’t happen, you call the main() function when __name__ == '__main__'.
+
+ex 27) def main():
+           print("This is a main function")
+    
+       if __name__ == '__main__':
+          main()
+
+Note that besides the __main__ function, you also have an __init__ function that initializes an instance of a class or an object. Simply stated, it acts as a constructor or initializer and is automatically called when you create a new instance of a class. With that function, the newly created object is assigned ot the parameter self.
+
+ex 28)
+class Dog:
+    
+    def __init__(self, legs, color):
+        self.legs = legs
+        self.color = color
+        
+        
+    def bark(self):
+        bark = "bark" * 2
+        return bark
+    
+if __name__ == "__main__":
+    dog = Dog(4, "brown")
+    bark = dog.bark()
+    print(bark)
+
+ex 29)
+def list_benefits():
+
+    return "More organized code", "More readable code", "Easier code reuse",
+   "Allowing programmers to share and connect code together"
+   
+
+# Modify this function to concatenate to each benefit - " is a benefit of functions!"
+
+def build_sentence(benefit):
+    
+	return "%s is a benefit of functions!" % benefit
+
+
+
+
+def name_the_benefits_of_functions():
+
+    list_of_benefits = list_benefits()
+
+    for benefit in list_of_benefits:
+
+        print(build_sentence(benefit))
+
+
+
+ex 30)
+# Define our 3 functions
+
+def my_function():
+
+    print("Hello From My Function!")
+
+
+
+def my_function_with_args(username, greeting):
+
+    print("Hello, %s , From My Function!, I wish you %s"%(username, greeting))
+
+
+
+def sum_two_numbers(a, b):
+
+    return a + b
+
+
+
+# print(a simple greeting)
+
+my_function()
+
+
+
+#prints - "Hello, John Doe, From My Function!, I wish you a great year!"
+
+my_function_with_args("John Doe", "a great year!")
+
+
+
+# after this line x will hold the value 3!
+
+x = sum_two_numbers(1,2)
+
+name_the_benefits_of_functions()
+

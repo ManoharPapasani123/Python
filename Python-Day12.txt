@@ -1,0 +1,128 @@
+Multithreading in Python
+-------------------------
+multithreading is a way of achieving multitasking. In multithreading, the concept of threads is used.
+
+Let us first understand the concept of thread in computer architecture.
+
+Thread
+------
+In computing, a process is an instance of a computer program that is being executed. Any process has 3 basic components:
+
+1) An executable program.
+2) The associated data needed by the program (variables, work space, buffers, etc.)
+3) The execution context of the program (State of process)
+
+A thread is an entity within a process that can be scheduled for execution. Also, it is the smallest unit of processing that can be performed in an OS (Operating System).
+
+In simple words, a thread is a sequence of such instructions within a program that can be executed independently of other code. For simplicity, you can assume that a thread is simply a subset of a process!
+
+A thread contains all this information in a Thread Control Block (TCB):
+
+1) Thread Identifier: Unique id (TID) is assigned to every new thread
+
+2) Stack pointer: Points to thread’s stack in the process. Stack contains the local variables under thread’s scope.
+
+3) Program counter: a register which stores the address of the instruction currently being executed by thread.
+
+4) Thread state: can be running, ready, waiting, start or done.
+
+5) Thread’s register set: registers assigned to thread for computations.
+
+6) Parent process Pointer: A pointer to the Process control block (PCB) of the process that the thread lives on.
+
+Process Control Block         Thread Control Block
+---------------------         --------------------
+ process id			Parent process Pointer
+
+ process state			Thread Id
+ 
+ process counter		Thread State
+
+ Registers			Program Counter
+
+ Memory Limits			Register Set
+
+ List of Open Files		Stack Pointer
+
+Multithreading
+--------------
+Multiple threads can exist within one process where:
+
+Each thread contains its own register set and local variables (stored in stack).
+All thread of a process share global variables (stored in heap) and the program code.
+import threading
+
+ex 1)
+def print_cube(num):
+    print("cube: {}".format(num*num*num))
+    
+def print_square(num):
+    print("square: {}".format(num*num*num*num))
+    
+if __name__ == "__main__":
+    t1 = threading.Thread(target=print_square, args=(10,))
+    t2 = threading.Thread(target=print_cube, args=(10,))
+    
+    t1.start()
+    t2.start()
+    
+    t1.join()
+    t2.join()
+    print("Done")
+
+To import the threading module, we do:
+import threading
+
+To create a new thread, we create an object of Thread class. It takes following arguments:
+
+target: the function to be executed by thread
+args: the arguments to be passed to the target function
+
+In above example, we created 2 threads with different target functions:
+
+t1 = threading.Thread(target=print_square, args=(10,))
+t2 = threading.Thread(target=print_cube, args=(10,))
+
+To start a thread, we use start method of Thread class.
+t1.start()
+t2.start()
+
+Once the threads start, the current program (you can think of it like a main thread) also keeps on executing. In order to stop execution of current program until a thread is complete, we use join method.
+t1.join()
+t2.join()
+
+As a result, the current program will first wait for the completion of t1 and then t2. Once, they are finished, the remaining statements of current program are executed.
+
+ex 2)
+import threading
+import os
+ 
+def task1():
+    print("Task 1 assigned to thread: {}".format(threading.current_thread().name))
+    print("ID of process running task 1: {}".format(os.getpid()))
+ 
+def task2():
+    print("Task 2 assigned to thread: {}".format(threading.current_thread().name))
+    print("ID of process running task 2: {}".format(os.getpid()))
+ 
+if __name__ == "__main__":
+ 
+    # print ID of current process
+    print("ID of process running main program: {}".format(os.getpid()))
+ 
+    # print name of main thread
+    print("Main thread name: {}".format(threading.main_thread().name))
+ 
+    # creating threads
+    t1 = threading.Thread(target=task1, name='t1')
+    t2 = threading.Thread(target=task2, name='t2')  
+ 
+    # starting threads
+    t1.start()
+    t2.start()
+ 
+    # wait until all threads finish
+    t1.join()
+    t2.join()
+
+

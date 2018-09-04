@@ -1,0 +1,587 @@
+Regex in Python
+---------------
+.       - Any Character Except New Line
+\d      - Digit (0-9)
+\D      - Not a Digit (0-9)
+\w      - Word Character (a-z, A-Z, 0-9, _)
+\W      - Not a Word Character
+\s      - Whitespace (space, tab, newline)
+\S      - Not Whitespace (space, tab, newline)
+
+\b      - Word Boundary
+\B      - Not a Word Boundary
+^       - Beginning of a String
+$       - End of a String
+
+[]      - Matches Characters in brackets
+[^ ]    - Matches Characters NOT in brackets
+|       - Either Or
+( )     - Group
+
+Quantifiers:
+*       - 0 or More
++       - 1 or More
+?       - 0 or One
+{3}     - Exact Number
+{3,4}   - Range of Numbers (Minimum, Maximum)
+
+Input Data
+----------
+text_to_search = '''
+abcdefghijklmnopqurtuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+1234567890
+Ha HaHa
+MetaCharacters (Need to be escaped):
+. ^ $ * + ? { } [ ] \ | ( )
+coreyms.com
+321-555-4321
+123.555.1234
+123*555*1234
+800-555-1234
+900-555-1234
+Mr. Schafer
+Mr Smith
+Ms Davis
+Mrs. Robinson
+Mr. T
+
+mat
+cat
+bat
+pat
+
+<composer>Wolfgang Amadeus Mozart</composer>
+<author>Samuel Beckett</author>
+<city>London</city>
+
+'''
+
+sentence = 'Start a sentence and then bring it to an end'
+
+emails = '''
+CoreMSchafer@gmail.com
+corey.schafer@university.edu
+corey-321-schafer@my-work.net
+'''
+
+urls = '''
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+'''
+
+
+
+
+#usecase 1
+pattern = re.compile(r'abc')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 2
+pattern = re.compile(r'\.')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 3
+pattern = re.compile(r'coreyms\.com')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 4
+pattern = re.compile(r'.')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 5
+pattern = re.compile(r'\d')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 6
+pattern = re.compile(r'\D')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 7
+pattern = re.compile(r'\w')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 8
+pattern = re.compile(r'\W')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 9(\s means space,tab,newline)
+pattern = re.compile(r'\s')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 10(\S means not space,tab,newline)
+pattern = re.compile(r'\s')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 11
+pattern = re.compile(r'\bHa')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 12
+pattern = re.compile(r'\BHa')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 13
+pattern = re.compile(r'^Start')
+
+matches = pattern.finditer(sentence)
+
+for match in matches:
+    print(match)
+
+#usecase 14
+pattern = re.compile(r'end$')
+
+matches = pattern.finditer(sentence)
+
+for match in matches:
+    print(match)
+
+#usecase 15
+pattern = re.compile(r'\d\d\d')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 16
+pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+
+#usecase 17
+pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+
+with open('regexdata.txt', 'r', encoding = 'utf-8') as f:
+	contents = f.read()
+	matches = pattern.finditer(contents)
+	for match in matches:
+    		print(match)
+
+#usecase 18
+pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 19
+pattern = re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d\d')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 20
+pattern = re.compile(r'[1-5]')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 21
+pattern = re.compile(r'[a-zA-Z]')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 22
+pattern = re.compile(r'[^a-zA-Z]')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 23
+pattern = re.compile(r'[^b]at')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 24
+pattern = re.compile(r'\d{3}.\d{3}.\d{4}')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 25
+pattern = re.compile(r'Mr\.')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 26
+pattern = re.compile(r'Mr\.?')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 27
+pattern = re.compile(r'Mr\.?\s[A-Z]\w*')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 28
+pattern = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*')
+
+matches = pattern.finditer(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 29
+pattern = re.compile(r'[a-zA-Z]+@[a-zA-Z]+\.com')
+
+matches = pattern.finditer(emails)
+
+for match in matches:
+    print(match)
+
+#usecase 30
+pattern = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')
+
+matches = pattern.finditer(emails)
+
+for match in matches:
+    print(match)
+
+#usecase 31
+pattern = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.[a-zA-Z0-9-.]+')
+
+matches = pattern.finditer(emails)
+
+for match in matches:
+    print(match)
+
+
+#usecase 32
+pattern = re.compile(r'https?://(www\.)?')
+
+matches = pattern.finditer(emails)
+
+for match in matches:
+    print(match)
+
+#usecase 33
+pattern = re.compile(r'https?://(www\.)?\w+\.\w+')
+
+matches = pattern.finditer(urls)
+
+for match in matches:
+    print(match)
+
+#usecase 34
+pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+matches = pattern.finditer(urls)
+
+for match in matches:
+    print(match.group(0))
+    print(match.group(1))
+    print(match.group(2))
+    print(match.group(3))
+
+#usecase 35
+pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+sub_urls = pattern.sub(r'\2\3', urls)
+
+print(sub_urls)
+
+#usecase 36
+pattern = re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*')
+
+matches = pattern.findall(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 37
+pattern = re.compile(r'\d{3}.\d{3}.\d{4}')
+
+matches = pattern.findall(text_to_search)
+
+for match in matches:
+    print(match)
+
+#usecase 38
+pattern = re.compile(r'Start')
+
+matches = pattern.match(sentence)
+
+print(matches)
+
+#usecase 39
+pattern = re.compile(r'Start')
+
+matches = pattern.serach(sentence)
+
+print(matches)
+
+#usecase 40
+pattern = re.compile(r'start', re.IGNORECASE)
+
+matches = pattern.serach(sentence)
+
+print(matches)
+
+Note:- We can write re.I also insted of re.IGNORECASE
+
+#usecase 41
+import re
+
+data ='''
+<composer>Wolfgang Amadeus Mozart</composer>
+<author>Samuel Beckett</author>
+<city>London</city>
+'''
+
+pattern = re.compile(r'<([a-z]+)>(.*)</\1>', re.I)
+
+matches = pattern.finditer(data)
+pdata = []
+for match in matches:
+    pdata.append(match.group(2))
+print(pdata)
+
+#usecase 42
+import re
+
+l = ["555-8396 Neu, Allison", 
+     "Burns, C. Montgomery", 
+     "555-5299 Putz, Lionel",
+     "555-7334 Simpson, Homer Jay"]
+
+for i in l:
+    res = re.search(r"([0-9-]*)\s*([A-Za-z]+),\s+(.*)", i)
+    print res.group(3) + " " + res.group(2) + " " + res.group(1)
+
+#usecase 43
+import re
+
+l = ["555-8396 Neu, Allison",
+     "Burns, C. Montgomery",
+     "555-5299 Putz, Lionel",
+     "555-7334 Simpson, Homer Jay"]
+
+for i in l:
+    res = re.search(r"([0-9-]*)\s*([A-Za-z]+),\s+(.*)", i)
+    print(res.group(3) + " " + res.group(2) + " " + res.group(1))
+
+#usecase 44
+import re
+
+example_codes = ["SW1A 0AA", # House of Commons
+                 "SW1A 1AA", # Buckingham Palace
+                 "SW1A 2AA", # Downing Street
+                 "BX3 2BB", # Barclays Bank
+                 "DH98 1BT", # British Telecom
+                 "N1 9GU", # Guardian Newspaper
+                 "E98 1TT", # The Times
+                 "TIM E22", # a fake postcode
+                 "A B1 A22", # not a valid postcode
+                 "EC2N 2DB", # Deutsche Bank
+                 "SE9 2UG", # University of Greenwhich
+                 "N1 0UY", # Islington, London
+                 "EC1V 8DS", # Clerkenwell, London
+                 "WC1X 9DT", # WC1X 9DT
+                 "B42 1LG", # Birmingham
+                 "B28 9AD", # Birmingham
+                 "W12 7RJ", # London, BBC News Centre
+                 "BBC 007" # a fake postcode
+                ]
+
+pc_re = (r"[A-z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}")
+
+for postcode in example_codes:
+    r = re.search(pc_re, postcode)
+    if r:
+        print(postcode + " matched!")
+    else:
+        print(postcode + " is not a valid postcode!")
+
+#usecase 45
+import re
+
+exampleString = '''
+Jessica is 15 years old, and Daniel is 27 years old.
+Edward is 97 years old, and his grandfather, Oscar, is 102. 
+'''
+
+ages = re.findall(r'\d{1,3}',exampleString)
+names = re.findall(r'[A-Z][a-z]*',exampleString)
+
+print(ages)
+print(names)
+
+Exception Handling in Python
+----------------------------
+try:
+    
+except Exception:
+
+else:
+
+finally:
+
+
+ex 1) f = open('test.csv', 'r', encoding = 'utf-8')
+
+
+ex 2)
+
+try:
+    f = open('test.csv', 'r', encoding = 'utf-8')
+except Exception:
+    print("Oops file not found exception")
+
+
+ex 3)
+
+try:
+    f = open('test.csv', 'r', encoding = 'utf-8')
+    var = bad_var
+except Exception:
+    print("Oops file not found exception")
+
+
+try:
+    f = open('test.csv', 'r', encoding = 'utf-8')
+    var = bad_var
+except FileNotFoundError:
+    print("Oops file not found exception")
+except Exception:
+    print("Sorry something went wrong")
+
+
+ex 4) 
+
+try:
+    f = open('test.csv', 'r', encoding = 'utf-8')
+    var = bad_var
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print(e)
+
+ex 5) 
+
+try:
+    f = open('test.csv', 'r', encoding = 'utf-8')
+    var = bad_var
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print(e)
+else:
+    print(f.read())
+    f.close()
+
+ex 6) 
+
+try:
+    f = open('test.csv', 'r', encoding = 'utf-8')
+    
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print(e)
+else:
+    print(f.read())
+    #f.close()
+finally:
+    f.close()
+
+ex 7) 
+
+try:
+    f = open('corruptfile.csv', 'r', encoding = 'utf-8')
+    if f.name == 'corruptfile.csv':
+	raise Exception
+    
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print(e)
+else:
+    print(f.read())
+    #f.close()
+finally:
+    f.close()
+
+
+
+
+

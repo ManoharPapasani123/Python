@@ -1,0 +1,465 @@
+CSV Files Reader/Writer/DictReader/DictWriter
+-----------------------------------
+ex 1) 
+import csv
+
+with open('C:\\Users\\Desktop\\names.csv','r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    
+    for line in csv_reader:
+        print(line)
+
+ex 2) 
+import csv
+
+with open('C:\\Users\\Desktop\\names.csv','r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    
+    for line in csv_reader:
+        print(line[2])
+
+ex 3) 
+import csv
+
+with open('C:\\Users\\Desktop\\names.csv','r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+
+    next(csv_reader)
+    
+    for line in csv_reader:
+        print(line[2])
+
+ex 4) 
+import csv
+
+with open('C:\\Users\\Desktop\\names.csv','r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    
+    with open('C:\\Users\\Desktop\\new_names.csv','w') as new_file:
+        csv_writer = csv.writer(new_file, delimiter = '\t')
+    
+        for line in csv_reader:
+            csv_writer.writerow(line)
+print("******************")
+
+ex 5)
+import csv
+
+with open('C:\\Users\\Desktop\\newnames.csv','r') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter = '\t')
+
+	for line in csv_reader:
+		print(line)
+
+ex 6)
+import csv
+
+with open('C:\\Users\\Desktop\\newnames.csv','r') as csv_file:
+    csv_reader = csv.DictReader(csv_file, delimiter = '\t')
+
+	for line in csv_reader:
+		print(line)
+
+ex 7)
+import csv
+
+with open('C:\\Users\\Desktop\\names.csv','r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+
+	for line in csv_reader:
+		print(line)
+
+ex 7)
+import csv
+
+with open('C:\\Users\\Desktop\\names.csv','r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+
+	with open('C:\\Users\\Desktop\\new_names.csv', 'w') as new_file:
+		filednames = ['first_name', 'last_name', 'email']
+ 		csv_writer = csv.DictWriter(new_file, fieldnames=filednames, delimiter = '\t')
+
+   		csv_writer.writeheader()		
+
+		for line in csv_reader:
+			csv_writer.writerow(line)
+
+ex 8)
+import csv
+
+with open('C:\\Users\\Desktop\\names.csv','r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+
+	with open('C:\\Users\\Desktop\\new_names.csv', 'w') as new_file:
+		filednames = ['first_name', 'last_name']
+ 		csv_writer = csv.DictWriter(new_file, fieldnames=filednames, delimiter = '\t')
+
+   		csv_writer.writeheader()		
+
+		for line in csv_reader:
+			del line['email']
+			csv_writer.writerow(line)
+
+
+Property Decorators-Getters,Setters and Deleters
+------------------------------------------------
+ex 1) class Employee:
+	
+	def __init__(self, first, last):
+		self.first = first
+		self.last = last
+                self.email = first +'.'+ last +'@gvipl.com'
+		
+	def fullname(self):
+		return '{} {}'.format(self.first, self.last)
+
+   emp1 = Employee('Kalyan', 'Kumar')
+   
+   emp1 = 'pradeep'
+
+   print(emp1.first)
+   print(emp1.email)
+   print(emp1.fullname())
+
+
+ex 2) class Employee:
+	
+	def __init__(self, first, last):
+		self.first = first
+		self.last = last
+                
+
+        @property
+	def email(self):
+		return '{}.{}@gvipl.com'.format(self.first, self.last)
+		
+	def fullname(self):
+		return '{} {}'.format(self.first, self.last)
+
+   emp1 = Employee('Kalyan', 'Kumar')
+   
+   emp1 = 'pradeep'
+
+   print(emp1.first)
+   print(emp1.email)
+   print(emp1.fullname())
+
+
+ex 3) class Employee:
+	
+	def __init__(self, first, last):
+		self.first = first
+		self.last = last
+                
+
+        @property
+	def email(self):
+		return '{}.{}@gvipl.com'.format(self.first, self.last)
+		
+	@property
+	def fullname(self):
+		return '{} {}'.format(self.first, self.last)
+
+   emp1 = Employee('Kalyan', 'Kumar')
+   
+   emp1 = 'pradeep'
+
+   print(emp1.first)
+   print(emp1.email)
+   print(emp1.fullname)
+
+ex 4) class Employee:
+	
+	def __init__(self, first, last):
+		self.first = first
+		self.last = last
+                
+
+        @property
+	def email(self):
+		return '{}.{}@gvipl.com'.format(self.first, self.last)
+		
+	@property
+	def fullname(self):
+		return '{} {}'.format(self.first, self.last)
+
+        @fullname.setter
+	def fullname(self, name):
+		first, last = name.split(' ')
+		self.first = first
+		self.last = last
+
+ 	@fullname.deleter
+	def fullname(self):
+		print('Delete Name !')
+		self.first = None
+		self.last = None
+
+   emp1 = Employee('Kalyan', 'Kumar')
+   
+   emp1.fullname = 'Kalyan kumar'
+
+   print(emp1.first)
+   print(emp1.email)
+   print(emp1.fullname)
+
+   del emp1.fullname
+
+Json Files using Python
+---------------------------
+
+Json           Python
+Object         dict
+array	       list
+string         str
+number{int}    int
+number{real}   float
+true	       True
+false	       False
+null	       None
+
+
+ex 1) 
+
+import json
+
+with open('C:\\Users\\Desktop\\states.json') as f:
+    data = json.load(f)
+    
+    for state in data['states']:
+        print(state)
+
+ex 2) 
+import json
+
+with open('C:\\Users\\Desktop\\states.json') as f:
+    data = json.load(f)
+    
+    for state in data['states']:
+        del state['area_codes']
+        
+with open('C:\\Users\\Desktop\\new_states.json', 'w') as f:
+            json.dump(data, f, indent=2)
+
+ex 3)
+import json
+from urllib.request import urlopen
+
+with urlopen("https://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json") as response:
+    source = response.read()
+
+data = json.loads(source)
+print(data)
+
+ex 4)
+import json
+from urllib.request import urlopen
+
+with urlopen("https://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json") as response:
+    source = response.read()
+
+data = json.loads(source)
+#print(data)
+
+# print(json.dumps(data, indent=2))
+
+usd_rates = dict()
+
+for item in data['list']['resources']:
+    name = item['resource']['fields']['name']
+    price = item['resource']['fields']['price']
+    usd_rates[name] = price
+    
+print(usd_rates)
+
+# print(50 * float(usd_rates['USD/INR']))
+
+
+
+
+
+
+Date,Time,Timedelta and Timezones
+----------------------------------
+ex 1) import datetime
+
+d = datatime.date(2018, 3, 11)
+print(d)
+
+ex 2) tday = datetime.date.today()
+      print(tday)
+      print(tday.year)
+     
+      print(tday.weekday())
+      print(tday.isoweekday())
+    
+      # Monday 0 sunday 6
+      # Monday 1 sunday 7 (Iso)
+
+ex 3) tdelta = datetime.timedelta(days=7)
+
+tday = datetime.date.today()
+print(tday + tdelta)
+print(tday - tdelta)
+
+ex 4)dbay = datetime.date(2018, 9, 10)
+till_bday = bday -tday
+
+print(till_bday)
+print(till_bday.days)
+print(till_bday.total_seconds())
+
+ex 5) t = datetime.time(9, 30, 45, 10000)
+
+print(t)
+print(t.hour)
+
+ex 6) t = datetime.datetime(2018, 3, 11, 11, 30, 30, 100000)
+
+print(t)
+print(t.date())
+print(t.time())
+print(t.year)
+
+
+tdelta = datetime.timedelta(days=7)
+print(t+tdelta)
+
+ex 7) dt_today = datetime.datetime.today()
+
+dt_now = datetime.datetime.now()
+
+dt_utcnow = datetime.datetime.utcnow()
+
+print(dt_today)
+print(dt_now)
+print(dt_utcnow)
+
+ex 8) pip install pytz
+
+import datetime
+import pytz
+
+dt = datetime.datetime(2018, 3, 11, 11, 30, 45, tzinfo = pytz.UTC)
+print(dt)
+
+dt_now = datetime.datetime.now(tz=pytz.UTC)
+print(dt_now)
+
+dt_utcnow = datetime.datetime.utcnow().
+replace(tzinfo = pytz.UTC)
+print(dt_utcnow)
+
+ex 9)import datetime
+import pytz
+
+dt_utcnow = datetime.datetime.utcnow().
+replace(tzinfo = pytz.UTC)
+print(dt_utcnow)
+
+dt_mtn =dt_utc.astimezone(pytz.timezone('US/Mountain'))
+print(dt_mtn)
+
+for tz in pytz.all_timezones:
+	print(tz)
+
+ex 10)
+import datetime
+import pytz
+
+dt_utcnow = datetime.datetime.utcnow().
+replace(tzinfo = pytz.UTC)
+print(dt_utcnow)
+
+dt_mtn = datetime.datetime.now()
+#dt_east = dt_mtn.astimezone(pytz.timezone('US/Eastern'))#Error
+
+mtn_tz = pytz.timezone('US/Mountain)
+dt_mtn = mtn_tz.localize(dt_mtn)
+print(dt_mtn)
+
+ex 11)
+import datetime
+import pytz
+
+dt_mtn = datetime.datetime.now(tz=pytz.timezone('US/Mountain'))
+
+print(dt_mtn.strftime('%B %d, %Y'))
+
+dt_str = 'March 10, 2018'
+
+dt = datetime.datetime.strptime(dt_str,'%B %d, %Y')
+print(dt)
+
+#strftime -- datetime to string
+#strptime -- string to datetime
+------------------------------------------------------------------------------------------------------------------------
+import datetime
+import pytz
+
+# Naive
+# d = datetime.date(2001, 9, 11)
+
+tday = datetime.date.today()
+
+
+# weekday() - Monday is 0 and Sunday is 6
+# print(tday)
+
+# isoweekday() - Monday is 1 and Sunday is 7
+# print(tday)
+
+
+# datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
+
+tdelta = datetime.timedelta(hours=12)
+
+# print(tday + tdelta)
+
+# date2 = date1 + timedelta
+# timedelta = date1 + date2
+
+bday = datetime.date(2016, 9, 24)
+
+till_bday = bday - tday
+
+# print(till_bday.days)
+
+t = datetime.time(9, 30, 45, 100000)
+
+# dt = datetime.datetime.today()
+# dtnow = datetime.datetime.now()
+# print(dir(datetime.datetime))
+# print(dt)
+# print(dtnow)
+
+dt = datetime.datetime(2016, 7, 24, 12, 30, 45, tzinfo=pytz.UTC)
+# print(dir(dt))
+
+dt_utcnow = datetime.datetime.now(tz=pytz.UTC)
+# print(dt_utcnow)
+
+dt_utcnow2 = datetime.datetime.utcnow().replace(tzinfo=pytz.UTC)
+# print(dt_utcnow2)
+
+# dt_mtn = dt_utcnow.astimezone(pytz.timezone('US/Mountain'))
+# print(dt_mtn)
+
+dt_mtn = datetime.datetime.now()
+
+mtn_tz = pytz.timezone('US/Mountain')
+dt_mtn = mtn_tz.localize(dt_mtn)
+
+# print(dt_mtn)
+
+dt_east = dt_mtn.astimezone(pytz.timezone('US/Eastern'))
+# print(dt_east)
+
+print(dt_mtn.strftime('%B %d, %Y'))
+
+dt_str = 'July 24, 2016'
+dt = datetime.datetime.strptime(dt_str, '%B %d, %Y')
+print(dt)
+
+# strftime - Datetime to String
+# strptime - String to Datetime
