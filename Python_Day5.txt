@@ -1,0 +1,140 @@
+ex 1)
+import re
+
+data = 'abbaaabbbbaaaaa'
+
+pattern = re.search(r'ab*', data) # a followed by zero or more b
+pattern = re.search(r'ab+', data) # a followed by one or more b
+pattern = re.search(r'ab?', data) # a followed by zero or one b
+pattern = re.search(r'ab{3}', data) # a followed by three b
+pattern = re.search(r'ab{2,3}', data) # a followed by two to three b
+print(pattern)
+
+ex 2)
+import re
+
+data = 'abbaaabbbbaaaaa'
+
+pattern = re.search(r'[ab]', data) # either a or b
+pattern = re.search(r'a[ab]+', data) # a followed by one or more a or b
+pattern = re.search(r'ab?', data) # a followed by zero or one b
+pattern = re.search(r'ab{3}', data) # a followed by three b
+pattern = re.search(r'ab{2,3}', data) # a followed by two to three b
+print(pattern)
+
+ex 3)
+import re
+
+data = 'This is some text -- with punctuation.'
+
+pattern = re.compile(r'[^-. ]+')
+matches = pattern.finditer(data)
+
+for match in matches:
+	print(match)
+
+ex 4)
+import re
+
+data = 'abbaaabbbbaaaaa'
+
+pattern = re.search(r'a.', data) # a followed by any one character
+pattern = re.search(r'a.*b', data) # # a followed by anything, ending in b
+pattern = re.search(r'a.*?b', data) # a followed by zero or one b
+
+ex 5)
+import re
+
+data = 'abbaaabbbbaaaaa'
+pattern = re.search(r'a(ab)',data)    # 'a' followed by literal 'ab'
+pattern = re.search(r'a(a*b*)',data)  # 'a' followed by 0-n 'a' and 0-n 'b'
+pattern = re.search(r'a(ab)*',data)  # 'a' followed by 0-n 'ab'
+pattern = re.search(r'a(ab)+', data)  # 'a' followed by 1-n 'ab'
+pattern = re.search(r'a((a*)(b*))', data) # 'a' followed by 0-n 'a' and 0-n 'b'
+pattern = re.search(r'a((a+)|(b+))',data) # 'a' followed by a sequence of 'a' or sequence of 'b'
+pattern = re.search(r'a((a|b)+)',data) # 'a' followed by a sequence of 'a' or 'b'
+
+ex 6)
+import re
+
+address = re.compile('[\w\d.+-]+@([\w\d.]+\.)+(com|org|edu)', re.UNICODE)
+
+candidates = [
+    u'first.last@example.com',
+    u'first.last+category@gmail.com',
+    u'valid-address@mail.example.com',
+    u'not-valid@example.foo',
+    ]
+
+for candidate in candidates:
+    print('Candidate:', candidate)
+    match = address.search(candidate)
+    if match:
+        print('Matches')
+    else:
+        print('No match')
+
+ex 7)
+import re
+
+address = re.compile(
+    '''
+    [\w\d.+-]+       # username
+    @
+    ([\w\d.]+\.)+    # domain name prefix
+    (com|org|edu)    # we should support more top-level domains
+    ''',
+    re.UNICODE | re.VERBOSE)
+
+candidates = [
+    u'first.last@example.com',
+    u'first.last+category@gmail.com',
+    u'valid-address@mail.example.com',
+    u'not-valid@example.foo',
+    ]
+
+for candidate in candidates:
+    print('Candidate:', candidate)
+    match = address.search(candidate)
+    if match:
+        print('Matches')
+    else:
+        print('No match')
+
+ex 8)
+import re
+
+address = re.compile(
+    '''
+    ^
+
+    # An address: username@domain.tld
+
+    # Ignore noreply addresses
+    (?!noreply@.*$)
+
+    [\w\d.+-]+       # username
+    @
+    ([\w\d.]+\.)+    # domain name prefix
+    (com|org|edu)    # limit the allowed top-level domains
+
+    $
+    ''',
+    re.UNICODE | re.VERBOSE)
+
+candidates = [
+    u'first.last@example.com',
+    u'noreply@example.com',
+    ]
+
+for candidate in candidates:
+    print()
+    print('Candidate:', candidate)
+    match = address.search(candidate)
+    if match:
+        print('Match:', candidate[match.start():match.end()])
+    else:
+        print('No match')
+
+
+

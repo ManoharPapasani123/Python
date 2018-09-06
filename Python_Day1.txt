@@ -1,0 +1,368 @@
+﻿Important differences between Python 2.x and Python 3.x with examples
+---------------------------------------------------------------------
+1) Division operator
+
+If we are porting our code or executing the python 3.x code in python 2.x, it can be dangerous if integer division changes go unnoticed (since it doesn’t raise any error). It is preferred to use the floating value (like 7.0/5 or 7/5.0) to get the expected result when porting our code.
+
+print 7/5
+print -7/5   
+ 
+Output in Python 2.x
+1
+-2
+Output in Python 3.x :
+1.4
+-1.4
+
+2)Print Function
+
+This is the most well known change. In this the print function in Python 2.x is replaced by print() function in Python 3.x,i.e, to print in Python 3.x an extra pair of parenthesis is required.
+
+Python 2.x
+
+print 'Hello World'
+
+Python 3.x
+
+Print('Hello World')
+
+Note:- As we can see, if we use parenthesis in python 2.x then there is no issue but if we don’t use parenthesis in python 3.x, we get SyntaxError.
+
+3)Unicode
+
+In Python 2, implicit str type is ASCII. But in Python 3.x implicit str type is Unicode.
+
+print(type('default string '))
+print(type(b'string with b '))
+
+Output in Python 2.x (Bytes is same as str)
+<type 'str'>
+<type 'str'>
+ 
+Output in Python 3.x (Bytes and str are different)
+<class 'str'>
+<class 'bytes'>
+
+Note:- Python 2.x also supports Unicode
+
+print(type('default string '))
+print(type(u'string with b '))
+ 
+'''
+Output in Python 2.x (Unicode and str are different)
+<type 'str'>
+<type 'unicode'>
+
+Output in Python 3.x (Unicode and str are same)
+<class 'str'>
+<class 'str'>
+
+4)xrange() vs range()
+
+xrange() of Python 2.x doesn’t exist in Python 3.x. In Python 2.x, range returns a list i.e. range(3) returns [0, 1, 2] while xrange returns a xrange object
+ i. e., xrange(3) returns iterator object which work similar to Java iterator and generates number when needed.
+If we need to iterate over the same sequence multiple times, we prefer range() as range provides a static list. xrange() reconstructs the sequence every time. xrange() doesn’t support slices and other list methods. The advantage of xrange() is, it saves memory when task is to iterate over a large range.
+
+In Python 3.x, the range function now does what xrange does in Python 2.x, so to keep our code portable, we might want to stick to using range instead. So Python 3.x’s range function is xrange from Python 2.x.
+
+for x in xrange(1, 5):
+    print(x)
+ 
+for x in range(1, 5):
+    print(x)
+	
+5) __future__module
+
+This is basically not a difference between two version, but useful thing to mention here. The idea of __future__ module is to help in migration. We can use Python 3.x
+If we are planning Python 3.x support in our 2.x code,we can ise_future_ imports it in our code.
+
+For example, in below Python 2.x code, we use Python 3.x’s integer division behavior using __future__ module
+
+# In below python 2.x code, division works
+# same as Python 3.x because we use  __future__
+from __future__ import division
+ 
+print 7 / 5
+print -7 / 5
+
+
+Variables in Python
+-------------------
+
+
+Python | end parameter in print()
+---------------------------------
+By default python’s print() function ends with a newline. A programmer with C/C++ background may wonder how to print without newline.
+
+Python’s print() function comes with a parameter called ‘end’. By default, the value of this parameter is ‘\n’, i.e. the new line character. You can end a print statement with any character/string using this parameter.
+
+# This Python program must be run with
+# Python 3 as it won't work with 2.7.
+ 
+# ends the output with a <space> 
+print("Welcome to" , end = ' ') 
+print("Python Course", end = ' ')
+
+Operators
+---------
+
+1)Logical Operators & Bitwise Operators
+
+Most of the languages including C, C++, Java and Python provide the boolean type that can be either set to False or True.
+
+Consider below programs that use Logical Not (or !) operator on boolean
+
+# A Python program that uses Logical Not or ! on boolean
+a = not True
+b = not False
+print(a)
+print(b)
+# Output: False
+#         True
+
+The outputs of above programs are as expected, but the outputs following programs may not be as expected if we have not used Bitwise Not (or ~) operator before.
+
+# A Python program that uses Bitwise Not or ~ on boolean
+a = True
+b = False
+print(~a)
+print(~b)
+
+# output: -2
+          -1
+Note:- The bitwise not operator ~ returns the complement of a number i.e., it switches each 1 to 0 and each 0 to 1. Booleans True and False have values 1 and 0 respectively.
+
+˜being the bitwise not operator,
+
+The expression “˜True” returns bitwise inverse of 1.
+The expression “˜False” returns bitwise inverse of 0.
+
+2) Ternary Operator
+
+Ternary operators also known as conditional expressions are operators that evaluate something based on a condition being true or false. It was added to Python in version 2.5.
+It simply allows to test a condition in a single line replacing the multiline if-else making the code compact.
+
+Syntax: [on_true] if [expression] else [on_false] 
+
+1)# Program to demonstrate conditional operator
+a, b = 10, 20
+ 
+# Copy value of a in min if a < b else copy b
+min = a if a < b else b
+ 
+print(min)
+
+2)# Python program to demonstrate nested ternary operator
+a, b = 10, 20
+ 
+print ("Both a and b are equal" if a == b else "a is greater than b"
+        if a > b else "b is greater than a")
+
+Above approach can be written as:
+
+# Python program to demonstrate nested ternary operator
+a, b = 10, 20
+ 
+if a != b:
+    if a > b:
+        print("a is greater than b")
+    else:
+        print("b is greater than a")
+else:
+    print("Both a and b are equal")
+	
+3)Increment and Decrement Operators
+
+If you’re familiar with Python, you would have known Increment and Decrement operators ( both pre and post) are not allowed in it.
+
+Python is designed to be consistent and readable. One common error by a novice programmer in languages with ++ and -- operators is mixing up the differences (both in precedence and in return value) between pre and post increment/decrement operators. Simple increment and decrement operators aren’t needed as much as in other languages.
+
+You don’t write things like :
+
+for (int i = 0; i < 5; ++i)//this is not correct approch
+
+In Python, instead we write it like
+
+# A Sample Python program to show loop (unlike many
+# other languages, it doesn't use ++)
+for i in range(0, 5):
+   print(i)
+   
+Note:- We can almost always avoid use of ++ and --. For example, x++ can be written as x += 1 and x-- can be written as x -= 1.
+
+4) Any & All Operators
+
+Any:
+Returns true if any of the items is True. It returns False if empty or all are false. Any can be thought of as a sequence of OR operations on the provided iterables.
+It short circuit the execution i.e. stop the execution as soon as the result is known.
+Syntax : any(list of iterables)
+
+# Since all are false, false is returned
+print (any([False, False, False, False]))
+ 
+# Here the method will short-circuit at the
+# second item (True) and will return True.
+print (any([False, True, False, False]))
+ 
+# Here the method will short-circuit at the
+# first (True) and will return True.
+print (any([True, False, False, False]))
+
+All:
+Returns true if all of the items are True (or if the iterable is empty). All can be thought of as a sequence of AND operations on the provided iterables. It also short circuit the execution i.e. stop the execution as soon as the result is known.
+Syntax : all(list of iterables)
+
+# Here all the iterables are True so all
+# will return True and the same will be printed
+print (all([True, True, True, True]))
+ 
+# Here the method will short-circuit at the 
+# first item (False) and will return False.
+print (all([False, True, True, False]))
+ 
+# This statement will return False, as no
+# True is found in the iterables
+print (all([False, False, False]))
+--------------------------------------------------
+Identifiers
+-----------
+name is used for identification purpose
+ex 1) x = 10
+ex 2) def f1():
+	statements
+ex 3) class Test(Exception):
+
+variable name,class name or method name is called
+as identifier.
+
+Rules to define identifier in python
+-------------------------------------
+1)Alphabet symbols(both uppercase and lowercase)
+2)Digits(0 to 9)
+3)Underscore(_)
+
+ex 1) test = 10
+      te$t = 10
+
+ex 2) test123 = 10
+      123test =10
+Note :- identifier should not start with digit
+
+ex 3) total = 10
+      TOTAL = 20
+Note:-Pyhton is case sensitive so both values are
+allowed
+
+ex 4) x = 10
+      if = 20
+Note:- keywords is not allowed for identifiers.
+
+ex 5) No length limit for python identifiers.
+
+Note:-1) if identifier start with _ then its private.
+2) if identifier start with __ then its strongly private.
+3) __main__ is language specific variable.
+
+ex ) a,b = 10,20
+     a + b
+     (or)
+     a.__add__(b)
+
+Reserved Words
+---------------
+in python some words is reserved for some functionality
+such type of words are called as reserved words.
+
+in python 33 reserved words.
+
+How to check list of keywords in python?
+
+import keyword
+
+keyword.kwlist
+
+keyword.iskeyword('False')
+
+ex ) True,False,None
+      and,or,is,not
+      if,else,elif(elseif)
+      while,for,break,continue,return,in,yield
+      try,except,finally,raise,assert
+      import,from,as,class,def,pass,global,nonlocal,lambda,del,with
+
+Note: 1) all reserved words contains alphabets
+2)True,False,None(first char is capital)
+
+ex 1) x = True
+      x = true(its not valid)
+
+ex 2) y = None
+      y = none(its not valid)
+
+Data Types:
+-----------
+python is dynamically typed programming language.
+
+ex 1)x = 10
+     type(x)
+
+Datatypes:
+1)int
+integral values are int type
+x = 10
+type(x)
+<class,'int'>
+
+-Decimal form(Base-10)
+ 0 to 9
+ ex 1) x = 10
+
+-Binary form(Base-2)
+ 0 and 1
+ ex 1) x  = 0B1111 (or) 0b1111
+
+-Octal form(Base-8)
+ 0 to 7
+ ex 1) x = 0o1111 (or) 0O1111
+
+-Hexa form(Base-16)
+ 0 to 9,a to f,A to F
+ x = 0xAbcd or 0XAbcd
+
+Note:-in python3 there is long datatype but in 
+python2 long datatype is there.
+
+print(a =10)
+print(a = 0b10)
+print(a = 0o10)
+print(a = 0x10)
+
+Note:python print above values in decimal form.
+
+2)float
+3)bool
+4)str
+5)bytes
+6)bytearray
+7)range
+8)list
+9)tuple
+10)set
+11)frozenset
+12)dict
+13)None
+14)Complex
+
+python in bulit functions
+-------------------------
+1)print()
+2)type()
+3)id() //address of the object.
+
+Note:-In python is everything is an object.
+
+13)None
+
+
+
+

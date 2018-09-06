@@ -1,0 +1,106 @@
+Reading data from MYSQL using Python
+------------------------------------
+This tutorial shows you how to query data from a MySQL database in Python by using MySQL Connector/Python API such as fetchone() , fetchmany() , and fetchall() .
+
+To query data in a MySQL database from Python, you need to do the following steps:
+
+1) Connect to the MySQL Database, you get a MySQLConnection object.
+2) Instantiate a  MySQLCursor object from the the MySQLConnection object.
+3) Use the cursor to execute a query by calling its  execute() method.
+4) Use fetchone() ,  fetchmany() or  fetchall() method to fetch data from the result set.
+5) Close the cursor as well as the database connection by calling the  close() 
+   method of the corresponding object.
+
+
+ex 1)
+
+import MySQLdb
+
+db = MySQLdb.connect(host="localhost", user="root", password="root",db="greeting")
+cur = db.cursor()
+cur.execute("select * from customer")
+for row in cur.fetchall():
+    print(row)
+
+cur.close()
+db.close()
+
+
+ex 2)
+
+import MySQLdb
+
+db = MySQLdb.connect(host="localhost", user="root", password="root",db="greeting")
+cur = db.cursor()
+cur.execute("select * from customer")
+for row in cur.fetchmany():
+    print(row)
+
+cur.close()
+db.close()
+
+ex 3)
+
+import MySQLdb
+
+db = MySQLdb.connect(host="localhost", user="root", password="root",db="greeting")
+cur = db.cursor()
+cur.execute("select * from customer")
+for row in cur.fetchone():
+    print(row)
+
+cur.close()
+db.close()
+
+
+Creating user defined modules in Python
+----------------------------------------
+Modules refer to a file containing Python statements and definitions.
+
+A file containing Python code, for e.g.: example.py, is called a module and its module name would be example.
+
+We use modules to break down large programs into small manageable and organized files. Furthermore, modules provide reusability of code.
+
+We can define our most used functions in a module and import it, instead of copying their definitions into different programs.
+
+Let us create a module. Type the following and save it as example.py.
+
+ex 1)
+
+def add(a, b):
+   """This program adds two
+   numbers and return the result"""
+
+   result = a + b
+   return result
+
+
+from pypkg import example
+
+example.add(4,5)
+
+ex 2)
+import math
+
+
+print("The value of pi is", math.pi)
+
+ex 3)
+import math as m
+
+
+print("The value of pi is", m.pi)
+
+ex 4)
+from math import pi
+
+
+print("The value of pi is", pi)
+
+ex 5)
+from math import *
+
+
+print("The value of pi is", pi)
+
+ 
